@@ -134,7 +134,7 @@
   // ─────────────────────────────────────────────────────
   function applyFiltersAndRender() {
     const searchVal = (qs('#search-input')?.value || '').trim().toLowerCase();
-    const activeCat = qs('.cat-chip.active')?.dataset.cat || '';
+    const activeCat = (qs('.filter-pill.active, .cat-chip.active')?.dataset.cat || '').trim();
     const statusVal = qs('#status-filter')?.value || '';
     const sortVal = qs('#sort-select')?.value || 'newest';
 
@@ -210,10 +210,10 @@
       const coverImg = gallery[0] || p.imageUrl || 'furlestial.ico';
       const statusClass = `status-${p.status || 'preorder'}`;
       const statusLabels = {
-        preorder: '🛒 เปิดพรี',
-        ordered: '✈️ รอของเข้า',
-        arrived: '📦 พร้อมส่ง',
-        closed: '⏸️ ปิดรับพรี',
+        preorder: 'PRE-ORDER',
+        ordered: 'IN TRANSIT',
+        arrived: 'IN STOCK',
+        closed: 'CLOSED',
       };
 
       return `
@@ -221,19 +221,19 @@
           <div class="card-media">
             <img src="${esc(coverImg)}" alt="${esc(p.name)}" class="card-img" loading="lazy" onerror="this.src='furlestial.ico'" />
             <span class="card-badge-code">${esc(p.id)}</span>
-            <span class="card-badge-status ${statusClass}">${statusLabels[p.status] || '🛒 เปิดพรี'}</span>
-            ${gallery.length > 1 ? `<span class="card-gallery-pill">📸 ${gallery.length} รูป</span>` : ''}
+            <span class="card-badge-status ${statusClass}">${statusLabels[p.status] || 'PRE-ORDER'}</span>
+            ${gallery.length > 1 ? `<span class="card-gallery-pill">${gallery.length} รูป</span>` : ''}
           </div>
           <div class="card-body">
             <h3 class="card-title">${esc(p.name)}</h3>
-            <div class="card-shop">${esc(p.nameCn || '[Furlestial Official]')}</div>
+            <div class="card-shop">${esc(p.nameCn || '[Furlestial Licensed Studio]')}</div>
             <div class="card-price-row">
               <span class="card-price-main">${priceText}</span>
-              ${hasMulti ? '<span class="card-price-multi">หลายราคา</span>' : ''}
+              ${hasMulti ? '<span class="card-price-multi">ตามตัวเลือก</span>' : ''}
               ${p.origPrice > minP ? `<span class="card-price-orig">฿${p.origPrice.toLocaleString('th-TH')}</span>` : ''}
             </div>
-            <div class="card-ship-badge">🚚 จัดส่งฟรีถึงหน้าบ้านคุณ (0 บาท)</div>
-            <button class="card-cta-btn" type="button">🔍 ดูรายละเอียด & ขนาด</button>
+            <div class="card-ship-badge">✓ รวมส่งฟรีถึงหน้าบ้านคุณ (0 บาท)</div>
+            <button class="card-cta-btn" type="button">ดูตารางไซส์ & รายละเอียด →</button>
           </div>
         </article>
       `;
@@ -270,9 +270,14 @@
 
     // Status
     const statusEl = qs('#modal-status');
-    const statusLabels = { preorder: '🛒 เปิดรับพรีออเดอร์', ordered: '✈️ สินค้าสั่งแล้ว รอของเข้า', arrived: '📦 มีสินค้าพร้อมส่ง', closed: '⏸️ ปิดรับพรีชั่วคราว' };
-    statusEl.textContent = statusLabels[p.status] || '🛒 เปิดรับพรี';
-    statusEl.className = `badge-status status-${p.status || 'preorder'}`;
+    const statusLabels = {
+      preorder: 'PRE-ORDER',
+      ordered: 'IN TRANSIT',
+      arrived: 'IN STOCK',
+      closed: 'CLOSED'
+    };
+    statusEl.textContent = statusLabels[p.status] || 'PRE-ORDER';
+    statusEl.className = `tag-status status-${p.status || 'preorder'}`;
 
     // Pricing
     const minP = Number(p.minSellPrice || p.sellPrice || 0);
@@ -302,10 +307,10 @@
       vWrap.innerHTML = p.variants.map(v => {
         const vPrice = Number(v.sellPrice || p.sellPrice || 0);
         return `
-          <div class="v-chip">
-            <span>${esc(v.emoji || '🐾')}</span>
+          <div class="v-pill">
+            <span>${esc(v.emoji || '✦')}</span>
             <span>${esc(v.name)}</span>
-            ${vPrice > 0 ? `<span class="v-price">฿${vPrice.toLocaleString('th-TH')}</span>` : ''}
+            ${vPrice > 0 ? `<span class="v-pill-price">฿${vPrice.toLocaleString('th-TH')}</span>` : ''}
           </div>
         `;
       }).join('');
@@ -322,9 +327,9 @@
         const sPrice = Number(s.sellPrice || 0);
         return `
           <tr>
-            <td class="size-badge">${esc(s.name)}</td>
+            <td class="spec-size-key">${esc(s.name)}</td>
             <td>${esc(s.measurement || 'สัดส่วนมาตรฐานตามโรงงาน')}</td>
-            <td>${sPrice > 0 ? `฿${sPrice.toLocaleString('th-TH')}` : '<span style="color:#34d399">เปิดรับพรี</span>'}</td>
+            <td>${sPrice > 0 ? `฿${sPrice.toLocaleString('th-TH')}` : '<span style="color:var(--accent-green); font-weight:600;">เปิดรับพรี</span>'}</td>
           </tr>
         `;
       }).join('');
@@ -427,10 +432,10 @@
       searchInp.focus();
     });
 
-    // Category chips
-    qsa('.cat-chip').forEach(btn => {
+    // Category filter pills
+    qsa('.filter-pill, .cat-chip').forEach(btn => {
       btn.addEventListener('click', () => {
-        qsa('.cat-chip').forEach(b => b.classList.remove('active'));
+        qsa('.filter-pill, .cat-chip').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         applyFiltersAndRender();
       });
@@ -444,7 +449,7 @@
     qs('#reset-filters-btn')?.addEventListener('click', () => {
       if (searchInp) searchInp.value = '';
       if (clearBtn) clearBtn.style.display = 'none';
-      qsa('.cat-chip').forEach((b, i) => b.classList.toggle('active', i === 0));
+      qsa('.filter-pill, .cat-chip').forEach((b, i) => b.classList.toggle('active', i === 0));
       if (qs('#status-filter')) qs('#status-filter').value = '';
       applyFiltersAndRender();
     });
