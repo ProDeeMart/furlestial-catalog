@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Furlestial Shop — แคตตาล็อกสินค้าพรีออเดอร์</title>
+  <meta name="description" content="แคตตาล็อกสินค้าพรีออเดอร์ Furry คอสเพลย์ เสื้อผ้า บ็อกเซอร์ ตุ๊กตา โมเดล และของสะสมลิขสิทธิ์แท้ จัดส่งตรงถึงหน้าบ้านคุณฟรี 0 บาท" />
+  
+  <!-- Open Graph / Facebook Sharing Meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Furlestial Shop — แคตตาล็อกสินค้าพรีออเดอร์" />
+  <meta property="og:description" content="ชมสินค้าพรีออเดอร์ทั้งหมด ตารางขนาด รายละเอียด และราคาพิเศษ พร้อมจัดส่งฟรีถึงหน้าบ้านคุณ!" />
+  <meta property="og:image" content="logo_Furlestial_shop.jpg" />
+
+  <link rel="icon" type="image/x-icon" href="furlestial.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=1.0" />
+</head>
+<body>
+  <!-- Ambient Space Glow -->
+  <div class="bg-stars"></div>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner container">
+      <div class="brand" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+        <img src="logo_Furlestial_shop.jpg" alt="Furlestial Shop Logo" class="brand-logo" onerror="this.style.display='none'" />
+        <div class="brand-text">
+          <div class="brand-name">FURLESTIAL <span class="brand-badge">CATALOG</span></div>
+          <div class="brand-tagline">ร้านพรีออเดอร์สินค้า Furry ลิขสิทธิ์แท้ 🐾</div>
+        </div>
+      </div>
+      <div class="header-actions">
+        <a href="#how-to-order" class="btn-ghost-sm">📦 วิธีสั่งพรี</a>
+        <a href="https://www.facebook.com" id="header-contact-btn" target="_blank" rel="noopener" class="btn-contact-header">
+          <span class="fb-icon">💬</span> สั่งซื้อ / สอบถามทาง Facebook
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section container">
+    <div class="hero-content">
+      <div class="hero-pill">✨ ลิขสิทธิ์แท้ส่งตรงจากร้านสเปเชียลตี้จีน • จัดส่งฟรีถึงหน้าบ้านคุณ (0 บาท) ✨</div>
+      <h1 class="hero-title">แคตตาล็อกสินค้าพรีออเดอร์</h1>
+      <p class="hero-subtitle">
+        รวมสินค้าทั้งหมดที่เปิดรับพรีออเดอร์ เช็กตารางไซส์ สัดส่วนจริง รูปภาพความละเอียดสูง และคำนวณราคาทุกตัวเลือกได้ที่นี่ตลอด 24 ชม.
+      </p>
+      <div class="hero-stats" id="hero-stats">
+        <div class="stat-item"><span class="stat-num" id="stat-total">0</span><span class="stat-label">รายการสินค้า</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat-item"><span class="stat-num" id="stat-preorder">0</span><span class="stat-label">เปิดรับพรีตอนนี้</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat-item"><span class="stat-num">0 ฿</span><span class="stat-label">ค่าส่งไทย (ส่งฟรีทุกออเดอร์)</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter & Controls Toolbar -->
+  <section class="toolbar-section container">
+    <div class="toolbar-card">
+      <!-- Search Input -->
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="search-input" placeholder="ค้นหาชื่อสินค้า, รหัสสินค้า (เช่น F0012, C0010), ตัวละคร หรือคอลเลกชัน..." autocomplete="off" />
+        <button id="search-clear-btn" class="search-clear" title="ล้างคำค้นหา" style="display:none;">✕</button>
+      </div>
+
+      <!-- Categories Filter Tabs -->
+      <div class="categories-bar" id="category-chips">
+        <button class="cat-chip active" data-cat="">🌟 ทั้งหมด</button>
+        <button class="cat-chip" data-cat="C">🩲 เสื้อผ้า / บ็อกเซอร์</button>
+        <button class="cat-chip" data-cat="F">🎭 เฟอร์สูท / คอสเพลย์</button>
+        <button class="cat-chip" data-cat="D">🧸 ตุ๊กตา / หมอน</button>
+        <button class="cat-chip" data-cat="T">🎮 ฟิกเกอร์ / โมเดล</button>
+        <button class="cat-chip" data-cat="S">🔞 คอลเลกชันพิเศษ</button>
+      </div>
+
+      <!-- Secondary Filters & Sorter -->
+      <div class="toolbar-sub">
+        <div class="filter-group">
+          <label for="status-filter" class="filter-label">สถานะ:</label>
+          <select id="status-filter" class="custom-select">
+            <option value="">ทุกสถานะสินค้า</option>
+            <option value="preorder">🛒 เปิดรับพรี</option>
+            <option value="ordered">✈️ รอของเข้า</option>
+            <option value="arrived">📦 พร้อมส่งทันที</option>
+            <option value="closed">⏸️ ปิดรับพรีชั่วคราว</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="sort-select" class="filter-label">เรียงลำดับ:</label>
+          <select id="sort-select" class="custom-select">
+            <option value="newest">🕒 เพิ่มล่าสุดก่อน</option>
+            <option value="price-asc">💸 ราคา: ถูก → แพง</option>
+            <option value="price-desc">💎 ราคา: แพง → ถูก</option>
+            <option value="code-asc">🏷️ รหัสสินค้า (A → Z)</option>
+            <option value="name-asc">🔤 ชื่อ ก → ฮ</option>
+          </select>
+        </div>
+
+        <div class="results-count" id="results-count">
+          แสดง 0 รายการ
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Grid -->
+  <main class="products-section container">
+    <div class="products-grid" id="products-grid">
+      <!-- Loading skeleton cards -->
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+    </div>
+
+    <!-- Empty State -->
+    <div id="empty-state" class="empty-state" style="display:none;">
+      <div class="empty-emoji">🐾</div>
+      <h3>ไม่พบสินค้าที่ตรงกับการค้นหา</h3>
+      <p>ลองเปลี่ยนคำค้นหา หรือกดล้างตัวกรองเพื่อดูสินค้าทั้งหมด</p>
+      <button id="reset-filters-btn" class="btn-primary-sm">ล้างตัวกรองทั้งหมด</button>
+    </div>
+  </main>
+
+  <!-- Order Guide & Assurance Section -->
+  <section class="guide-section container" id="how-to-order">
+    <h2 class="section-title">📦 วิธีสั่งพรีออเดอร์กับ Furlestial Shop</h2>
+    <div class="guide-grid">
+      <div class="guide-card">
+        <div class="guide-num">1</div>
+        <div class="guide-icon">🔍</div>
+        <h3>เลือกสินค้า & ไซส์</h3>
+        <p>เลือกสินค้าที่ต้องการในแคตตาล็อก ตรวจสอบตารางเทียบขนาด (ส่วนสูง/รอบเอว/น้ำหนัก) และตัวเลือกสี/ลาย</p>
+      </div>
+      <div class="guide-card">
+        <div class="guide-num">2</div>
+        <div class="guide-icon">💬</div>
+        <h3>ทักแชทสั่งซื้อ</h3>
+        <p>กดปุ่ม <strong>"สั่งซื้อสินค้านี้"</strong> เพื่อทักแชท Facebook Page หรือส่งรหัสสินค้า (เช่น F0012) ให้แอดมิน</p>
+      </div>
+      <div class="guide-card">
+        <div class="guide-num">3</div>
+        <div class="guide-icon">✈️</div>
+        <h3>รอรับของถึงบ้านฟรี</h3>
+        <p>ทางร้านสั่งตรงจากผู้ผลิต รอสินค้าประมาณ 2-3 สัปดาห์ จัดส่งฟรีถึงหน้าบ้านคุณ พร้อมแจ้งเลขอัปเดตทุกระยะ</p>
+      </div>
+    </div>
+
+    <div class="trust-banner">
+      <div class="trust-item"><span class="trust-icon">🛡️</span><span>สินค้าลิขสิทธิ์แท้ 100% สั่งตรงจากสตูดิโอผู้ผลิต</span></div>
+      <div class="trust-item"><span class="trust-icon">🚚</span><span>จัดส่งฟรีถึงหน้าบ้านคุณ (Door-to-Door ไม่มีบวกเพิ่ม)</span></div>
+      <div class="trust-item"><span class="trust-icon">📦</span><span>แพ็กมิดชิด ปกปิดชื่อสินค้าเพื่อความเป็นส่วนตัว</span></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo-title">🐾 FURLESTIAL SHOP</div>
+        <p class="footer-desc">ระบบแคตตาล็อกออนไลน์พรีออเดอร์สินค้าลิขสิทธิ์แท้ Furry & Cosplay คัดสรรคุณภาพส่งตรงถึงบ้านคุณ</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-heading">ติดต่อสอบถาม</div>
+        <p>Inbox เข้ามาสอบถามหรือสั่งพรีออเดอร์ได้ตลอด 24 ชั่วโมง</p>
+        <a href="https://www.facebook.com" id="footer-contact-link" target="_blank" rel="noopener" class="footer-social-btn">
+          💬 ทักแชท Facebook Page
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <span>© 2026 Furlestial Shop. All rights reserved. • Hosted on Cloudflare Pages</span>
+    </div>
+  </footer>
+
+  <!-- Product Detail Modal (Deep-Linkable) -->
+  <div id="product-modal-backdrop" class="modal-backdrop">
+    <div class="modal-card" id="product-modal" role="dialog" aria-modal="true">
+      <button class="modal-close-btn" id="modal-close-btn" title="ปิด (Esc)">✕</button>
+
+      <div class="modal-layout">
+        <!-- Media Column -->
+        <div class="modal-media-col">
+          <div class="main-image-wrap">
+            <img id="modal-main-img" src="" alt="" class="modal-main-img" />
+            <span class="modal-img-counter" id="modal-img-counter">1 / 1</span>
+            <button class="img-nav-btn prev" id="img-prev-btn" title="รูปก่อนหน้า">❮</button>
+            <button class="img-nav-btn next" id="img-next-btn" title="รูปถัดไป">❯</button>
+          </div>
+          <!-- Thumbnail strip -->
+          <div class="thumbnails-strip" id="modal-thumbnails"></div>
+        </div>
+
+        <!-- Info Column -->
+        <div class="modal-info-col">
+          <div class="modal-header-meta">
+            <span class="badge-code" id="modal-code">F0000</span>
+            <span class="badge-status" id="modal-status">เปิดรับพรี</span>
+            <span class="badge-ship" id="modal-ship">🚚 ส่งฟรีถึงหน้าบ้านคุณ</span>
+          </div>
+
+          <h2 class="modal-title" id="modal-title">ชื่อสินค้า</h2>
+          <div class="modal-shop" id="modal-shop">ร้านค้าต้นทาง</div>
+
+          <!-- Price Box -->
+          <div class="modal-price-box">
+            <div class="modal-price-main">
+              <span class="modal-price-label">ราคาพรีออเดอร์:</span>
+              <span class="modal-price-thb" id="modal-price-thb">฿0</span>
+              <span class="modal-price-orig" id="modal-price-orig"></span>
+            </div>
+            <div class="modal-ship-note">
+              🚚 <strong>จัดส่งฟรีถึงหน้าบ้านคุณ (0 บาท)</strong> ไม่มีค่าส่งในไทยบวกเพิ่ม
+            </div>
+          </div>
+
+          <!-- Variants Section -->
+          <div class="modal-section" id="modal-variants-section">
+            <div class="section-label">🎨 ตัวเลือก / สี / ลาย:</div>
+            <div class="variants-chips-wrap" id="modal-variants-chips"></div>
+          </div>
+
+          <!-- Size Chart Section -->
+          <div class="modal-section" id="modal-sizes-section">
+            <div class="section-label">📏 ตารางเทียบขนาด (สัดส่วนจริง):</div>
+            <div class="size-table-wrap">
+              <table class="size-table" id="modal-size-table">
+                <thead>
+                  <tr>
+                    <th>ไซส์</th>
+                    <th>สัดส่วนจริง (ส่วนสูง / น้ำหนัก / รอบเอว)</th>
+                    <th>สถานะ</th>
+                  </tr>
+                </thead>
+                <tbody id="modal-size-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Description Section -->
+          <div class="modal-section">
+            <div class="section-label">📌 รายละเอียดสินค้า:</div>
+            <div class="modal-desc" id="modal-desc"></div>
+          </div>
+
+          <!-- Delivery timeframe -->
+          <div class="modal-delivery-box">
+            <span class="delivery-icon">✈️</span>
+            <div>
+              <strong>ระยะเวลารอสินค้า:</strong> สินค้าพรีออเดอร์ ใช้เวลาขนส่งจากจีนมาไทยประมาณ <strong>2-3 สัปดาห์</strong>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="modal-actions">
+            <a href="#" id="modal-order-btn" target="_blank" rel="noopener" class="btn-order-primary">
+              <span class="btn-icon">💬</span> สั่งซื้อสินค้านี้ทาง Facebook
+            </a>
+            <button id="modal-copy-link-btn" class="btn-copy-link" title="คัดลอกลิงก์สินค้านี้เพื่อส่งให้เพื่อนหรือบันทึกไว้">
+              🔗 คัดลอกลิงก์สินค้า
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast"></div>
+
+  <script src="catalog.js?v=1.0"></script>
+</body>
+</html>
+

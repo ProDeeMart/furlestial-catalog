@@ -1,0 +1,1230 @@
+[
+  {
+    "id": "C0009",
+    "name": "กางเกงในบ็อกเซอร์ลายสัตว์ขนฟู ดีไซน์ออริจินัล (หมาป่า / เสือดาวหิมะ / เสือ / แพนด้าแดง)",
+    "nameCn": "[次元绒合furry铺]",
+    "category": "C",
+    "status": "preorder",
+    "sellPrice": 349,
+    "minSellPrice": 349,
+    "maxSellPrice": 1259,
+    "origPrice": 529,
+    "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
+    "delivery": "ประมาณ 2 อาทิตย์",
+    "desc": "กางเกงในบ็อกเซอร์ทรงขาสั้นพิมพ์ลายหางสัตว์ขนฟูสุดคิวท์ ดีไซน์ออริจินัลลิขสิทธิ์แท้จากร้าน [次元绒合furry铺] เนื้อผ้านุ่มลื่น ยืดหยุ่นกระชับ ระบายอากาศดีเยี่ยม สวมใส่สบายตลอดวันไม่อับชื้น สีสันและลายสกรีนคมชัดระดับ HD ซักแล้วสีไม่ตก!",
+    "imageUrl": "images/items/1017947336074/01.jpg",
+    "galleryImages": [
+      "images/items/1017947336074/01.jpg",
+      "images/items/1017947336074/02.jpg",
+      "images/items/1017947336074/03.jpg",
+      "images/items/1017947336074/04.jpg",
+      "images/items/1017947336074/05.jpg",
+      "images/items/1017947336074/06.jpg",
+      "images/items/1017947336074/07.jpg",
+      "images/items/1017947336074/08.jpg",
+      "images/items/1017947336074/09.jpg",
+      "images/items/1017947336074/10.jpg",
+      "images/items/1017947336074/11.jpg",
+      "images/items/1017947336074/12.jpg",
+      "images/items/1017947336074/13.jpg",
+      "images/items/1017947336074/14.jpg",
+      "images/items/1017947336074/15.jpg",
+      "images/items/1017947336074/16.jpg",
+      "images/items/1017947336074/17.jpg"
+    ],
+    "variants": [
+      {
+        "emoji": "🐯",
+        "name": "ลายเสือ (Tiger)",
+        "sellPrice": 359,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🐆",
+        "name": "ลายเสือดาวหิมะ (Snow Leopard)",
+        "sellPrice": 359,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🐼",
+        "name": "ลายแพนด้าแดง (Red Panda)",
+        "sellPrice": 359,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🐺",
+        "name": "ลายหมาป่า (Wolf)",
+        "sellPrice": 359,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "📦",
+        "name": "เซ็ตครบ 4 ลาย (เลือกคละลาย/คละไซส์ได้ แจ้งในแชท)",
+        "sellPrice": 1259,
+        "sold": false,
+        "priceNote": ""
+      }
+    ],
+    "sizes": [
+      {
+        "name": "L (170)",
+        "measurement": "ส่วนสูงแนะนำ ~165-170 ซม. / รอบเอว 28-30 นิ้ว (50-60 กก.)",
+        "sellPrice": 349,
+        "sold": false
+      },
+      {
+        "name": "XL (175)",
+        "measurement": "ส่วนสูงแนะนำ ~170-175 ซม. / รอบเอว 31-33 นิ้ว (60-70 กก.)",
+        "sellPrice": 349,
+        "sold": false
+      },
+      {
+        "name": "2XL (180)",
+        "measurement": "ส่วนสูงแนะนำ ~175-180 ซม. / รอบเอว 34-36 นิ้ว (70-80 กก.)",
+        "sellPrice": 349,
+        "sold": false
+      },
+      {
+        "name": "3XL (185)",
+        "measurement": "ส่วนสูงแนะนำ ~180-185 ซม. / รอบเอว 37-39 นิ้ว (80-90 กก.)",
+        "sellPrice": 349,
+        "sold": false
+      },
+      {
+        "name": "4XL (190)",
+        "measurement": "ส่วนสูงแนะนำ ~185-190 ซม. / รอบเอว 40-43 นิ้ว (90-105+ กก.)",
+        "sellPrice": 349,
+        "sold": false
+      }
+    ],
+    "createdAt": "2026-10-30T15:54:56.213Z",
+    "updatedAt": "2026-10-30T17:22:34.738Z"
+  },
+  {
+    "id": "F0010",
+    "name": "ชุดบอดี้สูทฮีโร่ Little Hero (คอลเลกชันพิเศษ Kiza × 次元绒合)",
+    "nameCn": "[次元绒合furry铺]",
+    "category": "F",
+    "status": "preorder",
+    "sellPrice": 1549,
+    "minSellPrice": 1549,
+    "maxSellPrice": 1729,
+    "origPrice": 1729,
+    "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
+    "delivery": "ประมาณ 2 อาทิตย์",
+    "desc": "ชุดบอดี้สูทแนวฮีโร่สุดเท่ รุ่น Little Hero (Fusion Matrix Series) คอลเลกชันคอลแลปพิเศษลิขสิทธิ์แท้จาก Kiza × [次元绒合furry铺] เนื้อผ้ายืดหยุ่นสูง กระชับสัดส่วน ระบายอากาศดี ลายสกรีนคมชัดระดับ HD มีให้เลือกทั้งแบบเฉพาะชุดบอดี้สูท และแบบเซ็ตครบชุดพร้อมปลอกแขนและปลอกขาเข้าเซ็ต!",
+    "imageUrl": "images/items/1058235229326/01.jpg",
+    "galleryImages": [
+      "images/items/1058235229326/01.jpg",
+      "images/items/1058235229326/02.jpg",
+      "images/items/1058235229326/03.jpg",
+      "images/items/1058235229326/04.jpg",
+      "images/items/1058235229326/05.jpg",
+      "images/items/1058235229326/06.jpg",
+      "images/items/1058235229326/07.jpg",
+      "images/items/1058235229326/08.jpg",
+      "images/items/1058235229326/09.jpg",
+      "images/items/1058235229326/10.jpg"
+    ],
+    "variants": [
+      {
+        "emoji": "🦸‍♂️",
+        "name": "เซ็ตครบชุด สีขาว-ทอง (บอดี้สูท + ปลอกแขน/ขา สีขาว)",
+        "sellPrice": 1729,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "⚡",
+        "name": "เซ็ตครบชุด สีดำ-ทอง (บอดี้สูท + ปลอกแขน/ขา สีดำ)",
+        "sellPrice": 1729,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "💎",
+        "name": "เซ็ตครบชุด สีฟ้า-ขาว (บอดี้สูท + ปลอกแขน/ขา แจ้งสลับสีได้)",
+        "sellPrice": 1729,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🤍",
+        "name": "เฉพาะชุดบอดี้สูท สีขาว-ทอง (Platinum)",
+        "sellPrice": 1549,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🖤",
+        "name": "เฉพาะชุดบอดี้สูท สีดำ-ทอง (Black-Gold)",
+        "sellPrice": 1549,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🩵",
+        "name": "เฉพาะชุดบอดี้สูท สีฟ้า-ขาว (Shiny Blue)",
+        "sellPrice": 1549,
+        "sold": false,
+        "priceNote": ""
+      }
+    ],
+    "sizes": [
+      {
+        "name": "L",
+        "measurement": "สูง 155–170 ซม. / น้ำหนัก 45–65 กก. / รอบเอว 26–29 นิ้ว (67–73 ซม.)",
+        "sellPrice": 0,
+        "sold": false
+      },
+      {
+        "name": "XL",
+        "measurement": "สูง 160–175 ซม. / น้ำหนัก 55–73 กก. / รอบเอว 29–31.5 นิ้ว (73–80 ซม.)",
+        "sellPrice": 0,
+        "sold": false
+      },
+      {
+        "name": "2XL",
+        "measurement": "สูง 165–180 ซม. / น้ำหนัก 63–83 กก. / รอบเอว 31.5–34 นิ้ว (80–87 ซม.)",
+        "sellPrice": 0,
+        "sold": false
+      },
+      {
+        "name": "3XL",
+        "measurement": "สูง 170–185 ซม. / น้ำหนัก 70–90 กก. / รอบเอว 34–37 นิ้ว (87–93 ซม.)",
+        "sellPrice": 0,
+        "sold": false
+      },
+      {
+        "name": "4XL",
+        "measurement": "สูง 175–190 ซม. / น้ำหนัก 80–100 กก. / รอบเอว 37–41 นิ้ว (93–103 ซม.)",
+        "sellPrice": 0,
+        "sold": false
+      },
+      {
+        "name": "5XL",
+        "measurement": "สูง 180–200 ซม. / น้ำหนัก 90–110 กก. / รอบเอว 41–46 นิ้ว (103–117 ซม.)",
+        "sellPrice": 0,
+        "sold": false
+      }
+    ],
+    "createdAt": "2026-10-30T17:00:00.000Z",
+    "updatedAt": "2026-10-30T18:29:22.106Z"
+  },
+  {
+    "id": "F0001",
+    "name": "ร่มหมีแพนด้าแดง",
+    "nameCn": "",
+    "category": "F",
+    "status": "preorder",
+    "sellPrice": 599,
+    "minSellPrice": 599,
+    "maxSellPrice": 599,
+    "origPrice": 899,
+    "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
+    "delivery": "ประมาณ 2 อาทิตย์",
+    "desc": "",
+    "imageUrl": "images/item_865696816552.jpg",
+    "galleryImages": [
+      "images/item_865696816552.jpg"
+    ],
+    "variants": [],
+    "sizes": [],
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "F0002",
+    "name": "เข็มกลัดโลหะเฟอร์",
+    "nameCn": "",
+    "category": "F",
+    "status": "preorder",
+    "sellPrice": 369,
+    "minSellPrice": 369,
+    "maxSellPrice": 369,
+    "origPrice": 559,
+    "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
+    "delivery": "ประมาณ 2 อาทิตย์",
+    "desc": "",
+    "imageUrl": "images/item_882056692700.jpg",
+    "galleryImages": [
+      "images/item_882056692700.jpg"
+    ],
+    "variants": [],
+    "sizes": [],
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "F0003",
+    "name": "Mouse pad พี่เสือ",
+    "nameCn": "",
+    "category": "F",
+    "status": "preorder",
+    "sellPrice": 899,
+    "minSellPrice": 899,
+    "maxSellPrice": 899,
+    "origPrice": 1199,
+    "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
+    "delivery": "ประมาณ 2 อาทิตย์",
+    "desc": "",
+    "imageUrl": "images/item_919767984468.jpg",
+    "galleryImages": [
+      "images/item_919767984468.jpg"
+    ],
+    "variants": [],
+    "sizes": [],
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "D0001",
+    "name": "ตุ๊กตาสัตว์น่ารัก",
+    "nameCn": "BambooMates",
+    "category": "D",
+    "status": "preorder",
+    "sellPrice": 429,
+    "minSellPrice": 429,
+    "maxSellPrice": 429,
+    "origPrice": 649,
+    "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
+    "delivery": "ประมาณ 2 อาทิตย์",
+    "desc": "",
+    "imageUrl": "images/item_shop281874488.jpg",
+    "galleryImages": [
+      "images/item_shop281874488.jpg"
+    ],
+    "variants": [],
+    "sizes": [],
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "C0001",
+    "name": "กระเป๋าข้าง",
+    "nameCn": "",
+    "category": "C",
+    "status": "preorder",
+    "sellPrice": 549,
+    "minSellPrice": 549,
+    "maxSellPrice": 549,
+    "origPrice": 799,
+    "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
+    "delivery": "ประมาณ 2 อาทิตย์",
+    "desc": "",
+    "imageUrl": "images/item_789476789572.jpg",
+    "galleryImages": [
+      "images/item_789476789572.jpg"
+    ],
+    "variants": [],
+    "sizes": [],
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "F0004",
+    "name": "Mouse pad Gray Claw×FurPaw",
+    "nameCn": "[Gray Claw × FurPaw]",
+    "category": "F",
+    "status": "preorder",
+    "sellPrice": 679,
+    "minSellPrice": 679,
+    "maxSellPrice": 679,
+    "origPrice": 999,
+    "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
+    "delivery": "ประมาณ 2 อาทิตย์",
+    "desc": "",
+    "imageUrl": "images/item_825668304384.jpg",
+    "galleryImages": [
+      "images/item_825668304384.jpg"
+    ],
+    "variants": [],
+    "sizes": [],
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "F0005",
+    "name": "Changed model",
+    "nameCn": "DragonSnow",
+    "category": "F",
+    "status": "preorder",
+    "sellPrice": 899,
+    "minSellPrice": 899,
+    "maxSellPrice": 899,
+    "origPrice": 1199,
+    "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
+    "delivery": "ประมาณ 2 อาทิตย์",
+    "desc": "",
+    "imageUrl": "images/item_964089225132.jpg",
+    "galleryImages": [
+      "images/item_964089225132.jpg"
+    ],
+    "variants": [],
+    "sizes": [],
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "F0006",
+    "name": "Changed Keychain",
+    "nameCn": "DragonSnow",
+    "category": "F",
+    "status": "preorder",
+    "sellPrice": 389,
+    "minSellPrice": 389,
+    "maxSellPrice": 389,
+    "origPrice": 589,
+    "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
+    "delivery": "ประมาณ 2 อาทิตย์",
+    "desc": "",
+    "imageUrl": "images/item_964089225132.jpg",
+    "galleryImages": [
+      "images/item_964089225132.jpg"
+    ],
+    "variants": [],
+    "sizes": [],
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "F0007",
+    "name": "แผ่นรองเมาส์เสือ",
+    "nameCn": "Baddaddy",
+    "category": "F",
+    "status": "preorder",
+    "sellPrice": 749,
+    "minSellPrice": 749,
+    "maxSellPrice": 749,
+    "origPrice": 999,
+    "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
+    "delivery": "ประมาณ 2 อาทิตย์",
+    "desc": "",
+    "imageUrl": "images/item_823341486066.jpg",
+    "galleryImages": [
+      "images/item_823341486066.jpg"
+    ],
+    "variants": [],
+    "sizes": [],
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "F0008",
+    "name": "แผ่นรองเมาส์เสือกับนวดปลาหมึก",
+    "nameCn": "Baddaddy",
+    "category": "F",
+    "status": "preorder",
+    "sellPrice": 749,
+    "minSellPrice": 749,
+    "maxSellPrice": 749,
+    "origPrice": 999,
+    "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
+    "delivery": "ประมาณ 2 อาทิตย์",
+    "desc": "",
+    "imageUrl": "images/item_790366994281.jpg",
+    "galleryImages": [
+      "images/item_790366994281.jpg"
+    ],
+    "variants": [],
+    "sizes": [],
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "F0009",
+    "name": "แผ่นรองเมาส์ก้นพี่เสือ",
+    "nameCn": "",
+    "category": "F",
+    "status": "preorder",
+    "sellPrice": 629,
+    "minSellPrice": 629,
+    "maxSellPrice": 629,
+    "origPrice": 849,
+    "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
+    "delivery": "ประมาณ 2 อาทิตย์",
+    "desc": "",
+    "imageUrl": "images/item_856557880923.jpg",
+    "galleryImages": [
+      "images/item_856557880923.jpg"
+    ],
+    "variants": [],
+    "sizes": [],
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "S0001",
+    "name": "ดิวโด้ยาว 100cm",
+    "nameCn": "",
+    "category": "S",
+    "status": "preorder",
+    "sellPrice": 839,
+    "minSellPrice": 839,
+    "maxSellPrice": 839,
+    "origPrice": 1259,
+    "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
+    "delivery": "ประมาณ 2 อาทิตย์",
+    "desc": "",
+    "imageUrl": "images/item_658291353406.jpg",
+    "galleryImages": [
+      "images/item_658291353406.jpg"
+    ],
+    "variants": [],
+    "sizes": [],
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "S0002",
+    "name": "ดิวมังกรฟ้า (S/M/L)",
+    "nameCn": "KORYM",
+    "category": "S",
+    "status": "preorder",
+    "sellPrice": 829,
+    "minSellPrice": 829,
+    "maxSellPrice": 829,
+    "origPrice": 1249,
+    "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
+    "delivery": "ประมาณ 2 อาทิตย์",
+    "desc": "",
+    "imageUrl": "images/item_965565118596.jpg",
+    "galleryImages": [
+      "images/item_965565118596.jpg"
+    ],
+    "variants": [],
+    "sizes": [],
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "S0005",
+    "name": "ดิวโด้หมาป่า (S-XXL)",
+    "nameCn": "Knot Wolf Dildo",
+    "category": "S",
+    "status": "preorder",
+    "sellPrice": 559,
+    "minSellPrice": 559,
+    "maxSellPrice": 559,
+    "origPrice": 839,
+    "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
+    "delivery": "ประมาณ 2 อาทิตย์",
+    "desc": "",
+    "imageUrl": "images/item_951919010279.jpg",
+    "galleryImages": [
+      "images/item_951919010279.jpg"
+    ],
+    "variants": [],
+    "sizes": [],
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "S0010",
+    "name": "ดิวโด้หมาสีแดง (S-XL)",
+    "nameCn": "Knot Wolf Dildo",
+    "category": "S",
+    "status": "preorder",
+    "sellPrice": 599,
+    "minSellPrice": 599,
+    "maxSellPrice": 599,
+    "origPrice": 899,
+    "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
+    "delivery": "ประมาณ 2 อาทิตย์",
+    "desc": "",
+    "imageUrl": "images/item_921020439642.jpg",
+    "galleryImages": [
+      "images/item_921020439642.jpg"
+    ],
+    "variants": [],
+    "sizes": [],
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "C0004",
+    "name": "ผ้าเตี่ยวของ Horkeu Kamui (阿依努後空內褲)",
+    "nameCn": "[大和的小房间]",
+    "category": "C",
+    "status": "preorder",
+    "sellPrice": 609,
+    "minSellPrice": 609,
+    "maxSellPrice": 609,
+    "origPrice": 899,
+    "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
+    "delivery": "ประมาณ 2 อาทิตย์",
+    "desc": "",
+    "imageUrl": "images/item_674306862396.jpg",
+    "galleryImages": [
+      "images/item_674306862396.jpg"
+    ],
+    "variants": [],
+    "sizes": [],
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "C0006",
+    "name": "ผ้าเตี่ยวสีน้ำเงิน",
+    "nameCn": "[大和的小房间]",
+    "category": "C",
+    "status": "preorder",
+    "sellPrice": 719,
+    "minSellPrice": 719,
+    "maxSellPrice": 719,
+    "origPrice": 1079,
+    "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
+    "delivery": "ประมาณ 2 อาทิตย์",
+    "desc": "",
+    "imageUrl": "images/item_618939649263.jpg",
+    "galleryImages": [
+      "images/item_618939649263.jpg"
+    ],
+    "variants": [],
+    "sizes": [],
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "C0007",
+    "name": "รองเท้าอุ้งเท้าสัตว์",
+    "nameCn": "",
+    "category": "C",
+    "status": "preorder",
+    "sellPrice": 1799,
+    "minSellPrice": 1799,
+    "maxSellPrice": 1799,
+    "origPrice": 2399,
+    "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
+    "delivery": "ประมาณ 2 อาทิตย์",
+    "desc": "",
+    "imageUrl": "images/item_644095849664.jpg",
+    "galleryImages": [
+      "images/item_644095849664.jpg"
+    ],
+    "variants": [],
+    "sizes": [],
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "C0008",
+    "name": "เสื้อแนวคาวบอย",
+    "nameCn": "",
+    "category": "C",
+    "status": "preorder",
+    "sellPrice": 559,
+    "minSellPrice": 559,
+    "maxSellPrice": 559,
+    "origPrice": 839,
+    "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
+    "delivery": "ประมาณ 2 อาทิตย์",
+    "desc": "",
+    "imageUrl": "images/item_811265321636.jpg",
+    "galleryImages": [
+      "images/item_811265321636.jpg"
+    ],
+    "variants": [],
+    "sizes": [],
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "L0001",
+    "name": "ปากมังกร",
+    "nameCn": "",
+    "category": "L",
+    "status": "preorder",
+    "sellPrice": 4690,
+    "minSellPrice": 4690,
+    "maxSellPrice": 4690,
+    "origPrice": 6990,
+    "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
+    "delivery": "ประมาณ 2 อาทิตย์",
+    "desc": "",
+    "imageUrl": "images/item_994359883458.jpg",
+    "galleryImages": [
+      "images/item_994359883458.jpg"
+    ],
+    "variants": [],
+    "sizes": [],
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "C0002",
+    "name": "กางเกงขาสั้นสไตล์ญี่ปุ่น Beastman ขนฟู โตเกียวหลังเลิกเรียน",
+    "nameCn": "東京放課後サモナーズ / Tokyo Afterschool Summoners",
+    "category": "C",
+    "status": "preorder",
+    "sellPrice": 339,
+    "minSellPrice": 339,
+    "maxSellPrice": 339,
+    "origPrice": 509,
+    "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
+    "delivery": "ประมาณ 2 อาทิตย์",
+    "desc": "",
+    "imageUrl": "images/item_674306862396.jpg",
+    "galleryImages": [
+      "images/item_674306862396.jpg"
+    ],
+    "variants": [
+      {
+        "emoji": "🐺",
+        "name": "ลายสุนัขจิ้งจอก (Fox)",
+        "sellPrice": 339,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🐯",
+        "name": "ลายเสือโคร่ง (Tiger)",
+        "sellPrice": 339,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🐻",
+        "name": "ลายหมีใหญ่ (Bear)",
+        "sellPrice": 339,
+        "sold": false,
+        "priceNote": ""
+      }
+    ],
+    "sizes": [
+      {
+        "name": "M",
+        "measurement": "รอบเอว 28-30 นิ้ว",
+        "sellPrice": 0,
+        "sold": false
+      },
+      {
+        "name": "L",
+        "measurement": "รอบเอว 31-33 นิ้ว",
+        "sellPrice": 0,
+        "sold": false
+      },
+      {
+        "name": "XL",
+        "measurement": "รอบเอว 34-36 นิ้ว",
+        "sellPrice": 0,
+        "sold": false
+      }
+    ],
+    "createdAt": "2026-10-25T15:00:00.000Z",
+    "updatedAt": "2026-10-25T15:00:00.000Z"
+  },
+  {
+    "id": "C0003",
+    "name": "กระเป๋าข้างนักเวท (เข็มขัดสตีมพังค์พร้อมขวดยาเวทมนตร์)",
+    "nameCn": "[皮皮阁阁主]",
+    "category": "C",
+    "status": "preorder",
+    "sellPrice": 589,
+    "minSellPrice": 589,
+    "maxSellPrice": 589,
+    "origPrice": 889,
+    "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
+    "delivery": "ประมาณ 2 อาทิตย์",
+    "desc": "",
+    "imageUrl": "images/item_846579140923.jpg",
+    "galleryImages": [
+      "images/item_846579140923.jpg"
+    ],
+    "variants": [
+      {
+        "emoji": "🧪",
+        "name": "เข็มขัดหนังสีน้ำตาล + ขวดยาสีเขียว",
+        "sellPrice": 589,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🏺",
+        "name": "เข็มขัดหนังสีดำ + ขวดยาสีแดง",
+        "sellPrice": 589,
+        "sold": false,
+        "priceNote": ""
+      }
+    ],
+    "sizes": [
+      {
+        "name": "Free Size",
+        "measurement": "สายปรับระดับได้ รอบเอว 28-42 นิ้ว",
+        "sellPrice": 0,
+        "sold": false
+      }
+    ],
+    "createdAt": "2026-10-25T16:00:00.000Z",
+    "updatedAt": "2026-10-25T16:00:00.000Z"
+  },
+  {
+    "id": "C0010",
+    "name": "กางเกงบ็อกเซอร์ลายFurry ต้นฉบับหมาป่าสีเทาเสือขาวเสือดำโกลเด้นรีทรีฟเวอร์เซ็กซี่และน่ารัก",
+    "nameCn": "[次元绒合furry铺]",
+    "category": "C",
+    "status": "preorder",
+    "sellPrice": 359,
+    "minSellPrice": 359,
+    "maxSellPrice": 1299,
+    "origPrice": 539,
+    "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
+    "delivery": "ประมาณ 2 อาทิตย์",
+    "desc": "กางเกงบ็อกเซอร์ลายFurry ต้นฉบับหมาป่าสีเทาเสือขาวเสือดำโกลเด้นรีทรีฟเวอร์เซ็กซี่และน่ารัก ลิขสิทธิ์แท้ส่งตรงจากร้าน [次元绒合furry铺] เนื้อผ้านุ่มละมุน ยืดหยุ่นกระชับรับสรีระ ระบายอากาศดีเยี่ยม ไม่อับชื้น งานสกรีนลายคมชัดสีสดสวย ใส่สบายได้ทุกวัน สาย Furry ห้ามพลาด!",
+    "imageUrl": "images/items/1077396539011/01.jpg",
+    "galleryImages": [
+      "images/items/1077396539011/01.jpg",
+      "images/items/1077396539011/02.jpg",
+      "images/items/1077396539011/03.jpg",
+      "images/items/1077396539011/04.jpg",
+      "images/items/1077396539011/05.jpg",
+      "images/items/1077396539011/06.jpg",
+      "images/items/1077396539011/07.jpg",
+      "images/items/1077396539011/08.jpg",
+      "images/items/1077396539011/09.jpg",
+      "images/items/1077396539011/10.jpg",
+      "images/items/1077396539011/11.jpg",
+      "images/items/1077396539011/12.jpg",
+      "images/items/1077396539011/13.jpg",
+      "images/items/1077396539011/14.jpg",
+      "images/items/1077396539011/15.jpg",
+      "images/items/1077396539011/16.jpg",
+      "images/items/1077396539011/17.jpg",
+      "images/items/1077396539011/18.jpg"
+    ],
+    "variants": [
+      {
+        "emoji": "🐯",
+        "name": "ลายเสือดำ (Black Tiger)",
+        "sellPrice": 359,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🐯",
+        "name": "ลายเสือขาว (White Tiger)",
+        "sellPrice": 359,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🐺",
+        "name": "ลายหมาป่าสีเทา (Grey Wolf)",
+        "sellPrice": 359,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "💛",
+        "name": "ลายโกลเด้นรีทรีฟเวอร์ (Golden Retriever)",
+        "sellPrice": 359,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🐾",
+        "name": "แพ็กคู่ 2 ตัว (เลือกคละลาย/คละไซส์ได้ แจ้งในแชท)",
+        "sellPrice": 679,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🐾",
+        "name": "เซ็ตครบ 4 ตัว (เลือกคละลาย/คละไซส์ได้ แจ้งในแชท)",
+        "sellPrice": 1299,
+        "sold": false,
+        "priceNote": ""
+      }
+    ],
+    "sizes": [
+      {
+        "name": "L",
+        "measurement": "ความยาว 34 ซม. / ส่วนสูง 23 ซม.",
+        "sellPrice": 359,
+        "sold": false
+      },
+      {
+        "name": "XL",
+        "measurement": "ความยาว 36 ซม. / ส่วนสูง 24 ซม.",
+        "sellPrice": 359,
+        "sold": false
+      },
+      {
+        "name": "2XL",
+        "measurement": "ความยาว 38 ซม. / ส่วนสูง 25 ซม.",
+        "sellPrice": 359,
+        "sold": false
+      },
+      {
+        "name": "3XL",
+        "measurement": "ความยาว 40 ซม. / ส่วนสูง 26 ซม.",
+        "sellPrice": 359,
+        "sold": false
+      },
+      {
+        "name": "XXXXL",
+        "measurement": "ความยาว 42 ซม. / ส่วนสูง 27 ซม. / 20",
+        "sellPrice": 359,
+        "sold": false
+      }
+    ],
+    "createdAt": "2026-10-30T18:33:15.386Z",
+    "updatedAt": "2026-10-30T18:33:15.386Z"
+  },
+  {
+    "id": "F0011",
+    "name": "ผ้าปิดตาสะกดจิต Furry รุ่น Falling World (คอลเลกชันพิเศษ 02World × 次元绒合)",
+    "nameCn": "[次元绒合furry铺]",
+    "category": "F",
+    "status": "preorder",
+    "sellPrice": 609,
+    "minSellPrice": 609,
+    "maxSellPrice": 1139,
+    "origPrice": 919,
+    "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
+    "delivery": "ประมาณ 2 อาทิตย์",
+    "desc": "ผ้าปิดตาสะกดจิตสาย Furry รุ่น Falling World คอลเลกชันคอลแลปพิเศษลิขสิทธิ์แท้จาก 02World × [次元绒合furry铺] เนื้อผ้านุ่มลื่น สวมใส่สบาย มีสายรัดยืดหยุ่นปรับระดับได้ ใส่ได้ทั้งคนและสวมทับหัวเฟอร์สูท (Fursuit) สำหรับถ่ายรูปหรือทำคอนเทนต์สุดคิวท์!",
+    "imageUrl": "images/items/1074412627371/01.jpg",
+    "galleryImages": [
+      "images/items/1074412627371/01.jpg",
+      "images/items/1074412627371/02.jpg",
+      "images/items/1074412627371/03.jpg",
+      "images/items/1074412627371/04.jpg",
+      "images/items/1074412627371/05.jpg",
+      "images/items/1074412627371/06.jpg",
+      "images/items/1074412627371/07.jpg",
+      "images/items/1074412627371/08.jpg",
+      "images/items/1074412627371/09.jpg",
+      "images/items/1074412627371/10.jpg",
+      "images/items/1074412627371/11.jpg"
+    ],
+    "variants": [
+      {
+        "emoji": "💚",
+        "name": "สีเขียว ลายก้นหอยสะกดจิต (Green Spiral)",
+        "sellPrice": 609,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🩷",
+        "name": "สีชมพู ลายหัวใจสะกดจิต (Pink Heart)",
+        "sellPrice": 609,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "📦",
+        "name": "แพ็กคู่ 2 ชิ้น (สีเขียว + สีชมพู ครบเซ็ต)",
+        "sellPrice": 1139,
+        "sold": false,
+        "priceNote": ""
+      }
+    ],
+    "sizes": [],
+    "createdAt": "2026-10-30T19:49:11.514Z",
+    "updatedAt": "2026-10-30T19:49:11.514Z"
+  },
+  {
+    "id": "F0012",
+    "name": "ชุดบอดี้สูทฮีโร่ Matrix Original Check (คอลเลกชันพิเศษ Kiza × 次元绒合)",
+    "nameCn": "[次元绒合furry铺]",
+    "category": "F",
+    "status": "preorder",
+    "sellPrice": 1799,
+    "minSellPrice": 1799,
+    "maxSellPrice": 2009,
+    "origPrice": 2699,
+    "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
+    "delivery": "ประมาณ 2 อาทิตย์",
+    "desc": "ชุดรัดรูปซีรีส์ Matrix สำหรับผู้ชาย รุ่น Original Check คอลเลคชั่นพิเศษจาก X Kiza แบรนด์ดังในวงการอนิเมะ ลิขสิทธิ์แท้ส่งตรงจากร้าน [次元绒合furry铺] ตัดเย็บประณีต เนื้อผ้าเกรดพรีเมียม สวมใส่สบาย ทรงสวย ดีไซน์โดดเด่นมีเอกลักษณ์ ดูตารางเทียบไซส์และภาพสินค้าจริงครบทุกมุมได้ในอัลบั้มภาพโพสต์นี้เลยครับ!",
+    "imageUrl": "images/items/1092845147813/01.jpg",
+    "galleryImages": [
+      "images/items/1092845147813/01.jpg",
+      "images/items/1092845147813/02.jpg",
+      "images/items/1092845147813/03.jpg",
+      "images/items/1092845147813/04.jpg",
+      "images/items/1092845147813/05.jpg",
+      "images/items/1092845147813/06.jpg",
+      "images/items/1092845147813/07.jpg",
+      "images/items/1092845147813/08.jpg",
+      "images/items/1092845147813/09.jpg",
+      "images/items/1092845147813/10.jpg",
+      "images/items/1092845147813/11.jpg",
+      "images/items/1092845147813/12.jpg",
+      "images/items/1092845147813/13.jpg"
+    ],
+    "variants": [
+      {
+        "emoji": "❤️",
+        "name": "เฉพาะชุดบอดี้สูท สีดั้งเดิม (Original Red)",
+        "sellPrice": 1799,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🧦",
+        "name": "เซ็ตครบชุด สีดั้งเดิม (บอดี้สูท + ถุงเท้าสีแดง)",
+        "sellPrice": 2009,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "💙",
+        "name": "เฉพาะชุดบอดี้สูท สีพิเศษ (Shiny Blue)",
+        "sellPrice": 1799,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "✨",
+        "name": "เซ็ตครบชุด สีพิเศษ (บอดี้สูท + ถุงเท้าสีฟ้า)",
+        "sellPrice": 2009,
+        "sold": false,
+        "priceNote": ""
+      }
+    ],
+    "sizes": [
+      {
+        "name": "L",
+        "measurement": "ส่วนสูง 155-170 ซม. / น้ำหนัก 45-65 กก. / รอบเอว 26-29 นิ้ว (67-73 ซม.)",
+        "sellPrice": 0,
+        "sold": false
+      },
+      {
+        "name": "XL",
+        "measurement": "ส่วนสูง 160-175 ซม. / น้ำหนัก 55-72 กก. / รอบเอว 29-31 นิ้ว (73-80 ซม.)",
+        "sellPrice": 0,
+        "sold": false
+      },
+      {
+        "name": "2XL",
+        "measurement": "ส่วนสูง 165-180 ซม. / น้ำหนัก 62-82 กก. / รอบเอว 31-34 นิ้ว (80-87 ซม.)",
+        "sellPrice": 0,
+        "sold": false
+      },
+      {
+        "name": "3XL",
+        "measurement": "ส่วนสูง 170-185 ซม. / น้ำหนัก 70-90 กก. / รอบเอว 34-37 นิ้ว (87-93 ซม.)",
+        "sellPrice": 0,
+        "sold": false
+      },
+      {
+        "name": "4XL",
+        "measurement": "ส่วนสูง 175-190 ซม. / น้ำหนัก 80-100 กก. / รอบเอว 37-41 นิ้ว (93-103 ซม.)",
+        "sellPrice": 0,
+        "sold": false
+      },
+      {
+        "name": "5XL",
+        "measurement": "ส่วนสูง 180-200 ซม. / น้ำหนัก 90-110 กก. / รอบเอว 41-46 นิ้ว (103-117 ซม.)",
+        "sellPrice": 0,
+        "sold": false
+      }
+    ],
+    "createdAt": "2026-10-30T19:54:57.886Z",
+    "updatedAt": "2026-10-30T19:54:57.886Z"
+  },
+  {
+    "id": "F0013",
+    "name": "Kizax Fanming Fur Original Animal Claw Pads Furry Socks แฮนด์การ์ด Little Hero Set",
+    "nameCn": "[次元绒合furry铺]",
+    "category": "F",
+    "status": "preorder",
+    "sellPrice": 439,
+    "minSellPrice": 439,
+    "maxSellPrice": 799,
+    "origPrice": 659,
+    "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
+    "delivery": "ประมาณ 2 อาทิตย์",
+    "desc": "Kizax Fanming Fur Original Animal Claw Pads Furry Socks แฮนด์การ์ด Little Hero Set ลิขสิทธิ์แท้ส่งตรงจากร้าน [次元绒合furry铺] วัสดุเกรดพรีเมียม งานละเอียดสวยงามตรงปก คัดสรรคุณภาพพร้อมจัดส่งตรงถึงหน้าบ้านคุณ!",
+    "imageUrl": "images/items/1028022548347/01.jpg",
+    "galleryImages": [
+      "images/items/1028022548347/01.jpg",
+      "images/items/1028022548347/02.jpg",
+      "images/items/1028022548347/03.jpg",
+      "images/items/1028022548347/04.jpg",
+      "images/items/1028022548347/05.jpg",
+      "images/items/1028022548347/06.jpg",
+      "images/items/1028022548347/08.jpg",
+      "images/items/1028022548347/07.jpg",
+      "images/items/1028022548347/09.jpg",
+      "images/items/1028022548347/10.jpg",
+      "images/items/1028022548347/11.jpg",
+      "images/items/1028022548347/12.jpg",
+      "images/items/1028022548347/13.jpg",
+      "images/items/1028022548347/14.jpg",
+      "images/items/1028022548347/15.jpg",
+      "images/items/1028022548347/16.jpg",
+      "images/items/1028022548347/17.jpg",
+      "images/items/1028022548347/18.jpg"
+    ],
+    "variants": [
+      {
+        "emoji": "🤍",
+        "name": "ชุดถุงเท้าและถุงมือ สีขาว สีขาว",
+        "sellPrice": 439,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🖤",
+        "name": "สีดำ ชุดถุงเท้าและแฮนด์การ์ด",
+        "sellPrice": 439,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🖤",
+        "name": "สีขาวและสีดำซื้อเป็นสองชุด",
+        "sellPrice": 799,
+        "sold": false,
+        "priceNote": ""
+      }
+    ],
+    "sizes": [
+      {
+        "name": "Free Size",
+        "measurement": "ขนาดตามตารางไซส์ในรูปสินค้า",
+        "sellPrice": 439,
+        "sold": false
+      }
+    ],
+    "createdAt": "2026-10-31T11:32:22.105Z",
+    "updatedAt": "2026-10-31T11:36:29.695Z"
+  },
+  {
+    "id": "C0011",
+    "name": "Kiza X Fanming Fur Original สัตว์น่ารัก Paw Meat Pad Furry Claw ถุงเท้า",
+    "nameCn": "[次元绒合furry铺]",
+    "category": "C",
+    "status": "preorder",
+    "sellPrice": 309,
+    "minSellPrice": 309,
+    "maxSellPrice": 1119,
+    "origPrice": 469,
+    "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
+    "delivery": "ประมาณ 2 อาทิตย์",
+    "desc": "Kiza X Fanming Fur Original สัตว์น่ารัก Paw Meat Pad Furry Claw ถุงเท้า ลิขสิทธิ์แท้ส่งตรงจากร้าน [次元绒合furry铺] วัสดุเกรดพรีเมียม งานละเอียดสวยงามตรงปก คัดสรรคุณภาพพร้อมจัดส่งตรงถึงหน้าบ้านคุณ!",
+    "imageUrl": "images/items/999590733638/01.jpg",
+    "galleryImages": [
+      "images/items/999590733638/01.jpg",
+      "images/items/999590733638/02.jpg",
+      "images/items/999590733638/03.jpg",
+      "images/items/999590733638/04.jpg",
+      "images/items/999590733638/05.jpg",
+      "images/items/999590733638/06.jpg",
+      "images/items/999590733638/07.jpg",
+      "images/items/999590733638/08.jpg",
+      "images/items/999590733638/09.jpg",
+      "images/items/999590733638/10.jpg",
+      "images/items/999590733638/11.jpg",
+      "images/items/999590733638/12.jpg",
+      "images/items/999590733638/13.jpg",
+      "images/items/999590733638/14.jpg",
+      "images/items/999590733638/15.jpg",
+      "images/items/999590733638/16.jpg",
+      "images/items/999590733638/17.jpg",
+      "images/items/999590733638/18.jpg"
+    ],
+    "variants": [
+      {
+        "emoji": "🤍",
+        "name": "สีส้มขาว",
+        "sellPrice": 309,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🤍",
+        "name": "แดงขาว",
+        "sellPrice": 309,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🤍",
+        "name": "สีฟ้าขาว",
+        "sellPrice": 309,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🐾",
+        "name": "กำหนดสี",
+        "sellPrice": 309,
+        "sold": false,
+        "priceNote": ""
+      }
+    ],
+    "sizes": [
+      {
+        "name": "จำนวน",
+        "measurement": "1 ชิ้น",
+        "sellPrice": 309,
+        "sold": false
+      },
+      {
+        "name": "จำนวน",
+        "measurement": "2 ชิ้น คละได้",
+        "sellPrice": 579,
+        "sold": false
+      },
+      {
+        "name": "จำนวน",
+        "measurement": "4 ชิ้น คละได้",
+        "sellPrice": 1119,
+        "sold": false
+      }
+    ],
+    "createdAt": "2026-10-31T11:48:03.977Z",
+    "updatedAt": "2026-10-31T11:48:03.977Z"
+  },
+  {
+    "id": "S0011",
+    "name": "Claw Root ปราสาท Thunder Dragon เครื่องบินถ้วยมังกรหัว Furry Beast Orc อยากรู้อยากเห็นของเล่นสำหรับผู้ใหญ่สัตว์ Inverted แม่พิมพ์ Masturbation",
+    "nameCn": "[爪根堡 DRAGON BALL]",
+    "category": "S",
+    "status": "preorder",
+    "sellPrice": 2919,
+    "minSellPrice": 2919,
+    "maxSellPrice": 2919,
+    "origPrice": 4379,
+    "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
+    "delivery": "ประมาณ 2 อาทิตย์",
+    "desc": "Claw Root ปราสาท Thunder Dragon เครื่องบินถ้วยมังกรหัว Furry Beast Orc อยากรู้อยากเห็นของเล่นสำหรับผู้ใหญ่สัตว์ Inverted แม่พิมพ์ Masturbation ลิขสิทธิ์แท้ส่งตรงจากร้าน [爪根堡 DRAGON BALL] วัสดุซิลิโคนเกรดพรีเมียม สัมผัสนุ่มยืดหยุ่น ปลอดภัย งานหล่อรายละเอียดคมชัด จัดส่งแบบปกปิดชื่อสินค้ามิดชิด 100%",
+    "imageUrl": "images/items/1052337221623/01.jpg",
+    "galleryImages": [
+      "images/items/1052337221623/01.jpg",
+      "images/items/1052337221623/02.jpg",
+      "images/items/1052337221623/03.jpg",
+      "images/items/1052337221623/04.jpg",
+      "images/items/1052337221623/05.jpg",
+      "images/items/1052337221623/06.jpg",
+      "images/items/1052337221623/07.jpg",
+      "images/items/1052337221623/08.jpg",
+      "images/items/1052337221623/09.jpg",
+      "images/items/1052337221623/10.jpg",
+      "images/items/1052337221623/11.jpg",
+      "images/items/1052337221623/12.jpg",
+      "images/items/1052337221623/13.jpg",
+      "images/items/1052337221623/14.jpg"
+    ],
+    "variants": [
+      {
+        "emoji": "🐉",
+        "name": "ลายมังกร (Dragon)",
+        "sellPrice": 2919,
+        "sold": false,
+        "priceNote": ""
+      }
+    ],
+    "sizes": [],
+    "createdAt": "2026-10-31T11:58:33.450Z",
+    "updatedAt": "2026-10-31T11:58:33.450Z"
+  }
+]
