@@ -10,7 +10,7 @@
   let currentFiltered = [];
   let currentProduct = null;
   let currentImgIndex = 0;
-  let contactUrl = 'https://www.facebook.com';
+  let contactUrl = 'https://m.me/666255349897305';
 
   const qs = (sel, el = document) => el.querySelector(sel);
   const qsa = (sel, el = document) => [...el.querySelectorAll(sel)];
@@ -28,6 +28,22 @@
       if (!res.ok) throw new Error('Cannot load products.json');
       const data = await res.json();
       allProducts = Array.isArray(data) ? data : (data.products || []);
+
+      // Auto-detect contact from products if available
+      const pWithContact = allProducts.find(p => p.contact);
+      if (pWithContact && pWithContact.contact) {
+        let c = pWithContact.contact.trim();
+        contactUrl = (c.startsWith('http://') || c.startsWith('https://')) ? c : ('https://' + c);
+      }
+      const headerBtn = qs('#header-contact-btn');
+      if (headerBtn) {
+        headerBtn.href = contactUrl;
+        headerBtn.onclick = () => {
+          showToast('💬 กำลังเปิดกล่องข้อความ Facebook Messenger ร้าน Furlestial Shop...');
+        };
+      }
+      const footerBtn = qs('#footer-contact-btn');
+      if (footerBtn) footerBtn.href = contactUrl;
     } catch (err) {
       console.warn('[Catalog] Error fetching products.json:', err);
       allProducts = [];
@@ -302,18 +318,36 @@
     // Variants
     const vSection = qs('#modal-variants-section');
     const vWrap = qs('#modal-variants-chips');
+    let selectedVariantName = '';
     if (p.variants && p.variants.length > 0) {
       vSection.style.display = 'flex';
-      vWrap.innerHTML = p.variants.map(v => {
+      vWrap.innerHTML = p.variants.map((v, i) => {
         const vPrice = Number(v.sellPrice || p.sellPrice || 0);
         return `
-          <div class="v-pill">
+          <div class="v-pill ${i === 0 ? 'selected' : ''}" data-index="${i}">
             <span>${esc(v.emoji || '✦')}</span>
             <span>${esc(v.name)}</span>
             ${vPrice > 0 ? `<span class="v-pill-price">฿${vPrice.toLocaleString('th-TH')}</span>` : ''}
           </div>
         `;
       }).join('');
+
+      selectedVariantName = p.variants[0].name;
+
+      qsa('.v-pill', vWrap).forEach((pill, idx) => {
+        pill.addEventListener('click', () => {
+          qsa('.v-pill', vWrap).forEach(el => el.classList.remove('selected'));
+          pill.classList.add('selected');
+          const chosen = p.variants[idx];
+          if (chosen) {
+            selectedVariantName = chosen.name;
+            const chosenPrice = Number(chosen.sellPrice || p.sellPrice || 0);
+            if (chosenPrice > 0) {
+              qs('#modal-price-thb').textContent = `฿${chosenPrice.toLocaleString('th-TH')}`;
+            }
+          }
+        });
+      });
     } else {
       vSection.style.display = 'none';
     }
@@ -342,12 +376,14 @@
 
     // Order CTA Button
     const orderBtn = qs('#modal-order-btn');
-    orderBtn.href = contactUrl;
-    orderBtn.onclick = (e) => {
+    const pContact = p.contact ? (p.contact.startsWith('http') ? p.contact : ('https://' + p.contact)) : contactUrl;
+    orderBtn.href = pContact;
+    orderBtn.onclick = () => {
       // Copy product summary to clipboard so customer can paste directly in chat!
-      const copyText = `สนใจสั่งพรีออเดอร์: [${p.id}] ${p.name}`;
+      const vText = selectedVariantName ? ` (เลือกลาย: ${selectedVariantName})` : '';
+      const copyText = `สนใจสั่งพรีออเดอร์: [${p.id}] ${p.name}${vText}`;
       copyToClipboard(copyText, false);
-      showToast(`📋 คัดลอกรหัส [${p.id}] แล้ว! กำลังเปิดแชท...`);
+      showToast(`📋 คัดลอกรหัส [${p.id}] แล้ว! กำลังเปิด Messenger เพื่อทักแชท...`);
     };
 
     backdrop.classList.add('open');

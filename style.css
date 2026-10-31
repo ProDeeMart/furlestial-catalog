@@ -1693,6 +1693,7 @@ body {
 
 .v-pill,
 .v-chip {
+  cursor: pointer;
   background: var(--glass-surface-subtle);
   border: var(--hairline-border);
   box-shadow: var(--specular-rim);
@@ -1703,12 +1704,27 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  transition: all 0.2s ease;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
 }
 .v-pill:hover,
 .v-chip:hover {
-  border-color: rgba(192, 132, 252, 0.4);
+  border-color: rgba(192, 132, 252, 0.5);
   color: var(--text-primary);
+  transform: translateY(-1px);
+}
+.v-pill.selected {
+  background: linear-gradient(135deg, rgba(235, 87, 87, 0.25) 0%, rgba(246, 211, 101, 0.25) 100%), rgba(255, 255, 255, 0.08);
+  border-color: rgba(246, 211, 101, 0.8);
+  color: #ffffff;
+  box-shadow: 0 0 16px rgba(246, 211, 101, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px) scale(1.02);
+}
+[data-theme="light"] .v-pill.selected {
+  background: linear-gradient(135deg, rgba(217, 119, 6, 0.15) 0%, rgba(245, 158, 11, 0.25) 100%), rgba(255, 255, 255, 0.9);
+  border-color: rgba(217, 119, 6, 0.7);
+  color: #1a162b;
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.2);
 }
 .v-pill-price,
 .v-price {
