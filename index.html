@@ -18,18 +18,22 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=1.0" />
+  <link rel="stylesheet" href="style.css?v=2.0" />
 </head>
 <body>
-  <!-- Ambient Space Glow -->
+  <!-- Ambient Liquid Glass Gradient Meshes -->
+  <div class="liquid-mesh">
+    <div class="liquid-orb orb-1"></div>
+    <div class="liquid-orb orb-2"></div>
+    <div class="liquid-orb orb-3"></div>
+    <div class="liquid-orb orb-4"></div>
+  </div>
   <div class="bg-stars"></div>
-  <div class="bg-glow bg-glow-1"></div>
-  <div class="bg-glow bg-glow-2"></div>
 
-  <!-- Header -->
+  <!-- Header (iOS Frosted Glass Navigation Bar) -->
   <header class="site-header">
     <div class="header-inner container">
-      <div class="brand" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+      <div class="brand" onclick="window.scrollTo({top:0, behavior:'smooth'})" title="กลับสู่ด้านบนสุด">
         <img src="logo_Furlestial_shop.jpg" alt="Furlestial Shop Logo" class="brand-logo" onerror="this.style.display='none'" />
         <div class="brand-text">
           <div class="brand-name">FURLESTIAL <span class="brand-badge">CATALOG</span></div>
@@ -37,9 +41,17 @@
         </div>
       </div>
       <div class="header-actions">
+        <!-- iOS Theme Segmented Switcher -->
+        <div class="theme-switch-wrap">
+          <button id="theme-toggle-btn" class="ios-theme-toggle" aria-label="สลับธีม สว่าง / มืด" title="สลับธีม สว่าง / มืด">
+            <span class="theme-indicator"></span>
+            <span class="theme-icon icon-dark">🌙</span>
+            <span class="theme-icon icon-light">☀️</span>
+          </button>
+        </div>
         <a href="#how-to-order" class="btn-ghost-sm">📦 วิธีสั่งพรี</a>
         <a href="https://www.facebook.com" id="header-contact-btn" target="_blank" rel="noopener" class="btn-contact-header">
-          <span class="fb-icon">💬</span> สั่งซื้อ / สอบถามทาง Facebook
+          <span class="fb-icon">💬</span> สั่งซื้อทาง Facebook
         </a>
       </div>
     </div>
@@ -278,10 +290,15 @@
     </div>
   </div>
 
+  <!-- Floating Back to Top Button (iOS Liquid Glass Pill) -->
+  <button id="back-to-top-btn" class="glass-back-to-top" aria-label="กลับสู่ด้านบน" title="กลับสู่ด้านบน">
+    <span>↑</span>
+  </button>
+
   <!-- Toast Notification -->
   <div id="toast" class="toast"></div>
 
-  <script src="catalog.js?v=1.0"></script>
+  <script src="catalog.js?v=2.0"></script>
 </body>
 </html>
 

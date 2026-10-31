@@ -19,6 +19,8 @@
   //  INIT & LOAD
   // ─────────────────────────────────────────────────────
   async function init() {
+    initTheme();
+    initBackToTop();
     bindEvents();
 
     try {
@@ -28,13 +30,64 @@
       allProducts = Array.isArray(data) ? data : (data.products || []);
     } catch (err) {
       console.warn('[Catalog] Error fetching products.json:', err);
-      // Fallback empty
       allProducts = [];
     }
 
     updateHeroStats();
     applyFiltersAndRender();
     handleInitialDeepLink();
+  }
+
+  // ─────────────────────────────────────────────────────
+  //  THEME (APPLE iOS LIQUID GLASS: DARK & LIGHT)
+  // ─────────────────────────────────────────────────────
+  function initTheme() {
+    const saved = localStorage.getItem('furlestial_theme');
+    const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+    const initialTheme = saved ? saved : (prefersLight ? 'light' : 'dark');
+
+    applyTheme(initialTheme);
+
+    const toggleBtn = qs('#theme-toggle-btn');
+    toggleBtn?.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      const next = current === 'dark' ? 'light' : 'dark';
+      applyTheme(next);
+      localStorage.setItem('furlestial_theme', next);
+      showToast(next === 'light' ? '☀️ สลับเป็นโหมดสว่าง (Light Glass) แล้ว' : '🌙 สลับเป็นโหมดมืด (Dark Cosmic) แล้ว');
+    });
+
+    if (window.matchMedia) {
+      window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', e => {
+        if (!localStorage.getItem('furlestial_theme')) {
+          applyTheme(e.matches ? 'light' : 'dark');
+        }
+      });
+    }
+  }
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+  }
+
+  // ─────────────────────────────────────────────────────
+  //  BACK TO TOP BUTTON
+  // ─────────────────────────────────────────────────────
+  function initBackToTop() {
+    const btt = qs('#back-to-top-btn');
+    if (!btt) return;
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        btt.classList.add('show');
+      } else {
+        btt.classList.remove('show');
+      }
+    }, { passive: true });
+
+    btt.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   }
 
   // ─────────────────────────────────────────────────────
