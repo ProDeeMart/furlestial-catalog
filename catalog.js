@@ -386,6 +386,10 @@
       showToast(`📋 คัดลอกรหัส [${p.id}] แล้ว! กำลังเปิด Messenger เพื่อทักแชท...`);
     };
 
+    if (modal) modal.scrollTop = 0;
+    const layout = qs('.sheet-layout', modal);
+    if (layout) layout.scrollTop = 0;
+
     backdrop.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
@@ -492,6 +496,7 @@
 
     // Modal Close
     qs('#modal-close-btn')?.addEventListener('click', () => closeProductModal(true));
+    qs('.sheet-handle')?.addEventListener('click', () => closeProductModal(true));
     qs('#product-modal-backdrop')?.addEventListener('click', (e) => {
       if (e.target === qs('#product-modal-backdrop')) closeProductModal(true);
     });
