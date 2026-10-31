@@ -417,7 +417,9 @@
     // Copy link button
     qs('#modal-copy-link-btn')?.addEventListener('click', () => {
       if (!currentProduct) return;
-      const permalink = window.location.origin + window.location.pathname + '#' + currentProduct.id;
+      const permalink = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+        ? (window.location.origin + window.location.pathname + '#' + currentProduct.id)
+        : ('https://furlestial.pages.dev/#' + currentProduct.id);
       copyToClipboard(permalink);
       showToast('🔗 คัดลอกลิงก์ถาวรของสินค้านี้แล้ว!');
     });
