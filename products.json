@@ -1219,9 +1219,9 @@
     "nameCn": "[爪根堡 DRAGON BALL]",
     "category": "S",
     "status": "preorder",
-    "sellPrice": 2919,
-    "minSellPrice": 2919,
-    "maxSellPrice": 2919,
+    "sellPrice": 2999,
+    "minSellPrice": 2999,
+    "maxSellPrice": 2999,
     "origPrice": 4379,
     "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
     "delivery": "ประมาณ 2 อาทิตย์",
@@ -1248,13 +1248,13 @@
       {
         "emoji": "🐉",
         "name": "ลายมังกร (Dragon)",
-        "sellPrice": 2919,
+        "sellPrice": 2999,
         "sold": false,
         "priceNote": ""
       }
     ],
     "sizes": [],
     "createdAt": "2026-10-31T11:58:33.450Z",
-    "updatedAt": "2026-10-31T11:58:33.450Z"
+    "updatedAt": "2026-11-01T09:14:53.880Z"
   }
 ]
