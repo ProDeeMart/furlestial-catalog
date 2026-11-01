@@ -233,7 +233,7 @@
       };
 
       return `
-        <article class="product-card" data-id="${esc(p.id)}">
+        <article class="product-card" data-id="${esc(p.id)}" role="button" tabindex="0" onclick="">
           <div class="card-media">
             <img src="${esc(coverImg)}" alt="${esc(p.name)}" class="card-img" loading="lazy" onerror="this.src='furlestial.ico'" />
             <span class="card-badge-code">${esc(p.id)}</span>
@@ -249,18 +249,27 @@
               ${p.origPrice > minP ? `<span class="card-price-orig">฿${p.origPrice.toLocaleString('th-TH')}</span>` : ''}
             </div>
             <div class="card-ship-badge">✓ รวมส่งฟรีถึงหน้าบ้านคุณ (0 บาท)</div>
-            <button class="card-cta-btn" type="button">ดูตารางไซส์ & รายละเอียด →</button>
+            <button class="card-cta-btn" type="button" aria-label="ดูรายละเอียด ${esc(p.name)}">ดูตารางไซส์ & รายละเอียด →</button>
           </div>
         </article>
       `;
     }).join('');
 
-    // Bind card clicks
+    // Bind card clicks directly and defensively for all platforms
     qsa('.product-card', grid).forEach(card => {
-      card.addEventListener('click', () => {
+      const handleOpen = (e) => {
+        if (e) e.stopPropagation();
         const id = card.dataset.id;
         const p = allProducts.find(item => item.id === id);
         if (p) openProductModal(p);
+      };
+      card.addEventListener('click', handleOpen);
+      // Keyboard enter/space support for accessibility
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          handleOpen();
+        }
       });
     });
   }
@@ -383,7 +392,7 @@
         for (const [key, val] of Object.entries(p.specs)) {
           const card = document.createElement('div');
           card.className = 'spec-card-item';
-          card.innerHTML = `<div class="spec-card-key">${escapeHtml(key)}</div><div class="spec-card-val">${escapeHtml(val)}</div>`;
+          card.innerHTML = `<div class="spec-card-key">${esc(key)}</div><div class="spec-card-val">${esc(val)}</div>`;
           specsGrid.appendChild(card);
         }
         specsBlock.style.display = 'block';
@@ -476,6 +485,18 @@
   //  EVENTS & HELPERS
   // ─────────────────────────────────────────────────────
   function bindEvents() {
+    // Event delegation on products-grid for ultra-resilient mobile/touch interactions
+    const grid = qs('#products-grid');
+    if (grid) {
+      grid.addEventListener('click', (e) => {
+        const card = e.target.closest('.product-card');
+        if (!card) return;
+        const id = card.dataset.id;
+        const p = allProducts.find(item => item.id === id);
+        if (p) openProductModal(p);
+      });
+    }
+
     // Search input
     const searchInp = qs('#search-input');
     const clearBtn = qs('#search-clear-btn');
@@ -578,6 +599,7 @@
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#39;');
   }
+  const escapeHtml = esc;
 
   // Run on DOM ready
   if (document.readyState === 'loading') {
