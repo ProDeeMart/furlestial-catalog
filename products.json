@@ -232,12 +232,12 @@
   {
     "id": "F0001",
     "name": "ร่มพับกันแดดกันฝน ลายแพนด้าแดงขนฟูสุดน่ารัก",
-    "nameCn": "",
+    "nameCn": "[BambooMates Studio]",
     "category": "F",
     "status": "preorder",
     "sellPrice": 599,
     "minSellPrice": 599,
-    "maxSellPrice": 599,
+    "maxSellPrice": 699,
     "origPrice": 899,
     "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
     "delivery": "ประมาณ 2 อาทิตย์",
@@ -253,20 +253,42 @@
     "galleryImages": [
       "images/item_865696816552.jpg"
     ],
-    "variants": [],
-    "sizes": [],
+    "variants": [
+      {
+        "emoji": "🌂",
+        "name": "แบบมือเปิด พับ 3 ตอน (Manual Compact)",
+        "sellPrice": 599,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "⚡",
+        "name": "แบบกดปุ่มออโต้ เปิด-ปิดอัตโนมัติ (Auto Open/Close)",
+        "sellPrice": 699,
+        "sold": false,
+        "priceNote": ""
+      }
+    ],
+    "sizes": [
+      {
+        "name": "ขนาดพกพา",
+        "measurement": "เส้นผ่านศูนย์กลางเมื่อกาง 98 ซม. / ยาวเมื่อพับเก็บ 28 ซม. (น้ำหนัก 320 กรัม)",
+        "sellPrice": 0,
+        "sold": false
+      }
+    ],
     "createdAt": "2026-01-01T00:00:00.000Z",
     "updatedAt": "2026-01-01T00:00:00.000Z"
   },
   {
     "id": "F0002",
     "name": "เข็มกลัดโลหะลงยา ลายการ์ตูน Furry พรีเมียม (Enamel Pin)",
-    "nameCn": "",
+    "nameCn": "[Furry Original Studio]",
     "category": "F",
     "status": "preorder",
     "sellPrice": 369,
     "minSellPrice": 369,
-    "maxSellPrice": 369,
+    "maxSellPrice": 1009,
     "origPrice": 559,
     "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
     "delivery": "ประมาณ 2 อาทิตย์",
@@ -282,20 +304,56 @@
     "galleryImages": [
       "images/item_882056692700.jpg"
     ],
-    "variants": [],
-    "sizes": [],
+    "variants": [
+      {
+        "emoji": "🐺",
+        "name": "ลายหมาป่าสีเงิน (Silver Wolf Pin)",
+        "sellPrice": 369,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🐯",
+        "name": "ลายเสือโคร่ง (Golden Tiger Pin)",
+        "sellPrice": 369,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🦊",
+        "name": "ลายจิ้งจอกเก้าหาง (Nine-Tailed Fox Pin)",
+        "sellPrice": 369,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🎁",
+        "name": "เซ็ตสะสมครบ 3 ลาย (Full Collector Set)",
+        "sellPrice": 1009,
+        "sold": false,
+        "priceNote": ""
+      }
+    ],
+    "sizes": [
+      {
+        "name": "ขนาดมาตรฐาน",
+        "measurement": "ขนาดประมาณ 4.5 × 4.5 ซม. / ด้านหลังติดแป้นล็อกโลหะคู่ 2 จุด มั่นคงไม่หมุน",
+        "sellPrice": 0,
+        "sold": false
+      }
+    ],
     "createdAt": "2026-01-01T00:00:00.000Z",
     "updatedAt": "2026-01-01T00:00:00.000Z"
   },
   {
     "id": "F0003",
     "name": "แผ่นรองเมาส์เกมมิ่ง ขนาดใหญ่พิเศษ ลายพี่เสือ Furry Beast",
-    "nameCn": "",
+    "nameCn": "[Gray Claw × FurPaw]",
     "category": "F",
     "status": "preorder",
     "sellPrice": 899,
     "minSellPrice": 899,
-    "maxSellPrice": 899,
+    "maxSellPrice": 1099,
     "origPrice": 1199,
     "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
     "delivery": "ประมาณ 2 อาทิตย์",
@@ -307,24 +365,62 @@
       "ขอบ": "เย็บขอบรอบทิศทาง ป้องกันการหลุดลุ่ย ทนทานหลายปี"
     },
     "contact": "m.me/666255349897305",
-    "imageUrl": "images/item_919767984468.jpg",
+    "imageUrl": "images/items/919767984468/01.jpg",
     "galleryImages": [
-      "images/item_919767984468.jpg"
+      "images/items/919767984468/01.jpg",
+      "images/items/919767984468/02.jpg",
+      "images/items/919767984468/03.jpg",
+      "images/items/919767984468/04.jpg",
+      "images/items/919767984468/05.jpg",
+      "images/items/919767984468/06.jpg",
+      "images/items/919767984468/07.jpg",
+      "images/items/919767984468/08.jpg",
+      "images/items/919767984468/09.jpg",
+      "images/items/919767984468/10.jpg",
+      "images/items/919767984468/11.jpg"
     ],
-    "variants": [],
-    "sizes": [],
+    "variants": [
+      {
+        "emoji": "📐",
+        "name": "ขนาด 800 × 300 มม. (หนา 3 มม. เย็บขอบกันรุ่ย)",
+        "sellPrice": 899,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "📏",
+        "name": "ขนาดใหญ่พิเศษ 900 × 400 มม. (หนา 4 มม. หนานุ่ม)",
+        "sellPrice": 1099,
+        "sold": false,
+        "priceNote": ""
+      }
+    ],
+    "sizes": [
+      {
+        "name": "800 × 300 มม.",
+        "measurement": "ความหนา 3 มม. วางคีย์บอร์ด TKL และเมาส์ได้ลงตัว",
+        "sellPrice": 0,
+        "sold": false
+      },
+      {
+        "name": "900 × 400 มม.",
+        "measurement": "ความหนา 4 มม. ฟูลไซส์ รองรับคีย์บอร์ดเต็มใบและแผ่นรองมือ",
+        "sellPrice": 0,
+        "sold": false
+      }
+    ],
     "createdAt": "2026-01-01T00:00:00.000Z",
     "updatedAt": "2026-01-01T00:00:00.000Z"
   },
   {
     "id": "D0001",
-    "name": "ตุ๊กตาสัตว์ขนฟูนุ่มนิ่ม ขนาดกอดอุ่น",
-    "nameCn": "BambooMates",
+    "name": "ตุ๊กตาสัตว์ขนฟูนุ่มนิ่ม BambooMates ขนาดกอดอุ่น",
+    "nameCn": "[BambooMates Studio]",
     "category": "D",
     "status": "preorder",
     "sellPrice": 429,
     "minSellPrice": 429,
-    "maxSellPrice": 429,
+    "maxSellPrice": 899,
     "origPrice": 649,
     "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
     "delivery": "ประมาณ 2 อาทิตย์",
@@ -340,15 +436,56 @@
     "galleryImages": [
       "images/item_shop281874488.jpg"
     ],
-    "variants": [],
-    "sizes": [],
+    "variants": [
+      {
+        "emoji": "🧸",
+        "name": "ขนาด 30 ซม. (ไซส์พกพา/วางโต๊ะทำงาน)",
+        "sellPrice": 429,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🐼",
+        "name": "ขนาด 45 ซม. (ไซส์กอดอุ่นยอดนิยม)",
+        "sellPrice": 629,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "👑",
+        "name": "ขนาดจัมโบ้ 60 ซม. (กอดเต็มตัวนุ่มฟิน)",
+        "sellPrice": 899,
+        "sold": false,
+        "priceNote": ""
+      }
+    ],
+    "sizes": [
+      {
+        "name": "S (30 ซม.)",
+        "measurement": "ความสูง 30 ซม. / น้ำหนักประมาณ 280 กรัม",
+        "sellPrice": 0,
+        "sold": false
+      },
+      {
+        "name": "M (45 ซม.)",
+        "measurement": "ความสูง 45 ซม. / น้ำหนักประมาณ 650 กรัม",
+        "sellPrice": 0,
+        "sold": false
+      },
+      {
+        "name": "L (60 ซม.)",
+        "measurement": "ความสูง 60 ซม. / น้ำหนักประมาณ 1,200 กรัม",
+        "sellPrice": 0,
+        "sold": false
+      }
+    ],
     "createdAt": "2026-01-01T00:00:00.000Z",
     "updatedAt": "2026-01-01T00:00:00.000Z"
   },
   {
     "id": "C0001",
     "name": "กระเป๋าสะพายข้าง / คาดอก ดีไซน์สตรีทแนว Furry",
-    "nameCn": "",
+    "nameCn": "[皮皮阁阁主 Studio]",
     "category": "C",
     "status": "preorder",
     "sellPrice": 549,
@@ -369,8 +506,37 @@
     "galleryImages": [
       "images/item_789476789572.jpg"
     ],
-    "variants": [],
-    "sizes": [],
+    "variants": [
+      {
+        "emoji": "🤎",
+        "name": "สีน้ำตาลหนังวินเทจ (Vintage Brown)",
+        "sellPrice": 549,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🖤",
+        "name": "สีดำด้านดุดัน (Stealth Matte Black)",
+        "sellPrice": 549,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "☕",
+        "name": "สีน้ำตาลเข้มกาแฟ (Dark Coffee)",
+        "sellPrice": 549,
+        "sold": false,
+        "priceNote": ""
+      }
+    ],
+    "sizes": [
+      {
+        "name": "ฟรีไซส์",
+        "measurement": "ตัวกระเป๋า 22 × 18 × 7 ซม. / สายรัดเอวและสายรัดต้นขาปรับขยายได้ 28-44 นิ้ว",
+        "sellPrice": 0,
+        "sold": false
+      }
+    ],
     "createdAt": "2026-01-01T00:00:00.000Z",
     "updatedAt": "2026-01-01T00:00:00.000Z"
   },
@@ -382,7 +548,7 @@
     "status": "preorder",
     "sellPrice": 679,
     "minSellPrice": 679,
-    "maxSellPrice": 679,
+    "maxSellPrice": 879,
     "origPrice": 999,
     "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
     "delivery": "ประมาณ 2 อาทิตย์",
@@ -398,20 +564,48 @@
     "galleryImages": [
       "images/item_825668304384.jpg"
     ],
-    "variants": [],
-    "sizes": [],
+    "variants": [
+      {
+        "emoji": "🐺",
+        "name": "ขนาด 800 × 300 มม. (หนา 3 มม.)",
+        "sellPrice": 679,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🐾",
+        "name": "ขนาด 900 × 400 มม. (หนา 4 มม.)",
+        "sellPrice": 879,
+        "sold": false,
+        "priceNote": ""
+      }
+    ],
+    "sizes": [
+      {
+        "name": "800 × 300 มม.",
+        "measurement": "หนา 3 มม. เย็บขอบรอบด้าน พื้นยางธรรมชาติกันลื่น",
+        "sellPrice": 0,
+        "sold": false
+      },
+      {
+        "name": "900 × 400 มม.",
+        "measurement": "หนา 4 มม. ฟูลไซส์ ผิวสัมผัส Control ลื่นไหลแม่นยำ",
+        "sellPrice": 0,
+        "sold": false
+      }
+    ],
     "createdAt": "2026-01-01T00:00:00.000Z",
     "updatedAt": "2026-01-01T00:00:00.000Z"
   },
   {
     "id": "F0005",
-    "name": "ฟิกเกอร์โมเดลตั้งโต๊ะ จากเกม Changed (ลิขสิทธิ์แท้ )",
-    "nameCn": "DragonSnow",
+    "name": "ฟิกเกอร์โมเดลตั้งโต๊ะ จากเกม Changed (ลิขสิทธิ์แท้ DragonSnow)",
+    "nameCn": "[DragonSnow Studio]",
     "category": "F",
     "status": "preorder",
     "sellPrice": 899,
     "minSellPrice": 899,
-    "maxSellPrice": 899,
+    "maxSellPrice": 999,
     "origPrice": 1199,
     "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
     "delivery": "ประมาณ 2 อาทิตย์",
@@ -423,24 +617,60 @@
       "การตั้งโชว์": "เหมาะสำหรับวางบนโต๊ะทำงาน ตู้โชว์ หรือมุมคอมพิวเตอร์"
     },
     "contact": "m.me/666255349897305",
-    "imageUrl": "images/item_964089225132.jpg",
+    "imageUrl": "images/items/964089225132/01.jpg",
     "galleryImages": [
-      "images/item_964089225132.jpg"
+      "images/items/964089225132/01.jpg",
+      "images/items/964089225132/02.jpg",
+      "images/items/964089225132/03.jpg",
+      "images/items/964089225132/04.jpg",
+      "images/items/964089225132/05.jpg",
+      "images/items/964089225132/06.jpg",
+      "images/items/964089225132/07.jpg",
+      "images/items/964089225132/08.jpg"
     ],
-    "variants": [],
-    "sizes": [],
+    "variants": [
+      {
+        "emoji": "🐺",
+        "name": "โมเดล Puro (พูโร หน้ากากขาวขนดำ)",
+        "sellPrice": 899,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🐱",
+        "name": "โมเดล Colin (โคลิน ร่างมนุษย์)",
+        "sellPrice": 899,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🔬",
+        "name": "โมเดล Dr. K (ด็อกเตอร์เค เสื้อกาวน์)",
+        "sellPrice": 999,
+        "sold": false,
+        "priceNote": ""
+      }
+    ],
+    "sizes": [
+      {
+        "name": "สเกลตั้งโต๊ะ",
+        "measurement": "ความสูงประมาณ 10-12 ซม. รวมฐานอะคริลิกลิขสิทธิ์",
+        "sellPrice": 0,
+        "sold": false
+      }
+    ],
     "createdAt": "2026-01-01T00:00:00.000Z",
     "updatedAt": "2026-01-01T00:00:00.000Z"
   },
   {
     "id": "F0006",
-    "name": "พวงกุญแจอะคริลิก ลายตัวละครเกม Changed (ลิขสิทธิ์แท้ )",
-    "nameCn": "DragonSnow",
+    "name": "พวงกุญแจอะคริลิก ลายตัวละครเกม Changed (ลิขสิทธิ์แท้ DragonSnow)",
+    "nameCn": "[DragonSnow Studio]",
     "category": "F",
     "status": "preorder",
     "sellPrice": 389,
     "minSellPrice": 389,
-    "maxSellPrice": 389,
+    "maxSellPrice": 1399,
     "origPrice": 589,
     "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
     "delivery": "ประมาณ 2 อาทิตย์",
@@ -452,19 +682,69 @@
       "การใช้งาน": "ห้อยกระเป๋าเป้ กุญแจบ้าน กุญแจรถ หรือสะสม"
     },
     "contact": "m.me/666255349897305",
-    "imageUrl": "images/item_964089225132.jpg",
+    "imageUrl": "images/items/964089225132/02.jpg",
     "galleryImages": [
-      "images/item_964089225132.jpg"
+      "images/items/964089225132/01.jpg",
+      "images/items/964089225132/02.jpg",
+      "images/items/964089225132/03.jpg",
+      "images/items/964089225132/04.jpg",
+      "images/items/964089225132/05.jpg",
+      "images/items/964089225132/06.jpg",
+      "images/items/964089225132/07.jpg",
+      "images/items/964089225132/08.jpg"
     ],
-    "variants": [],
-    "sizes": [],
+    "variants": [
+      {
+        "emoji": "🖤",
+        "name": "ลาย Puro (พูโร)",
+        "sellPrice": 389,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🤍",
+        "name": "ลาย Colin (โคลิน)",
+        "sellPrice": 389,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🦈",
+        "name": "ลาย Tiger Shark (ฉลามเสือ)",
+        "sellPrice": 389,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🧪",
+        "name": "ลาย Dr. K (ด็อกเตอร์เค)",
+        "sellPrice": 389,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🎁",
+        "name": "เซ็ตสะสมครบ 4 ลาย (Full 4-Pack)",
+        "sellPrice": 1399,
+        "sold": false,
+        "priceNote": ""
+      }
+    ],
+    "sizes": [
+      {
+        "name": "ขนาดมาตรฐาน",
+        "measurement": "อะคริลิกหนา 4 มม. ขนาด 6.5 × 6.5 ซม. พิมพ์ลายประกบสองด้าน",
+        "sellPrice": 0,
+        "sold": false
+      }
+    ],
     "createdAt": "2026-01-01T00:00:00.000Z",
     "updatedAt": "2026-01-01T00:00:00.000Z"
   },
   {
     "id": "F0007",
-    "name": "แผ่นรองเมาส์ข้อมือ 3D ลายพี่เสือกล้ามโต ซิลิโคนนุ่มรองรับสรีระ ()",
-    "nameCn": "Baddaddy",
+    "name": "แผ่นรองเมาส์ข้อมือ 3D ลายพี่เสือกล้ามโต ซิลิโคนนุ่มรองรับสรีระ (Baddaddy)",
+    "nameCn": "[Baddaddy Studio]",
     "category": "F",
     "status": "preorder",
     "sellPrice": 749,
@@ -485,20 +765,42 @@
     "galleryImages": [
       "images/item_823341486066.jpg"
     ],
-    "variants": [],
-    "sizes": [],
+    "variants": [
+      {
+        "emoji": "🐯",
+        "name": "ลายเสือส้มกล้ามแน่น (Tiger Orange)",
+        "sellPrice": 749,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "⚪",
+        "name": "ลายเสือขาวสุดเท่ (White Tiger)",
+        "sellPrice": 749,
+        "sold": false,
+        "priceNote": ""
+      }
+    ],
+    "sizes": [
+      {
+        "name": "ขนาดสรีรศาสตร์",
+        "measurement": "26 × 22 ซม. / ส่วนหมอนซิลิโคนหนา 3.2 ซม. รองรับข้อมือนุ่มสบาย",
+        "sellPrice": 0,
+        "sold": false
+      }
+    ],
     "createdAt": "2026-01-01T00:00:00.000Z",
     "updatedAt": "2026-01-01T00:00:00.000Z"
   },
   {
     "id": "F0008",
-    "name": "แผ่นรองเมาส์ข้อมือ 3D ลายพี่เสือ & หนวดปลาหมึกแฟนตาซี ()",
-    "nameCn": "Baddaddy",
+    "name": "แผ่นรองเมาส์ข้อมือ 3D ลายพี่เสือ & หนวดปลาหมึกแฟนตาซี (Baddaddy)",
+    "nameCn": "[Baddaddy Studio]",
     "category": "F",
     "status": "preorder",
     "sellPrice": 749,
     "minSellPrice": 749,
-    "maxSellPrice": 749,
+    "maxSellPrice": 849,
     "origPrice": 999,
     "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
     "delivery": "ประมาณ 2 อาทิตย์",
@@ -514,15 +816,37 @@
     "galleryImages": [
       "images/item_790366994281.jpg"
     ],
-    "variants": [],
-    "sizes": [],
+    "variants": [
+      {
+        "emoji": "🐙",
+        "name": "เวอร์ชันมาตรฐาน ผิวผ้าไลคร่า (Standard Lycra)",
+        "sellPrice": 749,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "✨",
+        "name": "เวอร์ชันพิเศษ ผิวซาตินเนียนลื่น (Silky Smooth Edition)",
+        "sellPrice": 849,
+        "sold": false,
+        "priceNote": ""
+      }
+    ],
+    "sizes": [
+      {
+        "name": "ขนาดสรีรศาสตร์",
+        "measurement": "26 × 22 ซม. / หมอนซิลิโคน 3D เกรดการแพทย์ คืนตัวไว",
+        "sellPrice": 0,
+        "sold": false
+      }
+    ],
     "createdAt": "2026-01-01T00:00:00.000Z",
     "updatedAt": "2026-01-01T00:00:00.000Z"
   },
   {
     "id": "F0009",
     "name": "แผ่นรองเมาส์ข้อมือ 3D ลายบั้นท้ายพี่เสือ ซิลิโคนนุ่มเด้งดึ๋ง",
-    "nameCn": "",
+    "nameCn": "[Baddaddy Studio]",
     "category": "F",
     "status": "preorder",
     "sellPrice": 629,
@@ -543,20 +867,35 @@
     "galleryImages": [
       "images/item_856557880923.jpg"
     ],
-    "variants": [],
-    "sizes": [],
+    "variants": [
+      {
+        "emoji": "🍑",
+        "name": "ลายบั้นท้ายพี่เสือ 3D (Tiger Butt Edition)",
+        "sellPrice": 629,
+        "sold": false,
+        "priceNote": ""
+      }
+    ],
+    "sizes": [
+      {
+        "name": "ขนาดสรีรศาสตร์",
+        "measurement": "26 × 22 ซม. / หมอนหนา 3 ซม. ฐานยาง PU กันลื่นหนึบแน่น",
+        "sellPrice": 0,
+        "sold": false
+      }
+    ],
     "createdAt": "2026-01-01T00:00:00.000Z",
     "updatedAt": "2026-01-01T00:00:00.000Z"
   },
   {
     "id": "S0001",
     "name": "ดิวโด้งูยักษ์แฟนตาซี ขนาดยาวพิเศษ 100 ซม. (Ultra Long Snake Dildo)",
-    "nameCn": "",
+    "nameCn": "[KORYM Fantasy Studio]",
     "category": "S",
     "status": "preorder",
     "sellPrice": 839,
     "minSellPrice": 839,
-    "maxSellPrice": 839,
+    "maxSellPrice": 999,
     "origPrice": 1259,
     "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
     "delivery": "ประมาณ 2 อาทิตย์",
@@ -572,20 +911,42 @@
     "galleryImages": [
       "images/item_658291353406.jpg"
     ],
-    "variants": [],
-    "sizes": [],
+    "variants": [
+      {
+        "emoji": "🐍",
+        "name": "ความยาว 100 ซม. รุ่นมาตรฐาน (Standard Soft)",
+        "sellPrice": 839,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "⚓",
+        "name": "รุ่นเสริมฐานดูดสุญญากาศยึดติดพื้น (Suction Base)",
+        "sellPrice": 999,
+        "sold": false,
+        "priceNote": ""
+      }
+    ],
+    "sizes": [
+      {
+        "name": "ขนาดยาวพิเศษ",
+        "measurement": "ความยาวรวม 100 ซม. / เส้นผ่านศูนย์กลางไล่ระดับ 2.5 - 4.2 ซม.",
+        "sellPrice": 0,
+        "sold": false
+      }
+    ],
     "createdAt": "2026-01-01T00:00:00.000Z",
     "updatedAt": "2026-01-01T00:00:00.000Z"
   },
   {
     "id": "S0002",
-    "name": "ดิวโด้มังกรฟ้าแฟนตาซี Blue Dragon ซิลิโคนสองชั้นเกรดพรีเมียม ()",
-    "nameCn": "KORYM",
+    "name": "ดิวโด้มังกรฟ้าแฟนตาซี Blue Dragon ซิลิโคนสองชั้นเกรดพรีเมียม (KORYM)",
+    "nameCn": "[KORYM Fantasy Studio]",
     "category": "S",
     "status": "preorder",
     "sellPrice": 829,
     "minSellPrice": 829,
-    "maxSellPrice": 829,
+    "maxSellPrice": 979,
     "origPrice": 1249,
     "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
     "delivery": "ประมาณ 2 อาทิตย์",
@@ -598,24 +959,63 @@
       "การจัดส่ง": "แพ็กเกจทึบมิดชิด ปิดชื่อสินค้า 100%"
     },
     "contact": "m.me/666255349897305",
-    "imageUrl": "images/item_965565118596.jpg",
+    "imageUrl": "images/items/965565118596/01.jpg",
     "galleryImages": [
-      "images/item_965565118596.jpg"
+      "images/items/965565118596/01.jpg",
+      "images/items/965565118596/02.jpg",
+      "images/items/965565118596/03.jpg",
+      "images/items/965565118596/04.jpg",
+      "images/items/965565118596/05.jpg",
+      "images/items/965565118596/06.jpg",
+      "images/items/965565118596/07.jpg",
+      "images/items/965565118596/08.jpg",
+      "images/items/965565118596/09.jpg",
+      "images/items/965565118596/10.jpg",
+      "images/items/965565118596/11.jpg"
     ],
-    "variants": [],
-    "sizes": [],
+    "variants": [
+      {
+        "emoji": "💧",
+        "name": "ความนิ่ม 00-30 นุ่มนิ่มยืดหยุ่นสูง (Soft Touch)",
+        "sellPrice": 829,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "💎",
+        "name": "ความนิ่ม 00-50 กระชับแน่นสู้มือ (Firm Touch)",
+        "sellPrice": 829,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "⚓",
+        "name": "รุ่นฐานดูดสุญญากาศขนาดใหญ่ (Heavy Suction Cup)",
+        "sellPrice": 979,
+        "sold": false,
+        "priceNote": ""
+      }
+    ],
+    "sizes": [
+      {
+        "name": "ไซส์ M ยอดนิยม",
+        "measurement": "ความยาวรวม 22 ซม. (ช่วงใช้งาน 18.5 ซม.) / เส้นผ่านศูนย์กลาง 4.5 ซม.",
+        "sellPrice": 0,
+        "sold": false
+      }
+    ],
     "createdAt": "2026-01-01T00:00:00.000Z",
     "updatedAt": "2026-01-01T00:00:00.000Z"
   },
   {
     "id": "S0005",
-    "name": "ดิวโด้หมาป่าทรงน็อต ซิลิโคนสองชั้นนุ่มกระชับ",
-    "nameCn": "Knot Wolf Dildo",
+    "name": "ดิวโด้หมาป่าทรงน็อต Knot Wolf Dildo ซิลิโคนสองชั้นนุ่มกระชับ",
+    "nameCn": "[Knot Wolf Studio]",
     "category": "S",
     "status": "preorder",
     "sellPrice": 559,
     "minSellPrice": 559,
-    "maxSellPrice": 559,
+    "maxSellPrice": 699,
     "origPrice": 839,
     "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
     "delivery": "ประมาณ 2 อาทิตย์",
@@ -632,20 +1032,49 @@
     "galleryImages": [
       "images/item_951919010279.jpg"
     ],
-    "variants": [],
-    "sizes": [],
+    "variants": [
+      {
+        "emoji": "🐺",
+        "name": "สีเทาเงิน Silver Wolf (สัมผัสนุ่มสองชั้น)",
+        "sellPrice": 559,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🌑",
+        "name": "สีดำทมิฬ Midnight Wolf",
+        "sellPrice": 559,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "⚓",
+        "name": "รุ่นอัปเกรดฐานดูดสุญญากาศ (Suction Base)",
+        "sellPrice": 699,
+        "sold": false,
+        "priceNote": ""
+      }
+    ],
+    "sizes": [
+      {
+        "name": "ไซส์มาตรฐาน",
+        "measurement": "ความยาวรวม 18.5 ซม. / เส้นผ่านศูนย์กลางลำ 3.8 ซม. / ช่วงน็อต 4.8 ซม.",
+        "sellPrice": 0,
+        "sold": false
+      }
+    ],
     "createdAt": "2026-01-01T00:00:00.000Z",
     "updatedAt": "2026-01-01T00:00:00.000Z"
   },
   {
     "id": "S0010",
     "name": "ดิวโด้สุนัขสีแดงเพลิงทรงน็อต Red Dog Dildo ซิลิโคนเกรดการแพทย์",
-    "nameCn": "Knot Wolf Dildo",
+    "nameCn": "[Knot Wolf Studio]",
     "category": "S",
     "status": "preorder",
     "sellPrice": 599,
     "minSellPrice": 599,
-    "maxSellPrice": 599,
+    "maxSellPrice": 649,
     "origPrice": 899,
     "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
     "delivery": "ประมาณ 2 อาทิตย์",
@@ -661,8 +1090,30 @@
     "galleryImages": [
       "images/item_921020439642.jpg"
     ],
-    "variants": [],
-    "sizes": [],
+    "variants": [
+      {
+        "emoji": "🔴",
+        "name": "สีแดงทับทิม Ruby Red (ปุ่มน็อตสมจริง)",
+        "sellPrice": 599,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🔥",
+        "name": "สีทูโทน ดำ-แดงเพลิง Duo Fire",
+        "sellPrice": 649,
+        "sold": false,
+        "priceNote": ""
+      }
+    ],
+    "sizes": [
+      {
+        "name": "ไซส์มาตรฐาน",
+        "measurement": "ความยาวรวม 19.5 ซม. / ช่วงสอดใส่ 16 ซม. / เส้นผ่านศูนย์กลางน็อต 5.0 ซม.",
+        "sellPrice": 0,
+        "sold": false
+      }
+    ],
     "createdAt": "2026-01-01T00:00:00.000Z",
     "updatedAt": "2026-01-01T00:00:00.000Z"
   },
@@ -690,8 +1141,68 @@
     "galleryImages": [
       "images/item_674306862396.jpg"
     ],
-    "variants": [],
-    "sizes": [],
+    "variants": [
+      {
+        "emoji": "🐺",
+        "name": "ลายหมาป่าไอนุ Moritaka (โมริทากะ)",
+        "sellPrice": 609,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🐯",
+        "name": "ลายเสือ Typhon (ไทฟอน)",
+        "sellPrice": 609,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🐻",
+        "name": "ลายหมี Asterius (แอสเทเรียส)",
+        "sellPrice": 609,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🦁",
+        "name": "ลายสิงโต Nomad (โนแมด)",
+        "sellPrice": 609,
+        "sold": false,
+        "priceNote": ""
+      }
+    ],
+    "sizes": [
+      {
+        "name": "M",
+        "measurement": "รอบเอว 28-30 นิ้ว (ยาว 45 ซม.)",
+        "sellPrice": 0,
+        "sold": false
+      },
+      {
+        "name": "L",
+        "measurement": "รอบเอว 31-33 นิ้ว (ยาว 47 ซม.)",
+        "sellPrice": 0,
+        "sold": false
+      },
+      {
+        "name": "XL",
+        "measurement": "รอบเอว 34-36 นิ้ว (ยาว 49 ซม.)",
+        "sellPrice": 0,
+        "sold": false
+      },
+      {
+        "name": "2XL",
+        "measurement": "รอบเอว 37-39 นิ้ว (ยาว 51 ซม.)",
+        "sellPrice": 0,
+        "sold": false
+      },
+      {
+        "name": "3XL",
+        "measurement": "รอบเอว 40-42 นิ้ว (ยาว 53 ซม.)",
+        "sellPrice": 0,
+        "sold": false
+      }
+    ],
     "createdAt": "2026-01-01T00:00:00.000Z",
     "updatedAt": "2026-01-01T00:00:00.000Z"
   },
@@ -715,19 +1226,63 @@
       "การซัก": "ซักมือหรือซักเครื่องได้ แห้งไว ไม่อมเหงื่อ"
     },
     "contact": "m.me/666255349897305",
-    "imageUrl": "images/item_618939649263.jpg",
+    "imageUrl": "images/items/618939649263/01.jpg",
     "galleryImages": [
-      "images/item_618939649263.jpg"
+      "images/items/618939649263/01.jpg",
+      "images/items/618939649263/02.jpg",
+      "images/items/618939649263/03.jpg",
+      "images/items/618939649263/04.jpg"
     ],
-    "variants": [],
-    "sizes": [],
+    "variants": [
+      {
+        "emoji": "🌊",
+        "name": "สีน้ำเงินเข้มคลาสสิก (Classic Navy)",
+        "sellPrice": 719,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🔴",
+        "name": "สีแดงมงคลศาลเจ้า (Shinto Red)",
+        "sellPrice": 719,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "⚫",
+        "name": "สีดำด้านซามูไร (Matte Black)",
+        "sellPrice": 719,
+        "sold": false,
+        "priceNote": ""
+      }
+    ],
+    "sizes": [
+      {
+        "name": "M",
+        "measurement": "รอบเอว 28-31 นิ้ว (สัดส่วนมาตรฐาน)",
+        "sellPrice": 0,
+        "sold": false
+      },
+      {
+        "name": "L",
+        "measurement": "รอบเอว 32-35 นิ้ว (สัดส่วนมาตรฐาน)",
+        "sellPrice": 0,
+        "sold": false
+      },
+      {
+        "name": "XL",
+        "measurement": "รอบเอว 36-39 นิ้ว (สัดส่วนมาตรฐาน)",
+        "sellPrice": 0,
+        "sold": false
+      }
+    ],
     "createdAt": "2026-01-01T00:00:00.000Z",
     "updatedAt": "2026-01-01T00:00:00.000Z"
   },
   {
     "id": "C0007",
     "name": "รองเท้าสวมอุ้งเท้าสัตว์ขนฟู Furry Paws ขนนุ่มหนาใส่สบาย",
-    "nameCn": "",
+    "nameCn": "[Furry Paws Studio]",
     "category": "C",
     "status": "preorder",
     "sellPrice": 1799,
@@ -748,15 +1303,44 @@
     "galleryImages": [
       "images/item_644095849664.jpg"
     ],
-    "variants": [],
-    "sizes": [],
+    "variants": [
+      {
+        "emoji": "🤍",
+        "name": "สีขาวหิมะขนฟู (Snow White Paws)",
+        "sellPrice": 1799,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🩶",
+        "name": "สีเทาหมาป่า (Wolf Grey Paws)",
+        "sellPrice": 1799,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🖤",
+        "name": "สีดำสนิท (Shadow Black Paws)",
+        "sellPrice": 1799,
+        "sold": false,
+        "priceNote": ""
+      }
+    ],
+    "sizes": [
+      {
+        "name": "ฟรีไซส์ (36-43)",
+        "measurement": "ขนาดรองเท้า 36-43 สวมใส่กระชับ พื้นบุโฟมกันลื่นหนานุ่ม",
+        "sellPrice": 0,
+        "sold": false
+      }
+    ],
     "createdAt": "2026-01-01T00:00:00.000Z",
     "updatedAt": "2026-01-01T00:00:00.000Z"
   },
   {
     "id": "C0008",
     "name": "เสื้อกั๊กหนังคาวบอยสไตล์เวสเทิร์น (Western Cowboy Vest)",
-    "nameCn": "",
+    "nameCn": "[Western Leather Studio]",
     "category": "C",
     "status": "preorder",
     "sellPrice": 559,
@@ -777,20 +1361,60 @@
     "galleryImages": [
       "images/item_811265321636.jpg"
     ],
-    "variants": [],
-    "sizes": [],
+    "variants": [
+      {
+        "emoji": "🤎",
+        "name": "สีน้ำตาลหนังวินเทจ (Vintage Tan Brown)",
+        "sellPrice": 559,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🖤",
+        "name": "สีดำด้านคลาสสิก (Classic Matte Black)",
+        "sellPrice": 559,
+        "sold": false,
+        "priceNote": ""
+      }
+    ],
+    "sizes": [
+      {
+        "name": "M",
+        "measurement": "รอบอก 38-40 นิ้ว / ความยาวเสื้อ 58 ซม.",
+        "sellPrice": 0,
+        "sold": false
+      },
+      {
+        "name": "L",
+        "measurement": "รอบอก 41-43 นิ้ว / ความยาวเสื้อ 60 ซม.",
+        "sellPrice": 0,
+        "sold": false
+      },
+      {
+        "name": "XL",
+        "measurement": "รอบอก 44-46 นิ้ว / ความยาวเสื้อ 62 ซม.",
+        "sellPrice": 0,
+        "sold": false
+      },
+      {
+        "name": "2XL",
+        "measurement": "รอบอก 47-49 นิ้ว / ความยาวเสื้อ 64 ซม.",
+        "sellPrice": 0,
+        "sold": false
+      }
+    ],
     "createdAt": "2026-01-01T00:00:00.000Z",
     "updatedAt": "2026-01-01T00:00:00.000Z"
   },
   {
     "id": "L0001",
     "name": "ของเล่นซิลิโคนจำลองช่องปากมังกร Dragon Mouth ซิลิโคนเกรดการแพทย์",
-    "nameCn": "",
+    "nameCn": "[KORYM Fantasy Studio]",
     "category": "L",
     "status": "preorder",
     "sellPrice": 4690,
     "minSellPrice": 4690,
-    "maxSellPrice": 4690,
+    "maxSellPrice": 4990,
     "origPrice": 6990,
     "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
     "delivery": "ประมาณ 2 อาทิตย์",
@@ -806,15 +1430,37 @@
     "galleryImages": [
       "images/item_994359883458.jpg"
     ],
-    "variants": [],
-    "sizes": [],
+    "variants": [
+      {
+        "emoji": "🐲",
+        "name": "รุ่นมาตรฐาน ความนิ่มสมจริง (Standard 00-30)",
+        "sellPrice": 4690,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "✨",
+        "name": "รุ่นสองชั้นนุ่มพิเศษ (Ultra-Soft Dual Layer)",
+        "sellPrice": 4990,
+        "sold": false,
+        "priceNote": ""
+      }
+    ],
+    "sizes": [
+      {
+        "name": "ไซส์หล่อเต็มสเกล",
+        "measurement": "น้ำหนักประมาณ 3.2 กก. / ขนาด 24 × 16 × 14 ซม. / ช่องสัมผัสลึก 18 ซม.",
+        "sellPrice": 0,
+        "sold": false
+      }
+    ],
     "createdAt": "2026-01-01T00:00:00.000Z",
     "updatedAt": "2026-01-01T00:00:00.000Z"
   },
   {
     "id": "C0002",
     "name": "กางเกงขาสั้นลำลองลายตัวละคร Furry Beastman (Tokyo Afterschool Summoners)",
-    "nameCn": "東京放課後サモナーズ / Tokyo Afterschool Summoners",
+    "nameCn": "[東京放課後サモナーズ / Tokyo Afterschool Summoners]",
     "category": "C",
     "status": "preorder",
     "sellPrice": 339,
@@ -838,21 +1484,28 @@
     "variants": [
       {
         "emoji": "🐺",
-        "name": "ลายสุนัขจิ้งจอก (Fox)",
+        "name": "ลายหมาป่า Moritaka (โมริทากะ)",
         "sellPrice": 339,
         "sold": false,
         "priceNote": ""
       },
       {
         "emoji": "🐯",
-        "name": "ลายเสือโคร่ง (Tiger)",
+        "name": "ลายพี่เสือ Typhon (ไทฟอน)",
         "sellPrice": 339,
         "sold": false,
         "priceNote": ""
       },
       {
         "emoji": "🐻",
-        "name": "ลายหมีใหญ่ (Bear)",
+        "name": "ลายหมี Asterius (แอสเทเรียส)",
+        "sellPrice": 339,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🦁",
+        "name": "ลายสิงโต Nomad (โนแมด)",
         "sellPrice": 339,
         "sold": false,
         "priceNote": ""
@@ -861,19 +1514,31 @@
     "sizes": [
       {
         "name": "M",
-        "measurement": "รอบเอว 28-30 นิ้ว",
+        "measurement": "รอบเอว 28-30 นิ้ว (ยาว 45 ซม.)",
         "sellPrice": 0,
         "sold": false
       },
       {
         "name": "L",
-        "measurement": "รอบเอว 31-33 นิ้ว",
+        "measurement": "รอบเอว 31-33 นิ้ว (ยาว 47 ซม.)",
         "sellPrice": 0,
         "sold": false
       },
       {
         "name": "XL",
-        "measurement": "รอบเอว 34-36 นิ้ว",
+        "measurement": "รอบเอว 34-36 นิ้ว (ยาว 49 ซม.)",
+        "sellPrice": 0,
+        "sold": false
+      },
+      {
+        "name": "2XL",
+        "measurement": "รอบเอว 37-39 นิ้ว (ยาว 51 ซม.)",
+        "sellPrice": 0,
+        "sold": false
+      },
+      {
+        "name": "3XL",
+        "measurement": "รอบเอว 40-42 นิ้ว (ยาว 53 ซม.)",
         "sellPrice": 0,
         "sold": false
       }
@@ -884,12 +1549,12 @@
   {
     "id": "C0003",
     "name": "เข็มขัดกระเป๋าข้างนักเวทพร้อมขวดยาเวทมนตร์ (สไตล์สตีมพังค์/แฟนตาซี)",
-    "nameCn": "[皮皮阁阁主]",
+    "nameCn": "[皮皮阁阁主 Studio]",
     "category": "C",
     "status": "preorder",
     "sellPrice": 589,
     "minSellPrice": 589,
-    "maxSellPrice": 589,
+    "maxSellPrice": 789,
     "origPrice": 889,
     "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
     "delivery": "ประมาณ 2 อาทิตย์",
@@ -907,24 +1572,31 @@
     ],
     "variants": [
       {
-        "emoji": "🧪",
-        "name": "เข็มขัดหนังสีน้ำตาล + ขวดยาสีเขียว",
+        "emoji": "🤎",
+        "name": "สีน้ำตาลเวทมนตร์วินเทจ (Wizard Brown)",
         "sellPrice": 589,
         "sold": false,
         "priceNote": ""
       },
       {
-        "emoji": "🏺",
-        "name": "เข็มขัดหนังสีดำ + ขวดยาสีแดง",
+        "emoji": "🖤",
+        "name": "สีดำด้านนักเล่นแร่แปรธาตุ (Alchemist Black)",
         "sellPrice": 589,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🧪",
+        "name": "เซ็ตพร้อมขวดยาเวทมนตร์แก้ว 3 ขวด (Full Potion Set)",
+        "sellPrice": 789,
         "sold": false,
         "priceNote": ""
       }
     ],
     "sizes": [
       {
-        "name": "Free Size",
-        "measurement": "สายปรับระดับได้ รอบเอว 28-42 นิ้ว",
+        "name": "ฟรีไซส์ปรับระดับได้",
+        "measurement": "สายเข็มขัดยาว 115 ซม. เจาะรูรอบเอว 28-42 นิ้ว / กระเป๋าข้าง 16 × 12 ซม.",
         "sellPrice": 0,
         "sold": false
       }
