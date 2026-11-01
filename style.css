@@ -1814,6 +1814,40 @@ body {
   border: var(--hairline-border);
 }
 
+.modal-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.65rem;
+  margin-top: 0.35rem;
+}
+
+.spec-card-item {
+  background: var(--glass-surface-subtle);
+  border: var(--hairline-border);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.spec-card-item:hover {
+  border-color: rgba(99, 102, 241, 0.4);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.spec-card-key {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent-gold, #fbbf24);
+  margin-bottom: 0.2rem;
+  letter-spacing: 0.3px;
+}
+
+.spec-card-val {
+  font-size: 0.84rem;
+  color: var(--text-primary);
+  line-height: 1.45;
+}
+
 .delivery-time-pill {
   display: flex;
   align-items: center;

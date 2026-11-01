@@ -374,6 +374,24 @@
     // Description
     qs('#modal-desc').textContent = p.desc || 'สินค้าพรีออเดอร์เกรดพรีเมียมลิขสิทธิ์แท้ สอบถามรายละเอียดเพิ่มเติมทางแชทได้ตลอด 24 ชั่วโมง!';
 
+    // Separated Specifications Section
+    const specsBlock = qs('#modal-specs-block');
+    const specsGrid = qs('#modal-specs-grid');
+    if (specsBlock && specsGrid) {
+      if (p.specs && typeof p.specs === 'object' && Object.keys(p.specs).length > 0) {
+        specsGrid.innerHTML = '';
+        for (const [key, val] of Object.entries(p.specs)) {
+          const card = document.createElement('div');
+          card.className = 'spec-card-item';
+          card.innerHTML = `<div class="spec-card-key">${escapeHtml(key)}</div><div class="spec-card-val">${escapeHtml(val)}</div>`;
+          specsGrid.appendChild(card);
+        }
+        specsBlock.style.display = 'block';
+      } else {
+        specsBlock.style.display = 'none';
+      }
+    }
+
     // Order CTA Button
     const orderBtn = qs('#modal-order-btn');
     const pContact = p.contact ? (p.contact.startsWith('http') ? p.contact : ('https://' + p.contact)) : contactUrl;
