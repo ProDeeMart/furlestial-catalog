@@ -2097,5 +2097,86 @@
     "sizes": [],
     "createdAt": "2026-10-31T11:58:33.450Z",
     "updatedAt": "2026-11-01T09:14:53.880Z"
+  },
+  {
+    "id": "C0012",
+    "name": "กางเกงในเฟอร์รี่",
+    "nameCn": "",
+    "category": "C",
+    "status": "preorder",
+    "sellPrice": 369,
+    "minSellPrice": 369,
+    "maxSellPrice": 999,
+    "origPrice": 559,
+    "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
+    "delivery": "ประมาณ 2 อาทิตย์",
+    "desc": "กางเกงในเฟอร์รี่ สินค้าพรีออเดอร์คุณภาพพรีเมียมนำเข้าโดยตรง เนื้อผ้านุ่มละมุน ยืดหยุ่นกระชับรับสรีระ ระบายอากาศดีเยี่ยม ไม่อับชื้น งานสกรีนลายคมชัดสีสดสวย ใส่สบายได้ทุกวัน สาย Furry ห้ามพลาด!",
+    "specs": null,
+    "contact": "m.me/666255349897305",
+    "imageUrl": "images/items/1067650405104/01.jpg",
+    "galleryImages": [
+      "images/items/1067650405104/01.jpg",
+      "images/items/1067650405104/02.jpg",
+      "images/items/1067650405104/03.jpg",
+      "images/items/1067650405104/04.jpg",
+      "images/items/1067650405104/05.jpg",
+      "images/items/1067650405104/06.jpg",
+      "images/items/1067650405104/09.jpg",
+      "images/items/1067650405104/10.jpg",
+      "images/items/1067650405104/11.jpg",
+      "images/items/1067650405104/12.jpg"
+    ],
+    "variants": [
+      {
+        "emoji": "🐯",
+        "name": "3 แบบ เหมียวสีน้ำเงิน+สุนัขสีเหลือง+ ลายเสือขาว",
+        "sellPrice": 999,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🐻",
+        "name": "เหมียวสีน้ำเงิน",
+        "sellPrice": 369,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🐾",
+        "name": "สุนัขสีเหลือง",
+        "sellPrice": 369,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🐯",
+        "name": "ลายเสือขาว",
+        "sellPrice": 369,
+        "sold": false,
+        "priceNote": ""
+      }
+    ],
+    "sizes": [
+      {
+        "name": "M รอบเอว 68-80cm",
+        "measurement": "ขนาดตามตารางไซส์ในรูปสินค้า",
+        "sellPrice": 369,
+        "sold": false
+      },
+      {
+        "name": "L รอบเอว 80-95cm",
+        "measurement": "ขนาดตามตารางไซส์ในรูปสินค้า",
+        "sellPrice": 369,
+        "sold": false
+      },
+      {
+        "name": "XL รอบเอว 95-110cm",
+        "measurement": "ขนาดตามตารางไซส์ในรูปสินค้า",
+        "sellPrice": 369,
+        "sold": false
+      }
+    ],
+    "createdAt": "2026-11-02T15:29:21.872Z",
+    "updatedAt": "2026-11-02T15:29:21.872Z"
   }
 ]
