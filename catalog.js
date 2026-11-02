@@ -49,9 +49,63 @@
       allProducts = [];
     }
 
+    setupCategoryFilterPills();
     updateHeroStats();
     applyFiltersAndRender();
     handleInitialDeepLink();
+  }
+
+  const KNOWN_CAT_LABELS = {
+    F: '🐾 ฟูร์สูท & คอสเพลย์',
+    C: '👕 เสื้อผ้า & แฟชั่น',
+    A: '💍 เครื่องประดับ & พวงกุญแจ',
+    B: '🎒 กระเป๋า & ซองใส่ของ',
+    D: '🧸 ตุ๊กตา & หมอน',
+    T: '🎮 ฟิกเกอร์ & ของสะสม',
+    M: '🖱️ แผ่นรองเมาส์เกมมิ่ง',
+    P: '🎨 โปสเตอร์ & แสตนดี้',
+    W: '🧦 ถุงเท้า & ปลอกแขน',
+    S: '🔞 คอลเลกชันพิเศษ 18+',
+    L: '🐉 สายรัดหนัง & แฟนตาซี',
+    E: '⭐ สินค้าลิมิเต็ด',
+    X: '📦 เบ็ดเตล็ดทั่วไป',
+    K: '☕ แก้วน้ำ & ของใช้',
+    G: '🎲 การ์ด & บอร์ดเกม',
+    Q: '📱 เคสมือถือ & อุปกรณ์',
+    H: '🧢 หมวก & ที่คาดผม'
+  };
+
+  function setupCategoryFilterPills() {
+    const container = qs('#category-chips');
+    if (!container) return;
+
+    const existingPills = new Set(Array.from(container.querySelectorAll('.filter-pill')).map(b => (b.dataset.cat || '').toUpperCase()));
+
+    const usedCategories = new Set();
+    allProducts.forEach(p => {
+      const cleanId = String(p.id || '').trim();
+      const match = cleanId.match(/^([A-Za-z]+)/);
+      const pref = (p.category || (match ? match[1] : cleanId.charAt(0)) || '').toUpperCase();
+      if (pref) usedCategories.add(pref);
+    });
+
+    usedCategories.forEach(pref => {
+      if (!existingPills.has(pref)) {
+        const btn = document.createElement('button');
+        btn.className = 'filter-pill';
+        btn.dataset.cat = pref;
+        btn.textContent = KNOWN_CAT_LABELS[pref] || `🏷️ หมวด ${pref}`;
+        container.appendChild(btn);
+      }
+    });
+
+    container.querySelectorAll('.filter-pill').forEach(btn => {
+      btn.onclick = () => {
+        container.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        applyFiltersAndRender();
+      };
+    });
   }
 
   // ─────────────────────────────────────────────────────
