@@ -19,7 +19,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <!-- Apple & Luxury Modern Typography: Plus Jakarta Sans + IBM Plex Sans Thai -->
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=4.8" />
+  <link rel="stylesheet" href="style.css?v=5.0" />
+  <!-- Supabase Client for Self-Service Checkout & Customer Login -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
   <!-- Celestial Galaxy Canvas / Cosmic Starlight Universe -->
@@ -60,14 +62,20 @@
           <span class="theme-btn-label label-light"><span class="icon">☀️</span><span class="txt">Light</span></span>
         </button>
 
-        <a href="#guide-section" class="nav-link-subtle">วิธีสั่งพรี</a>
+        <!-- Customer Login / Account Button -->
+        <button id="header-auth-btn" class="nav-btn-glass" title="เข้าสู่ระบบ / เช็กประวัติคำสั่งซื้อ">
+          <span class="icon">👤</span>
+          <span class="txt" id="header-auth-txt">เข้าสู่ระบบ</span>
+        </button>
 
-        <a href="https://m.me/666255349897305" id="header-contact-btn" target="_blank" rel="noopener" class="btn-facebook-order">
-          <svg class="fb-svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
-            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-          </svg>
-          <span>สั่งซื้อ / ทักแชท</span>
-        </a>
+        <!-- Cart Button with Live Counter -->
+        <button id="header-cart-btn" class="nav-btn-glass cart-btn" title="เปิดตะกร้าสินค้า">
+          <span class="icon">🛒</span>
+          <span class="txt">ตะกร้า</span>
+          <span class="cart-badge-count" id="header-cart-count" style="display:none;">0</span>
+        </button>
+
+        <a href="#guide-section" class="nav-link-subtle">วิธีสั่งพรี</a>
       </div>
     </div>
   </header>
@@ -359,18 +367,349 @@
             <div><strong>ระยะเวลารอสินค้า:</strong> พรีออเดอร์จากจีนเข้าไทยประมาณ <strong>2-3 สัปดาห์</strong> (อัปเดตสถานะให้ตลอด)</div>
           </div>
 
-          <!-- Primary Actions -->
-          <div class="modal-action-row">
-            <a href="https://m.me/666255349897305" id="modal-order-btn" target="_blank" rel="noopener" class="btn-sheet-primary">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
-                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-              </svg>
-              <span>สั่งซื้อ / ทักแชทสินค้านี้</span>
+          <!-- Primary Actions (Self-Service Checkout + Add to Cart) -->
+          <div class="modal-action-row" style="flex-wrap:wrap; gap:8px;">
+            <button type="button" id="modal-buy-now-btn" class="btn-sheet-primary" style="background:linear-gradient(135deg, #10b981, #059669); flex:1.4; min-width:180px;">
+              <span>⚡ สั่งซื้อ & ชำระเงินทันที</span>
+            </button>
+            <button type="button" id="modal-add-cart-btn" class="btn-sheet-secondary" style="border-color:rgba(245,158,11,0.4); color:#fde68a; flex:1; min-width:140px;">
+              <span>🛒 เพิ่มลงตะกร้า</span>
+            </button>
+            <a href="https://m.me/666255349897305" id="modal-order-btn" target="_blank" rel="noopener" class="btn-sheet-secondary" style="flex:0.9; min-width:130px;" title="ทักคุยกับแอดมินทาง Facebook Messenger">
+              <span>💬 คุยแชทเพจ</span>
             </a>
-            <button id="modal-copy-link-btn" class="btn-sheet-secondary" title="คัดลอกลิงก์สินค้านี้">
-              🔗 คัดลอกลิงก์
+            <button type="button" id="modal-copy-link-btn" class="btn-sheet-secondary" style="flex:0.6; padding:0.6rem 0.8rem;" title="คัดลอกลิงก์สินค้านี้">
+              🔗
             </button>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🛒 CART MODAL (Apple Glass Drawer) -->
+  <div id="cart-modal-backdrop" class="sheet-backdrop">
+    <div class="sheet-container cart-sheet-container" role="dialog" aria-modal="true">
+      <div class="sheet-header">
+        <div class="sheet-title" style="display:flex; align-items:center; gap:8px;">
+          <span>🛒</span> <span>ตะกร้าสินค้าของคุณ</span>
+        </div>
+        <button id="cart-close-btn" class="sheet-close-btn" title="ปิดตะกร้า">✕</button>
+      </div>
+      <div class="cart-modal-body">
+        <div id="cart-items-list" class="cart-items-list">
+          <!-- Populated by catalog.js -->
+        </div>
+        <div id="cart-empty-view" class="cart-empty-view" style="display:none;">
+          <div style="font-size:3rem; margin-bottom:10px;">🛍️</div>
+          <p style="color:#aaa; font-size:0.95rem;">ยังไม่มีสินค้าในตะกร้าของคุณนะแง้ว</p>
+          <button id="cart-shop-now-btn" class="btn-sheet-primary" style="margin-top:12px; width:auto; padding:8px 24px;">เลือกดูสินค้าในร้าน</button>
+        </div>
+      </div>
+      <div class="cart-modal-footer" id="cart-modal-footer">
+        <div class="cart-summary-box">
+          <div class="cart-summary-row">
+            <span>ค่าจัดส่งในไทย:</span>
+            <span style="color:#34d399; font-weight:700;">ฟรี (0 บาท)</span>
+          </div>
+          <div class="cart-summary-row cart-total-row">
+            <span>ยอดชำระสุทธิ:</span>
+            <span class="cart-total-price" id="cart-total-thb">฿0</span>
+          </div>
+        </div>
+        <div class="cart-action-row">
+          <button id="cart-clear-btn" class="btn-sheet-secondary" style="flex:0.6;">ล้างตะกร้า</button>
+          <button id="cart-checkout-btn" class="btn-sheet-primary" style="background:linear-gradient(135deg, #10b981, #059669); flex:1.4;">
+            <span>⚡ ไปชำระเงิน</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 💳 CHECKOUT & PAYMENT MODAL -->
+  <div id="checkout-modal-backdrop" class="sheet-backdrop">
+    <div class="sheet-container checkout-sheet-container" role="dialog" aria-modal="true">
+      <div class="sheet-header">
+        <div class="sheet-title" style="display:flex; align-items:center; gap:8px;">
+          <span>💳</span> <span>สั่งซื้อ & ชำระเงิน</span>
+        </div>
+        <button id="checkout-close-btn" class="sheet-close-btn" title="ปิด">✕</button>
+      </div>
+
+      <div class="checkout-modal-body">
+        <!-- Step Indicator -->
+        <div class="checkout-steps-bar">
+          <div class="step-badge active" id="chk-step1-badge">1. ข้อมูลจัดส่ง</div>
+          <div class="step-arrow">➜</div>
+          <div class="step-badge" id="chk-step2-badge">2. สแกนจ่าย & แนบสลิป</div>
+        </div>
+
+        <!-- Section 1: Customer Shipping Form -->
+        <div id="checkout-shipping-section">
+          <h4 class="checkout-section-title">📍 ข้อมูลผู้รับพัสดุ (ส่งฟรีถึงหน้าบ้าน)</h4>
+          <div class="chk-form-grid">
+            <div class="chk-form-group">
+              <label>ชื่อ-นามสกุล ผู้รับ <span class="req">*</span></label>
+              <input type="text" id="chk-name" class="chk-input" placeholder="เช่น สุภกิตติ์ วิเวโก" required />
+            </div>
+            <div class="chk-form-group">
+              <label>เบอร์โทรศัพท์ (สำหรับขนส่งโทรหา) <span class="req">*</span></label>
+              <input type="tel" id="chk-phone" class="chk-input" placeholder="08X-XXX-XXXX" required />
+            </div>
+          </div>
+          <div class="chk-form-group" style="margin-top:10px;">
+            <label>ที่อยู่จัดส่งโดยละเอียด <span class="req">*</span></label>
+            <textarea id="chk-address" rows="2" class="chk-input" placeholder="บ้านเลขที่, หมู่, ถนน, ตำบล/แขวง, อำเภอ/เขต, จังหวัด..." required></textarea>
+          </div>
+          <div class="chk-form-grid" style="margin-top:10px;">
+            <div class="chk-form-group">
+              <label>รหัสไปรษณีย์ <span class="req">*</span></label>
+              <input type="text" id="chk-postal" class="chk-input" placeholder="เช่น 10110" style="max-width:140px;" required />
+            </div>
+            <div class="chk-form-group">
+              <label>หมายเหตุเพิ่มเติมถึงร้าน (ถ้ามี)</label>
+              <input type="text" id="chk-note" class="chk-input" placeholder="เช่น ฝากไว้ที่ป้อมยาม / แจ้งลายเพิ่มเติม" />
+            </div>
+          </div>
+
+          <!-- Items summary in checkout -->
+          <div class="chk-order-items-preview" style="margin-top:16px;">
+            <div style="font-size:0.85rem; color:#aaa; margin-bottom:6px;">รายการสินค้าที่สั่งซื้อ:</div>
+            <div id="chk-items-summary-list"></div>
+            <div class="chk-summary-total-bar">
+              <span>ยอดรวมทั้งหมด:</span>
+              <strong id="chk-subtotal-thb" style="color:#fde68a; font-size:1.15rem;">฿0</strong>
+            </div>
+          </div>
+
+          <div style="margin-top:16px; text-align:right;">
+            <button type="button" id="chk-proceed-payment-btn" class="btn-sheet-primary" style="background:linear-gradient(135deg, #10b981, #059669); width:100%;">
+              <span>ดำเนินการชำระเงิน (สแกน QR) ➜</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Section 2: Payment (PromptPay QR & Slip Upload) -->
+        <div id="checkout-payment-section" style="display:none;">
+          <button type="button" id="chk-back-shipping-btn" class="btn-xs-glass" style="margin-bottom:12px; font-size:0.8rem;">
+            ← กลับไปแก้ไขข้อมูลที่อยู่
+          </button>
+
+          <!-- Bank Account Info Card -->
+          <div class="kbank-account-card">
+            <div class="kbank-badge">
+              <span class="kbank-logo-circle">K</span>
+              <span>ธนาคารกสิกรไทย (KBank)</span>
+            </div>
+            <div class="kbank-number-row">
+              <span class="kbank-num" id="kbank-acc-num">015-1-98030-9</span>
+              <button type="button" id="btn-copy-kbank" class="btn-copy-acc" title="คัดลอกเลขบัญชี">
+                📋 คัดลอก
+              </button>
+            </div>
+            <div class="kbank-owner">ชื่อบัญชี: <strong>นาย สุภกิตติ์ วิเวโก</strong></div>
+            <div class="kbank-amount-row">
+              <span>ยอดเงินที่ต้องโอน:</span>
+              <strong class="kbank-exact-price" id="chk-payment-exact-thb">฿0</strong>
+            </div>
+          </div>
+
+          <!-- PromptPay QR Code Box -->
+          <div class="qr-payment-box">
+            <div class="qr-title-tag">
+              <span>📱 สแกน QR เพื่อจ่ายได้จากทุกธนาคาร</span>
+            </div>
+            <div class="qr-img-frame">
+              <img src="images/promptpay_qr.jpg" alt="PromptPay QR Code สุภกิตติ์ วิเวโก" class="promptpay-qr-img" id="chk-qr-img" />
+            </div>
+            <div class="qr-note-sub">
+              รองรับ K PLUS, SCB EASY, Krungthai NEXT, KMA, และทุกแอปธนาคารไทย (ไม่มีค่าธรรมเนียม)
+            </div>
+          </div>
+
+          <!-- Slip Upload Form -->
+          <div class="slip-upload-section">
+            <label class="slip-label">📸 แนบรูปสลิปหลักฐานการโอนเงิน <span class="req">*</span></label>
+            <div class="slip-dropzone" id="slip-dropzone">
+              <input type="file" id="slip-file-input" accept="image/*" style="display:none;" />
+              <div id="slip-prompt" class="slip-prompt-content">
+                <span style="font-size:1.8rem;">📎</span>
+                <p>คลิกเพื่อเลือกรูปสลิป หรือลากไฟล์มาวางที่นี่</p>
+                <span style="font-size:0.75rem; color:#888;">รองรับไฟล์ JPG, PNG, WEBP</span>
+              </div>
+              <div id="slip-preview-wrap" style="display:none; position:relative; width:100%; text-align:center;">
+                <img id="slip-preview-img" src="" alt="สลิปการโอน" style="max-height:220px; border-radius:8px; box-shadow:0 4px 15px rgba(0,0,0,0.5); object-fit:contain;" />
+                <button type="button" id="slip-remove-btn" class="slip-remove-btn" title="เปลี่ยนรูปสลิป">✕ เปลี่ยนรูป</button>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:18px;">
+            <button type="button" id="chk-submit-order-btn" class="btn-sheet-primary" style="background:linear-gradient(135deg, #f59e0b, #ec4899); width:100%; font-size:1.05rem; padding:12px;">
+              <span>✅ ยืนยันการสั่งซื้อและแจ้งชำระเงิน</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🎉 ORDER SUCCESS & TRACKING MODAL -->
+  <div id="order-success-backdrop" class="sheet-backdrop">
+    <div class="sheet-container success-sheet-container" role="dialog" aria-modal="true">
+      <div class="success-header-graphic">
+        <div class="success-sparkle">🎉</div>
+        <h2 style="color:#fff; font-size:1.4rem; margin:8px 0 4px 0;">สั่งซื้อ & ชำระเงินเรียบร้อยแล้ว!</h2>
+        <p style="color:#aaa; font-size:0.88rem; margin:0;">ระบบบันทึกคำสั่งซื้อของคุณเข้าสู่ระบบ Furlestial Shop แล้วนะแง้ว</p>
+      </div>
+
+      <div class="order-ticket-card">
+        <div class="order-ticket-header">
+          <div>
+            <span style="font-size:0.78rem; color:#888;">รหัสคำสั่งซื้อของคุณ:</span>
+            <div class="order-id-badge" id="success-order-id">#FUR-2026-000</div>
+          </div>
+          <button type="button" id="btn-copy-order-id" class="btn-xs-glass" style="font-size:0.75rem;">
+            📋 คัดลอกรหัส
+          </button>
+        </div>
+
+        <!-- Live Status Timeline -->
+        <div class="order-status-timeline">
+          <div class="timeline-step active" id="tl-step-1">
+            <span class="tl-dot"></span>
+            <div class="tl-content">
+              <strong>รอตรวจสอบยอดเงิน</strong>
+              <span>แอดมินกำลังตรวจเช็กสลิป</span>
+            </div>
+          </div>
+          <div class="timeline-step" id="tl-step-2">
+            <span class="tl-dot"></span>
+            <div class="tl-content">
+              <strong>รับออเดอร์ / สั่งพรีแล้ว</strong>
+              <span>สั่งตรงจากสตูดิโอจีน</span>
+            </div>
+          </div>
+          <div class="timeline-step" id="tl-step-3">
+            <span class="tl-dot"></span>
+            <div class="tl-content">
+              <strong>ของถึงไทยแล้ว</strong>
+              <span>เตรียมแพ็กส่งถึงหน้าบ้าน</span>
+            </div>
+          </div>
+          <div class="timeline-step" id="tl-step-4">
+            <span class="tl-dot"></span>
+            <div class="tl-content">
+              <strong>จัดส่งแล้ว</strong>
+              <span>พร้อมแจ้งเลขพัสดุ</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="success-order-summary" id="success-order-summary"></div>
+      </div>
+
+      <div class="success-footer-actions">
+        <button type="button" id="btn-view-my-orders" class="btn-sheet-primary" style="background:linear-gradient(135deg, #10b981, #059669); flex:1;">
+          📦 ดูคำสั่งซื้อของฉัน
+        </button>
+        <button type="button" id="btn-success-close" class="btn-sheet-secondary" style="flex:1;">
+          กลับไปหน้าร้าน
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 👤 CUSTOMER AUTH & TRACKING MODAL -->
+  <div id="auth-modal-backdrop" class="sheet-backdrop">
+    <div class="sheet-container auth-sheet-container" role="dialog" aria-modal="true">
+      <div class="sheet-header">
+        <div class="sheet-title" id="auth-modal-title">
+          <span>🐾</span> <span>ระบบสมาชิก & ติดตามออเดอร์</span>
+        </div>
+        <button id="auth-close-btn" class="sheet-close-btn" title="ปิด">✕</button>
+      </div>
+
+      <div class="auth-modal-body">
+        <!-- Auth Tabs -->
+        <div class="auth-tabs-row" id="auth-tabs-row">
+          <button type="button" class="auth-tab-btn active" data-tab="login">เข้าสู่ระบบ</button>
+          <button type="button" class="auth-tab-btn" data-tab="signup">สมัครสมาชิก</button>
+          <button type="button" class="auth-tab-btn" data-tab="lookup">🔎 เช็กออเดอร์ (ไม่ต้องล็อกอิน)</button>
+        </div>
+
+        <!-- Tab 1: Login -->
+        <div class="auth-tab-content" id="tab-login-content">
+          <form id="form-customer-login" class="auth-form">
+            <div class="chk-form-group">
+              <label>อีเมล</label>
+              <input type="email" id="login-email" class="chk-input" placeholder="you@email.com" required />
+            </div>
+            <div class="chk-form-group" style="margin-top:10px;">
+              <label>รหัสผ่าน</label>
+              <input type="password" id="login-password" class="chk-input" placeholder="••••••••" required />
+            </div>
+            <button type="submit" class="btn-sheet-primary" style="margin-top:16px; width:100%; background:linear-gradient(135deg, #f59e0b, #ec4899);">
+              เข้าสู่ระบบ
+            </button>
+          </form>
+        </div>
+
+        <!-- Tab 2: Signup -->
+        <div class="auth-tab-content" id="tab-signup-content" style="display:none;">
+          <form id="form-customer-signup" class="auth-form">
+            <div class="chk-form-group">
+              <label>ชื่อ-นามสกุล</label>
+              <input type="text" id="signup-name" class="chk-input" placeholder="เช่น สุภกิตติ์" required />
+            </div>
+            <div class="chk-form-group" style="margin-top:10px;">
+              <label>เบอร์โทรศัพท์</label>
+              <input type="tel" id="signup-phone" class="chk-input" placeholder="08X-XXX-XXXX" required />
+            </div>
+            <div class="chk-form-group" style="margin-top:10px;">
+              <label>อีเมล</label>
+              <input type="email" id="signup-email" class="chk-input" placeholder="you@email.com" required />
+            </div>
+            <div class="chk-form-group" style="margin-top:10px;">
+              <label>ตั้งรหัสผ่าน (อย่างน้อย 6 ตัวอักษร)</label>
+              <input type="password" id="signup-password" class="chk-input" minlength="6" placeholder="••••••••" required />
+            </div>
+            <button type="submit" class="btn-sheet-primary" style="margin-top:16px; width:100%; background:linear-gradient(135deg, #10b981, #059669);">
+              สร้างบัญชีสมาชิก
+            </button>
+          </form>
+        </div>
+
+        <!-- Tab 3: Guest Lookup (Track by Phone / Order ID) -->
+        <div class="auth-tab-content" id="tab-lookup-content" style="display:none;">
+          <p style="font-size:0.84rem; color:#aaa; margin-top:0;">กรอกเบอร์โทรศัพท์ที่ใช้สั่งซื้อ หรือรหัสคำสั่งซื้อ เพื่อดูสถานะพัสดุได้ทันทีโดยไม่ต้องจำรหัสผ่าน</p>
+          <div class="chk-form-group">
+            <label>เบอร์โทรศัพท์ หรือ รหัสออเดอร์ (#FUR-...)</label>
+            <div style="display:flex; gap:8px;">
+              <input type="text" id="lookup-query" class="chk-input" placeholder="เช่น 0812345678 หรือ FUR-2611-001" style="flex:1;" />
+              <button type="button" id="btn-do-lookup" class="btn-sheet-primary" style="width:auto; padding:0 16px;">
+                🔍 ค้นหา
+              </button>
+            </div>
+          </div>
+          <div id="lookup-results-list" style="margin-top:14px;"></div>
+        </div>
+
+        <!-- Logged In Customer Profile View -->
+        <div id="auth-logged-in-view" style="display:none;">
+          <div class="user-profile-badge">
+            <div class="profile-avatar">🐾</div>
+            <div>
+              <div style="color:#fff; font-weight:700;" id="user-display-name">คุณลูกค้า</div>
+              <div style="color:#aaa; font-size:0.8rem;" id="user-display-email">email@domain.com</div>
+            </div>
+            <button type="button" id="btn-customer-logout" class="btn-xs-glass" style="margin-left:auto; color:#f87171;">
+              ออกจากระบบ
+            </button>
+          </div>
+          <h4 style="color:#fde68a; font-size:0.95rem; margin:16px 0 8px 0;">📦 คำสั่งซื้อของคุณ:</h4>
+          <div id="user-orders-list" class="user-orders-list"></div>
         </div>
       </div>
     </div>
@@ -386,6 +725,6 @@
   <!-- iOS Dynamic Toast -->
   <div id="toast" class="ios-toast"></div>
 
-  <script src="catalog.js?v=4.9"></script>
+  <script src="catalog.js?v=5.0"></script>
 </body>
 </html>
