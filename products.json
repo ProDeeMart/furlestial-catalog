@@ -288,7 +288,7 @@
     "status": "preorder",
     "sellPrice": 369,
     "minSellPrice": 369,
-    "maxSellPrice": 1009,
+    "maxSellPrice": 1019,
     "origPrice": 559,
     "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
     "delivery": "ประมาณ 2 อาทิตย์",
@@ -329,7 +329,7 @@
       {
         "emoji": "🎁",
         "name": "เซ็ตสะสมครบ 3 ลาย (Full Collector Set)",
-        "sellPrice": 1009,
+        "sellPrice": 1019,
         "sold": false,
         "priceNote": ""
       }
@@ -670,7 +670,7 @@
     "status": "preorder",
     "sellPrice": 389,
     "minSellPrice": 389,
-    "maxSellPrice": 1399,
+    "maxSellPrice": 1409,
     "origPrice": 589,
     "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
     "delivery": "ประมาณ 2 อาทิตย์",
@@ -725,7 +725,7 @@
       {
         "emoji": "🎁",
         "name": "เซ็ตสะสมครบ 4 ลาย (Full 4-Pack)",
-        "sellPrice": 1399,
+        "sellPrice": 1409,
         "sold": false,
         "priceNote": ""
       }
@@ -1226,12 +1226,12 @@
       "การซัก": "ซักมือหรือซักเครื่องได้ แห้งไว ไม่อมเหงื่อ"
     },
     "contact": "m.me/666255349897305",
-    "imageUrl": "images/items/618939649263/01.jpg",
+    "imageUrl": "images/items/618939649263/04.jpg",
     "galleryImages": [
-      "images/items/618939649263/01.jpg",
+      "images/items/618939649263/04.jpg",
       "images/items/618939649263/02.jpg",
-      "images/items/618939649263/03.jpg",
-      "images/items/618939649263/04.jpg"
+      "images/items/618939649263/01.jpg",
+      "images/items/618939649263/03.jpg"
     ],
     "variants": [
       {
@@ -1260,24 +1260,24 @@
       {
         "name": "M",
         "measurement": "รอบเอว 28-31 นิ้ว (สัดส่วนมาตรฐาน)",
-        "sellPrice": 0,
+        "sellPrice": 719,
         "sold": false
       },
       {
         "name": "L",
         "measurement": "รอบเอว 32-35 นิ้ว (สัดส่วนมาตรฐาน)",
-        "sellPrice": 0,
+        "sellPrice": 719,
         "sold": false
       },
       {
         "name": "XL",
         "measurement": "รอบเอว 36-39 นิ้ว (สัดส่วนมาตรฐาน)",
-        "sellPrice": 0,
+        "sellPrice": 719,
         "sold": false
       }
     ],
     "createdAt": "2026-01-01T00:00:00.000Z",
-    "updatedAt": "2026-01-01T00:00:00.000Z"
+    "updatedAt": "2026-11-01T21:25:37.758Z"
   },
   {
     "id": "C0007",
@@ -1900,7 +1900,7 @@
     "status": "preorder",
     "sellPrice": 439,
     "minSellPrice": 439,
-    "maxSellPrice": 819,
+    "maxSellPrice": 829,
     "origPrice": 659,
     "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
     "delivery": "ประมาณ 2 อาทิตย์",
@@ -1951,7 +1951,7 @@
       {
         "emoji": "🖤",
         "name": "แพ็กคู่ 2 เซ็ต (สีขาว + สีดำ ครบชุด)",
-        "sellPrice": 819,
+        "sellPrice": 829,
         "sold": false,
         "priceNote": ""
       }
