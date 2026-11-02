@@ -1143,7 +1143,7 @@
           payment_method: 'promptpay',
           payment_slip_url: slipUrl,
           payment_status: 'paid',
-          order_status: 'verifying',
+          order_status: 'pending_review',
           customer_note: note
         };
 
@@ -1409,8 +1409,11 @@
 
   function renderOrdersCards(orders, container) {
     const statusMap = {
+      pending_review: { label: '🟡 รอตรวจสอบยอดเงิน', color: '#fde68a' },
       verifying: { label: '🟡 รอตรวจสอบยอดเงิน', color: '#fde68a' },
+      ordered_from_china: { label: '🔵 สั่งพรีออเดอร์แล้ว', color: '#60a5fa' },
       preorder_placed: { label: '🔵 สั่งพรีออเดอร์แล้ว', color: '#60a5fa' },
+      arrived_thailand: { label: '🟣 สินค้าถึงไทยแล้ว', color: '#c084fc' },
       arrived_th: { label: '🟣 สินค้าถึงไทยแล้ว', color: '#c084fc' },
       shipped: { label: '🟢 จัดส่งแล้ว', color: '#34d399' },
       cancelled: { label: '🔴 ยกเลิก', color: '#f87171' }
