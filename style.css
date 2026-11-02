@@ -1763,6 +1763,26 @@ body {
   font-size: 0.76rem;
 }
 
+.v-pill-thumb {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  flex-shrink: 0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  transition: transform 0.18s ease;
+}
+
+.v-pill:hover .v-pill-thumb {
+  transform: scale(1.08);
+}
+
+.v-pill.selected .v-pill-thumb {
+  border-color: #f6d365;
+  box-shadow: 0 0 8px rgba(246, 211, 101, 0.7);
+}
+
 /* Size Table */
 .spec-table-frame {
   overflow-x: auto;

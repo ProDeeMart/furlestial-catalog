@@ -45,35 +45,45 @@
         "name": "ลายเสือ (Tiger)",
         "sellPrice": 359,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🐆",
         "name": "ลายเสือดาวหิมะ (Snow Leopard)",
         "sellPrice": 359,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🐼",
         "name": "ลายแพนด้าแดง (Red Panda)",
         "sellPrice": 359,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🐺",
         "name": "ลายหมาป่า (Wolf)",
         "sellPrice": 359,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "📦",
         "name": "เซ็ตครบ 4 ลาย (เลือกคละลาย/คละไซส์ได้ แจ้งในแชท)",
         "sellPrice": 1259,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       }
     ],
     "sizes": [
@@ -150,42 +160,54 @@
         "name": "เซ็ตครบชุด สีขาว-ทอง (บอดี้สูท + ปลอกแขน/ขา สีขาว)",
         "sellPrice": 1729,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "⚡",
         "name": "เซ็ตครบชุด สีดำ-ทอง (บอดี้สูท + ปลอกแขน/ขา สีดำ)",
         "sellPrice": 1729,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "💎",
         "name": "เซ็ตครบชุด สีฟ้า-ขาว (บอดี้สูท + ปลอกแขน/ขา แจ้งสลับสีได้)",
         "sellPrice": 1729,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🤍",
         "name": "เฉพาะชุดบอดี้สูท สีขาว-ทอง (Platinum)",
         "sellPrice": 1549,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🖤",
         "name": "เฉพาะชุดบอดี้สูท สีดำ-ทอง (Black-Gold)",
         "sellPrice": 1549,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🩵",
         "name": "เฉพาะชุดบอดี้สูท สีฟ้า-ขาว (Shiny Blue)",
         "sellPrice": 1549,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       }
     ],
     "sizes": [
@@ -259,14 +281,18 @@
         "name": "แบบมือเปิด พับ 3 ตอน (Manual Compact)",
         "sellPrice": 599,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "⚡",
         "name": "แบบกดปุ่มออโต้ เปิด-ปิดอัตโนมัติ (Auto Open/Close)",
         "sellPrice": 699,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       }
     ],
     "sizes": [
@@ -310,28 +336,36 @@
         "name": "ลายหมาป่าสีเงิน (Silver Wolf Pin)",
         "sellPrice": 369,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🐯",
         "name": "ลายเสือโคร่ง (Golden Tiger Pin)",
         "sellPrice": 369,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🦊",
         "name": "ลายจิ้งจอกเก้าหาง (Nine-Tailed Fox Pin)",
         "sellPrice": 369,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🎁",
         "name": "เซ็ตสะสมครบ 3 ลาย (Full Collector Set)",
         "sellPrice": 1019,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       }
     ],
     "sizes": [
@@ -385,14 +419,18 @@
         "name": "ขนาด 800 × 300 มม. (หนา 3 มม. เย็บขอบกันรุ่ย)",
         "sellPrice": 899,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "📏",
         "name": "ขนาดใหญ่พิเศษ 900 × 400 มม. (หนา 4 มม. หนานุ่ม)",
         "sellPrice": 1099,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       }
     ],
     "sizes": [
@@ -442,21 +480,27 @@
         "name": "ขนาด 30 ซม. (ไซส์พกพา/วางโต๊ะทำงาน)",
         "sellPrice": 429,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🐼",
         "name": "ขนาด 45 ซม. (ไซส์กอดอุ่นยอดนิยม)",
         "sellPrice": 629,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "👑",
         "name": "ขนาดจัมโบ้ 60 ซม. (กอดเต็มตัวนุ่มฟิน)",
         "sellPrice": 899,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       }
     ],
     "sizes": [
@@ -512,21 +556,27 @@
         "name": "สีน้ำตาลหนังวินเทจ (Vintage Brown)",
         "sellPrice": 549,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🖤",
         "name": "สีดำด้านดุดัน (Stealth Matte Black)",
         "sellPrice": 549,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "☕",
         "name": "สีน้ำตาลเข้มกาแฟ (Dark Coffee)",
         "sellPrice": 549,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       }
     ],
     "sizes": [
@@ -570,14 +620,18 @@
         "name": "ขนาด 800 × 300 มม. (หนา 3 มม.)",
         "sellPrice": 679,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🐾",
         "name": "ขนาด 900 × 400 มม. (หนา 4 มม.)",
         "sellPrice": 879,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       }
     ],
     "sizes": [
@@ -634,21 +688,27 @@
         "name": "โมเดล Puro (พูโร หน้ากากขาวขนดำ)",
         "sellPrice": 899,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🐱",
         "name": "โมเดล Colin (โคลิน ร่างมนุษย์)",
         "sellPrice": 899,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🔬",
         "name": "โมเดล Dr. K (ด็อกเตอร์เค เสื้อกาวน์)",
         "sellPrice": 999,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       }
     ],
     "sizes": [
@@ -699,35 +759,45 @@
         "name": "ลาย Puro (พูโร)",
         "sellPrice": 389,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🤍",
         "name": "ลาย Colin (โคลิน)",
         "sellPrice": 389,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🦈",
         "name": "ลาย Tiger Shark (ฉลามเสือ)",
         "sellPrice": 389,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🧪",
         "name": "ลาย Dr. K (ด็อกเตอร์เค)",
         "sellPrice": 389,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🎁",
         "name": "เซ็ตสะสมครบ 4 ลาย (Full 4-Pack)",
         "sellPrice": 1409,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       }
     ],
     "sizes": [
@@ -771,14 +841,18 @@
         "name": "ลายเสือส้มกล้ามแน่น (Tiger Orange)",
         "sellPrice": 749,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "⚪",
         "name": "ลายเสือขาวสุดเท่ (White Tiger)",
         "sellPrice": 749,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       }
     ],
     "sizes": [
@@ -822,14 +896,18 @@
         "name": "เวอร์ชันมาตรฐาน ผิวผ้าไลคร่า (Standard Lycra)",
         "sellPrice": 749,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "✨",
         "name": "เวอร์ชันพิเศษ ผิวซาตินเนียนลื่น (Silky Smooth Edition)",
         "sellPrice": 849,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       }
     ],
     "sizes": [
@@ -873,7 +951,9 @@
         "name": "ลายบั้นท้ายพี่เสือ 3D (Tiger Butt Edition)",
         "sellPrice": 629,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       }
     ],
     "sizes": [
@@ -917,14 +997,18 @@
         "name": "ความยาว 100 ซม. รุ่นมาตรฐาน (Standard Soft)",
         "sellPrice": 839,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "⚓",
         "name": "รุ่นเสริมฐานดูดสุญญากาศยึดติดพื้น (Suction Base)",
         "sellPrice": 999,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       }
     ],
     "sizes": [
@@ -979,21 +1063,27 @@
         "name": "ความนิ่ม 00-30 นุ่มนิ่มยืดหยุ่นสูง (Soft Touch)",
         "sellPrice": 829,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "💎",
         "name": "ความนิ่ม 00-50 กระชับแน่นสู้มือ (Firm Touch)",
         "sellPrice": 829,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "⚓",
         "name": "รุ่นฐานดูดสุญญากาศขนาดใหญ่ (Heavy Suction Cup)",
         "sellPrice": 979,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       }
     ],
     "sizes": [
@@ -1038,21 +1128,27 @@
         "name": "สีเทาเงิน Silver Wolf (สัมผัสนุ่มสองชั้น)",
         "sellPrice": 559,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🌑",
         "name": "สีดำทมิฬ Midnight Wolf",
         "sellPrice": 559,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "⚓",
         "name": "รุ่นอัปเกรดฐานดูดสุญญากาศ (Suction Base)",
         "sellPrice": 699,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       }
     ],
     "sizes": [
@@ -1096,14 +1192,18 @@
         "name": "สีแดงทับทิม Ruby Red (ปุ่มน็อตสมจริง)",
         "sellPrice": 599,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🔥",
         "name": "สีทูโทน ดำ-แดงเพลิง Duo Fire",
         "sellPrice": 649,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       }
     ],
     "sizes": [
@@ -1147,28 +1247,36 @@
         "name": "ลายหมาป่าไอนุ Moritaka (โมริทากะ)",
         "sellPrice": 609,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🐯",
         "name": "ลายเสือ Typhon (ไทฟอน)",
         "sellPrice": 609,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🐻",
         "name": "ลายหมี Asterius (แอสเทเรียส)",
         "sellPrice": 609,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🦁",
         "name": "ลายสิงโต Nomad (โนแมด)",
         "sellPrice": 609,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       }
     ],
     "sizes": [
@@ -1239,21 +1347,27 @@
         "name": "สีน้ำเงินเข้มคลาสสิก (Classic Navy)",
         "sellPrice": 719,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🔴",
         "name": "สีแดงมงคลศาลเจ้า (Shinto Red)",
         "sellPrice": 719,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "⚫",
         "name": "สีดำด้านซามูไร (Matte Black)",
         "sellPrice": 719,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       }
     ],
     "sizes": [
@@ -1309,21 +1423,27 @@
         "name": "สีขาวหิมะขนฟู (Snow White Paws)",
         "sellPrice": 1799,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🩶",
         "name": "สีเทาหมาป่า (Wolf Grey Paws)",
         "sellPrice": 1799,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🖤",
         "name": "สีดำสนิท (Shadow Black Paws)",
         "sellPrice": 1799,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       }
     ],
     "sizes": [
@@ -1367,14 +1487,18 @@
         "name": "สีน้ำตาลหนังวินเทจ (Vintage Tan Brown)",
         "sellPrice": 559,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🖤",
         "name": "สีดำด้านคลาสสิก (Classic Matte Black)",
         "sellPrice": 559,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       }
     ],
     "sizes": [
@@ -1436,14 +1560,18 @@
         "name": "รุ่นมาตรฐาน ความนิ่มสมจริง (Standard 00-30)",
         "sellPrice": 4690,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "✨",
         "name": "รุ่นสองชั้นนุ่มพิเศษ (Ultra-Soft Dual Layer)",
         "sellPrice": 4990,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       }
     ],
     "sizes": [
@@ -1487,28 +1615,36 @@
         "name": "ลายหมาป่า Moritaka (โมริทากะ)",
         "sellPrice": 339,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🐯",
         "name": "ลายพี่เสือ Typhon (ไทฟอน)",
         "sellPrice": 339,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🐻",
         "name": "ลายหมี Asterius (แอสเทเรียส)",
         "sellPrice": 339,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🦁",
         "name": "ลายสิงโต Nomad (โนแมด)",
         "sellPrice": 339,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       }
     ],
     "sizes": [
@@ -1576,21 +1712,27 @@
         "name": "สีน้ำตาลเวทมนตร์วินเทจ (Wizard Brown)",
         "sellPrice": 589,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🖤",
         "name": "สีดำด้านนักเล่นแร่แปรธาตุ (Alchemist Black)",
         "sellPrice": 589,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🧪",
         "name": "เซ็ตพร้อมขวดยาเวทมนตร์แก้ว 3 ขวด (Full Potion Set)",
         "sellPrice": 789,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       }
     ],
     "sizes": [
@@ -1651,42 +1793,54 @@
         "name": "ลายเสือดำ (Black Tiger)",
         "sellPrice": 359,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🐯",
         "name": "ลายเสือขาว (White Tiger)",
         "sellPrice": 359,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🐺",
         "name": "ลายหมาป่าสีเทา (Grey Wolf)",
         "sellPrice": 359,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "💛",
         "name": "ลายโกลเด้นรีทรีฟเวอร์ (Golden Retriever)",
         "sellPrice": 359,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🐾",
         "name": "แพ็กคู่ 2 ตัว (เลือกคละลาย/คละไซส์ได้ แจ้งในแชท)",
         "sellPrice": 679,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🐾",
         "name": "เซ็ตครบ 4 ตัว (เลือกคละลาย/คละไซส์ได้ แจ้งในแชท)",
         "sellPrice": 1299,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       }
     ],
     "sizes": [
@@ -1764,21 +1918,27 @@
         "name": "สีเขียว ลายก้นหอยสะกดจิต (Green Spiral)",
         "sellPrice": 609,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🩷",
         "name": "สีชมพู ลายหัวใจสะกดจิต (Pink Heart)",
         "sellPrice": 609,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "📦",
         "name": "แพ็กคู่ 2 ชิ้น (สีเขียว + สีชมพู ครบเซ็ต)",
         "sellPrice": 1139,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       }
     ],
     "sizes": [],
@@ -1827,28 +1987,36 @@
         "name": "เฉพาะชุดบอดี้สูท สีดั้งเดิม (Original Red)",
         "sellPrice": 1799,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🧦",
         "name": "เซ็ตครบชุด สีดั้งเดิม (บอดี้สูท + ถุงเท้าสีแดง)",
         "sellPrice": 2009,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "💙",
         "name": "เฉพาะชุดบอดี้สูท สีพิเศษ (Shiny Blue)",
         "sellPrice": 1799,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "✨",
         "name": "เซ็ตครบชุด สีพิเศษ (บอดี้สูท + ถุงเท้าสีฟ้า)",
         "sellPrice": 2009,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       }
     ],
     "sizes": [
@@ -1939,21 +2107,27 @@
         "name": "เซ็ตครบชุด สีขาว (ถุงเท้า + ปลอกแขน)",
         "sellPrice": 439,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🖤",
         "name": "เซ็ตครบชุด สีดำ (ถุงเท้า + ปลอกแขน)",
         "sellPrice": 439,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🖤",
         "name": "แพ็กคู่ 2 เซ็ต (สีขาว + สีดำ ครบชุด)",
         "sellPrice": 829,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       }
     ],
     "sizes": [
@@ -2014,28 +2188,36 @@
         "name": "ลายอุ้งเท้า สีส้ม-ขาว",
         "sellPrice": 309,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🤍",
         "name": "ลายอุ้งเท้า สีแดง-ขาว",
         "sellPrice": 309,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🤍",
         "name": "ลายอุ้งเท้า สีฟ้า-ขาว",
         "sellPrice": 309,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🐾",
         "name": "กำหนดสี",
         "sellPrice": 309,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       }
     ],
     "sizes": [
@@ -2091,7 +2273,9 @@
         "name": "หัวมังกรสายฟ้า Thunder Dragon (ระบบสองช่องสัมผัส)",
         "sellPrice": 2999,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       }
     ],
     "sizes": [],
@@ -2132,28 +2316,36 @@
         "name": "3 แบบ เหมียวสีน้ำเงิน+สุนัขสีเหลือง+ ลายเสือขาว",
         "sellPrice": 999,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🐻",
         "name": "เหมียวสีน้ำเงิน",
         "sellPrice": 369,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🐾",
         "name": "สุนัขสีเหลือง",
         "sellPrice": 369,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       },
       {
         "emoji": "🐯",
         "name": "ลายเสือขาว",
         "sellPrice": 369,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       }
     ],
     "sizes": [
@@ -2213,35 +2405,45 @@
         "name": "ขนาดเล็ก (ความสูงไม่เกิน 45 ซม. และความกว้าง 38 ซม.) สามารถขึ้นเครื่องได้",
         "sellPrice": 1590,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "images/items/762124021552/01.jpg",
+        "imageIndex": 0
       },
       {
         "emoji": "🖤",
         "name": "ใหม่สีดำล้วนขนาดเล็ก (สูง 45 ซม. กว้าง 40 ซม. หรือน้อยกว่า)",
         "sellPrice": 2059,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "images/items/762124021552/02.jpg",
+        "imageIndex": 1
       },
       {
         "emoji": "🖤",
         "name": "ใหม่ขนาดเล็กสีดำและสีเหลือง (สูง 45 ซม. กว้าง 40 ซม. หรือน้อยกว่า)",
         "sellPrice": 2059,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "images/items/762124021552/03.jpg",
+        "imageIndex": 2
       },
       {
         "emoji": "🐾",
         "name": "กลาง (สูง 48 ซม. กว้าง 45 ซม. หรือน้อยกว่า)",
         "sellPrice": 1990,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "images/items/762124021552/04.jpg",
+        "imageIndex": 3
       },
       {
         "emoji": "🐾",
         "name": "ใหญ่สุด (สูง 55 ซม. กว้าง 60 ซม. หรือน้อยกว่า)",
         "sellPrice": 2390,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "images/items/762124021552/05.jpg",
+        "imageIndex": 4
       }
     ],
     "sizes": [],
@@ -2279,7 +2481,9 @@
         "name": "ชุดฟูร์สูท Fursuit Head ความจุขนาดใหญ่กระเป๋าเก็บของ -2A",
         "sellPrice": 1899,
         "sold": false,
-        "priceNote": ""
+        "priceNote": "",
+        "image": "",
+        "imageIndex": null
       }
     ],
     "sizes": [],

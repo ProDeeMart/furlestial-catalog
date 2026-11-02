@@ -376,7 +376,6 @@
 
     // Media & Thumbnails
     const gallery = (p.galleryImages && p.galleryImages.length > 0) ? p.galleryImages : [p.imageUrl || 'furlestial.ico'];
-    renderModalGallery(gallery);
 
     // Variants
     const vSection = qs('#modal-variants-section');
@@ -386,10 +385,13 @@
       vSection.style.display = 'flex';
       vWrap.innerHTML = p.variants.map((v, i) => {
         const vPrice = Number(v.sellPrice || p.sellPrice || 0);
+        const vImgIdx = resolveVariantImageIndex(v, i, gallery);
+        const vImgUrl = (vImgIdx >= 0 && vImgIdx < gallery.length) ? gallery[vImgIdx] : null;
         return `
-          <div class="v-pill ${i === 0 ? 'selected' : ''}" data-index="${i}">
+          <div class="v-pill ${i === 0 ? 'selected' : ''}" data-index="${i}" data-img-index="${vImgIdx}">
+            ${vImgUrl ? `<img src="${esc(vImgUrl)}" class="v-pill-thumb" alt="${esc(v.name)}" onerror="this.style.display='none'" />` : ''}
             <span>${esc(v.emoji || '✦')}</span>
-            <span>${esc(v.name)}</span>
+            <span class="v-pill-name">${esc(v.name)}</span>
             ${vPrice > 0 ? `<span class="v-pill-price">฿${vPrice.toLocaleString('th-TH')}</span>` : ''}
           </div>
         `;
@@ -408,12 +410,37 @@
             if (chosenPrice > 0) {
               qs('#modal-price-thb').textContent = `฿${chosenPrice.toLocaleString('th-TH')}`;
             }
+
+            // FLIP GALLERY TO LINKED VARIANT IMAGE!
+            const targetImgIdx = resolveVariantImageIndex(chosen, idx, gallery);
+            if (targetImgIdx >= 0 && typeof activeShowGalleryImage === 'function') {
+              activeShowGalleryImage(targetImgIdx);
+            }
           }
         });
       });
     } else {
       vSection.style.display = 'none';
     }
+
+    // Render gallery with two-way sync to variant pills
+    renderModalGallery(gallery, (imgIdx) => {
+      // If user clicked thumbnail in gallery, highlight the matching variant pill
+      const matchingPill = qs(`.v-pill[data-img-index="${imgIdx}"]`, vWrap);
+      if (matchingPill && !matchingPill.classList.contains('selected')) {
+        qsa('.v-pill', vWrap).forEach(el => el.classList.remove('selected'));
+        matchingPill.classList.add('selected');
+        const vIdx = Number(matchingPill.dataset.index);
+        const chosen = p.variants[vIdx];
+        if (chosen) {
+          selectedVariantName = chosen.name;
+          const chosenPrice = Number(chosen.sellPrice || p.sellPrice || 0);
+          if (chosenPrice > 0) {
+            qs('#modal-price-thb').textContent = `฿${chosenPrice.toLocaleString('th-TH')}`;
+          }
+        }
+      }
+    });
 
     // Sizes Table
     const sSection = qs('#modal-sizes-section');
@@ -486,7 +513,36 @@
     }
   }
 
-  function renderModalGallery(images) {
+  let activeShowGalleryImage = null;
+
+  function resolveVariantImageIndex(v, idx, gallery) {
+    if (!gallery || gallery.length === 0) return -1;
+    if (typeof v.imageIndex === 'number' && v.imageIndex >= 0 && v.imageIndex < gallery.length) {
+      return v.imageIndex;
+    }
+    if (v.image || v.imageUrl) {
+      const target = String(v.image || v.imageUrl).trim();
+      const matchIdx = gallery.findIndex(g => g === target || g.includes(target) || target.includes(g));
+      if (matchIdx !== -1) return matchIdx;
+    }
+
+    // Keyword / Heuristic mapping based on variant name
+    const nameLow = String(v.name || '').toLowerCase();
+    if (/ดำล้วน/.test(nameLow) && gallery.length > 1) return 1;
+    if (/ดำและสีเหลือง|ดำเหลือง/.test(nameLow) && gallery.length > 2) return 2;
+    if (/กลาง/.test(nameLow) && gallery.length > 3) return 3;
+    if (/ใหญ่สุด|ใหญ่/.test(nameLow) && gallery.length > 4) return 4;
+    if (/เล็ก/.test(nameLow) && gallery.length > 0) return 0;
+
+    // Default 1-to-1 index matching if gallery has enough photos
+    if (idx < gallery.length) {
+      return idx;
+    }
+
+    return 0;
+  }
+
+  function renderModalGallery(images, onImageChange = null) {
     const mainImg = qs('#modal-main-img');
     const counter = qs('#modal-img-counter');
     const thumbWrap = qs('#modal-thumbnails');
@@ -505,6 +561,10 @@
         t.classList.toggle('active', i === idx);
         if (i === idx) t.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
       });
+
+      if (typeof onImageChange === 'function') {
+        onImageChange(idx);
+      }
     }
 
     if (images.length <= 1) {
@@ -532,7 +592,9 @@
       nextBtn.onclick = () => showImage(currentImgIndex + 1);
     }
 
+    activeShowGalleryImage = showImage;
     showImage(0);
+    return showImage;
   }
 
   // ─────────────────────────────────────────────────────
