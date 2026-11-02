@@ -2247,5 +2247,43 @@
     "sizes": [],
     "createdAt": "2026-11-02T16:20:42.112Z",
     "updatedAt": "2026-11-02T16:20:42.112Z"
+  },
+  {
+    "id": "B0002",
+    "name": "กระเป๋าเก็บหัว กระเป๋าใส่หัวสัตว์ขนปุย กระเป๋าใส่หัวสัตว์น่ารัก ขนปุย กํามะหยี่",
+    "nameCn": "绒爪实验室",
+    "category": "B",
+    "status": "preorder",
+    "sellPrice": 1899,
+    "minSellPrice": 1899,
+    "maxSellPrice": 1899,
+    "origPrice": 2699,
+    "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
+    "delivery": "ประมาณ 2 อาทิตย์",
+    "desc": "(กว้าง × ลึก × สูง): 40 × 46 × 50 ซม.",
+    "specs": null,
+    "contact": "m.me/666255349897305",
+    "imageUrl": "images/items/1021353748747/01.jpg",
+    "galleryImages": [
+      "images/items/1021353748747/01.jpg",
+      "images/items/1021353748747/02.jpg",
+      "images/items/1021353748747/03.jpg",
+      "images/items/1021353748747/04.jpg",
+      "images/items/1021353748747/07.jpg",
+      "images/items/1021353748747/09.jpg",
+      "images/items/1021353748747/11.jpg"
+    ],
+    "variants": [
+      {
+        "emoji": "🐾",
+        "name": "ชุดฟูร์สูท Fursuit Head ความจุขนาดใหญ่กระเป๋าเก็บของ -2A",
+        "sellPrice": 1899,
+        "sold": false,
+        "priceNote": ""
+      }
+    ],
+    "sizes": [],
+    "createdAt": "2026-11-02T16:49:23.626Z",
+    "updatedAt": "2026-11-02T16:49:23.626Z"
   }
 ]
