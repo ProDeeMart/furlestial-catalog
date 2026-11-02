@@ -2178,5 +2178,74 @@
     ],
     "createdAt": "2026-11-02T15:29:21.872Z",
     "updatedAt": "2026-11-02T15:29:21.872Z"
+  },
+  {
+    "id": "B0001",
+    "name": "กระเป๋าเป้สะพายหลังเก็บชุดฟูร์สูท Fursuit สไตล์ญี่ปุ่น หน้าต่างใสรอบด้าน (Furry Ita-Bag) มีหลายขนาด",
+    "nameCn": "",
+    "category": "B",
+    "status": "preorder",
+    "sellPrice": 1590,
+    "minSellPrice": 1590,
+    "maxSellPrice": 2390,
+    "origPrice": 1519,
+    "domesticShip": "ส่งฟรีถึงหน้าบ้านคุณ (รวมในค่าส่งจีนแล้ว 0 บาท)",
+    "delivery": "ประมาณ 2 อาทิตย์",
+    "desc": "สินค้าพรีออเดอร์คุณภาพพรีเมียมนำเข้าโดยตรง วัสดุเกรดพรีเมียม เป็นกระเป๋าสำหรับใส่ fursuit แง้ววว",
+    "specs": null,
+    "contact": "m.me/666255349897305",
+    "imageUrl": "images/items/762124021552/01.jpg",
+    "galleryImages": [
+      "images/items/762124021552/01.jpg",
+      "images/items/762124021552/02.jpg",
+      "images/items/762124021552/03.jpg",
+      "images/items/762124021552/04.jpg",
+      "images/items/762124021552/05.jpg",
+      "images/items/762124021552/09.jpg",
+      "images/items/762124021552/10.jpg",
+      "images/items/762124021552/11.jpg",
+      "images/items/762124021552/12.jpg",
+      "images/items/762124021552/13.jpg"
+    ],
+    "variants": [
+      {
+        "emoji": "🐾",
+        "name": "ขนาดเล็ก (ความสูงไม่เกิน 45 ซม. และความกว้าง 38 ซม.) สามารถขึ้นเครื่องได้",
+        "sellPrice": 1590,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🖤",
+        "name": "ใหม่สีดำล้วนขนาดเล็ก (สูง 45 ซม. กว้าง 40 ซม. หรือน้อยกว่า)",
+        "sellPrice": 2059,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🖤",
+        "name": "ใหม่ขนาดเล็กสีดำและสีเหลือง (สูง 45 ซม. กว้าง 40 ซม. หรือน้อยกว่า)",
+        "sellPrice": 2059,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🐾",
+        "name": "กลาง (สูง 48 ซม. กว้าง 45 ซม. หรือน้อยกว่า)",
+        "sellPrice": 1990,
+        "sold": false,
+        "priceNote": ""
+      },
+      {
+        "emoji": "🐾",
+        "name": "ใหญ่สุด (สูง 55 ซม. กว้าง 60 ซม. หรือน้อยกว่า)",
+        "sellPrice": 2390,
+        "sold": false,
+        "priceNote": ""
+      }
+    ],
+    "sizes": [],
+    "createdAt": "2026-11-02T16:20:42.112Z",
+    "updatedAt": "2026-11-02T16:20:42.112Z"
   }
 ]
