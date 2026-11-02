@@ -543,6 +543,7 @@
   }
 
   function renderModalGallery(images, onImageChange = null) {
+    if (!images || images.length === 0) images = ['furlestial.ico'];
     const mainImg = qs('#modal-main-img');
     const counter = qs('#modal-img-counter');
     const thumbWrap = qs('#modal-thumbnails');
