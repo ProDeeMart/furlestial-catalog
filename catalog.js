@@ -922,6 +922,30 @@
       showToast('📋 คัดลอกเลขบัญชีกสิกรไทย (015-1-98030-9) แล้ว!');
     });
 
+    // Clear saved address button
+    qs('#btn-clear-saved-addr')?.addEventListener('click', () => {
+      localStorage.removeItem('furlestial_customer_info');
+      if (qs('#chk-name')) qs('#chk-name').value = '';
+      if (qs('#chk-phone')) qs('#chk-phone').value = '';
+      if (qs('#chk-address')) qs('#chk-address').value = '';
+      if (qs('#chk-postal')) qs('#chk-postal').value = '';
+      if (qs('#chk-saved-indicator')) qs('#chk-saved-indicator').style.display = 'none';
+      if (qs('#btn-clear-saved-addr')) qs('#btn-clear-saved-addr').style.display = 'none';
+      showToast('🗑️ ล้างที่อยู่ที่จำไว้เรียบร้อยแล้ว');
+    });
+
+    // Auto-save address as customer types (debounced)
+    let addrDebounceTimer = null;
+    const handleAddrInput = () => {
+      clearTimeout(addrDebounceTimer);
+      addrDebounceTimer = setTimeout(() => {
+        saveSavedAddress(false);
+      }, 400);
+    };
+    ['#chk-name', '#chk-phone', '#chk-address', '#chk-postal', '#chk-note'].forEach(sel => {
+      qs(sel)?.addEventListener('input', handleAddrInput);
+    });
+
     // Step navigation
     qs('#chk-proceed-payment-btn')?.addEventListener('click', () => {
       const name = qs('#chk-name')?.value?.trim();
@@ -935,10 +959,8 @@
       if (!address || address.length < 10) { showToast('กรุณากรอกที่อยู่จัดส่งโดยละเอียด'); qs('#chk-address')?.focus(); return; }
       if (!postal || postal.length < 5) { showToast('กรุณากรอกรหัสไปรษณีย์'); qs('#chk-postal')?.focus(); return; }
 
-      // Save customer info locally for instant auto-fill next time
-      try {
-        localStorage.setItem('furlestial_customer_info', JSON.stringify({ name, phone, address, postal, note }));
-      } catch {}
+      // Save customer info locally & to cloud profile for instant auto-fill
+      saveSavedAddress(true);
 
       // Transition to Step 2: Payment
       qs('#checkout-shipping-section').style.display = 'none';
@@ -1017,19 +1039,88 @@
     reader.readAsDataURL(file);
   }
 
+  function saveSavedAddress(isSubmitting = false) {
+    const chkSave = qs('#chk-save-address');
+    if (chkSave && !chkSave.checked) return;
+
+    const name = qs('#chk-name')?.value?.trim() || '';
+    const phone = qs('#chk-phone')?.value?.trim() || '';
+    const address = qs('#chk-address')?.value?.trim() || '';
+    const postal = qs('#chk-postal')?.value?.trim() || '';
+    const note = qs('#chk-note')?.value?.trim() || '';
+
+    if (!name && !phone && !address) return;
+
+    const info = { name, phone, address, postal, note };
+    try {
+      localStorage.setItem('furlestial_customer_info', JSON.stringify(info));
+    } catch {}
+
+    const ind = qs('#chk-saved-indicator');
+    if (ind && (address || phone)) ind.style.display = 'inline-block';
+    const clr = qs('#btn-clear-saved-addr');
+    if (clr && (address || phone)) clr.style.display = 'inline-block';
+
+    // Cloud Profile sync for logged in member
+    if (currentAuthUser && supabase && isSubmitting && (name || phone || address)) {
+      supabase.from('profiles').upsert({
+        id: currentAuthUser.id,
+        full_name: name,
+        phone: phone,
+        shipping_address: address,
+        postal_code: postal,
+        updated_at: new Date().toISOString()
+      }).then(() => {}).catch(() => {});
+    }
+  }
+
+  async function loadSavedAddress() {
+    let saved = null;
+    try {
+      saved = JSON.parse(localStorage.getItem('furlestial_customer_info') || 'null');
+    } catch {}
+
+    // Cloud fetch if logged in
+    if (currentAuthUser && supabase) {
+      try {
+        const { data: profile } = await supabase
+          .from('profiles')
+          .select('*')
+          .eq('id', currentAuthUser.id)
+          .single();
+        if (profile && (profile.shipping_address || profile.phone || profile.full_name)) {
+          saved = {
+            name: profile.full_name || saved?.name || currentAuthUser.user_metadata?.full_name || '',
+            phone: profile.phone || saved?.phone || currentAuthUser.user_metadata?.phone || '',
+            address: profile.shipping_address || saved?.address || '',
+            postal: profile.postal_code || saved?.postal || '',
+            note: saved?.note || ''
+          };
+          localStorage.setItem('furlestial_customer_info', JSON.stringify(saved));
+        }
+      } catch {}
+    }
+
+    if (saved) {
+      if (saved.name && qs('#chk-name')) qs('#chk-name').value = saved.name;
+      if (saved.phone && qs('#chk-phone')) qs('#chk-phone').value = saved.phone;
+      if (saved.address && qs('#chk-address')) qs('#chk-address').value = saved.address;
+      if (saved.postal && qs('#chk-postal')) qs('#chk-postal').value = saved.postal;
+      if (saved.note && qs('#chk-note')) qs('#chk-note').value = saved.note;
+
+      const ind = qs('#chk-saved-indicator');
+      if (ind) ind.style.display = (saved.address || saved.phone) ? 'inline-block' : 'none';
+      const clr = qs('#btn-clear-saved-addr');
+      if (clr) clr.style.display = (saved.address || saved.phone) ? 'inline-block' : 'none';
+    }
+  }
+
   function startCheckout(items) {
     if (!items || items.length === 0) return;
     checkoutItems = [...items];
 
-    // Pre-fill customer info if available
-    try {
-      const saved = JSON.parse(localStorage.getItem('furlestial_customer_info') || '{}');
-      if (saved.name && !qs('#chk-name').value) qs('#chk-name').value = saved.name;
-      if (saved.phone && !qs('#chk-phone').value) qs('#chk-phone').value = saved.phone;
-      if (saved.address && !qs('#chk-address').value) qs('#chk-address').value = saved.address;
-      if (saved.postal && !qs('#chk-postal').value) qs('#chk-postal').value = saved.postal;
-      if (saved.note && !qs('#chk-note').value) qs('#chk-note').value = saved.note;
-    } catch {}
+    // Pre-fill customer address from LocalStorage or Supabase
+    loadSavedAddress();
 
     // Calculate total & render items list in checkout
     let total = 0;
@@ -1040,13 +1131,13 @@
         total += sub;
         const opt = [it.variant ? `ลาย: ${it.variant}` : '', it.size ? `ไซส์: ${it.size}` : ''].filter(Boolean).join(' • ');
         return `
-          <div style="display:flex; justify-content:space-between; align-items:center; padding:6px 0; border-bottom:1px dashed rgba(255,255,255,0.08); font-size:0.84rem;">
+          <div class="chk-summary-item-row">
             <div>
-              <strong style="color:#fff;">${esc(it.name)}</strong>
-              ${opt ? `<div style="font-size:0.75rem; color:#f0c060;">${esc(opt)}</div>` : ''}
-              <div style="font-size:0.75rem; color:#888;">จำนวน: ${it.quantity || 1} ชิ้น × ฿${it.price.toLocaleString('th-TH')}</div>
+              <strong class="chk-item-name">${esc(it.name)}</strong>
+              ${opt ? `<div class="chk-item-var">${esc(opt)}</div>` : ''}
+              <div class="chk-item-qty">จำนวน: ${it.quantity || 1} ชิ้น × ฿${it.price.toLocaleString('th-TH')}</div>
             </div>
-            <div style="font-weight:700; color:#34d399;">฿${sub.toLocaleString('th-TH')}</div>
+            <div class="chk-item-subtotal">฿${sub.toLocaleString('th-TH')}</div>
           </div>
         `;
       }).join('');
@@ -1203,11 +1294,11 @@
     const summaryEl = qs('#success-order-summary');
     if (summaryEl) {
       summaryEl.innerHTML = `
-        <div style="font-size:0.84rem; color:#ddd; line-height:1.6; border-top:1px solid rgba(255,255,255,0.08); padding-top:10px;">
+        <div class="success-order-summary-box">
           <div>👤 <strong>ผู้รับ:</strong> ${esc(name)} (โทร ${esc(phone)})</div>
           <div>📍 <strong>ที่อยู่จัดส่ง:</strong> ${esc(address)}</div>
           <div>📦 <strong>สินค้า:</strong> ${items.length} รายการ (ส่งฟรีถึงหน้าบ้าน)</div>
-          <div>💰 <strong>ยอดเงินที่ชำระ:</strong> <strong style="color:#fde68a; font-size:1.05rem;">฿${total.toLocaleString('th-TH')}</strong> (PromptPay KBank)</div>
+          <div>💰 <strong>ยอดเงินที่ชำระ:</strong> <strong class="success-order-total-price">฿${total.toLocaleString('th-TH')}</strong> (PromptPay KBank)</div>
         </div>
       `;
     }
@@ -1251,6 +1342,20 @@
       });
     });
 
+    // Helper links to switch between tabs
+    qs('#link-goto-signup')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      qs('.auth-tab-btn[data-tab="signup"]')?.click();
+    });
+    qs('#link-goto-login')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      qs('.auth-tab-btn[data-tab="login"]')?.click();
+    });
+    qs('#link-goto-lookup')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      qs('.auth-tab-btn[data-tab="lookup"]')?.click();
+    });
+
     // Form Login
     qs('#form-customer-login')?.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -1260,11 +1365,18 @@
       showToast('⏳ กำลังเข้าสู่ระบบ...');
       const { data, error } = await supabase.auth.signInWithPassword({ email, password });
       if (error) {
-        showToast('เข้าสู่ระบบไม่สำเร็จ: ' + error.message);
+        let msg = error.message || '';
+        if (msg.includes('Invalid login credentials') || msg.includes('invalid_credentials')) {
+          msg = 'อีเมลหรือรหัสผ่านไม่ถูกต้อง (หากยังไม่เคยมีบัญชี กรุณากดปุ่ม "สมัครสมาชิก" ก่อนนะแง้ว)';
+        } else if (msg.includes('Email not confirmed')) {
+          msg = 'อีเมลนี้ยังไม่ได้รับการยืนยัน';
+        }
+        showToast('❌ เข้าสู่ระบบไม่สำเร็จ: ' + msg);
       } else {
         currentAuthUser = data.user;
         updateCustomerAuthUI();
         showToast('✅ เข้าสู่ระบบสำเร็จแล้วนะแง้ว!');
+        setTimeout(() => closeAuthModal(), 600);
       }
     });
 
@@ -1283,11 +1395,18 @@
         options: { data: { full_name: name, phone: phone } }
       });
       if (error) {
-        showToast('สมัครสมาชิกไม่สำเร็จ: ' + error.message);
+        let msg = error.message || '';
+        if (msg.includes('User already registered')) {
+          msg = 'อีเมลนี้เคยลงทะเบียนไว้แล้ว กรุณากด "เข้าสู่ระบบ" นะแง้ว';
+        } else if (msg.includes('Password should be at least')) {
+          msg = 'รหัสผ่านต้องมีความยาวอย่างน้อย 6 ตัวอักษร';
+        }
+        showToast('❌ สมัครสมาชิกไม่สำเร็จ: ' + msg);
       } else {
         currentAuthUser = data.user;
         updateCustomerAuthUI();
         showToast('🎉 สมัครสมาชิกและเข้าสู่ระบบเรียบร้อยแล้ว!');
+        setTimeout(() => closeAuthModal(), 600);
       }
     });
 
@@ -1299,11 +1418,78 @@
       showToast('ออกจากระบบเรียบร้อยแล้ว');
     });
 
+    // Profile Address Editor Listeners
+    qs('#btn-edit-profile-addr')?.addEventListener('click', () => {
+      const form = qs('#form-profile-addr');
+      const prev = qs('#profile-addr-preview');
+      if (form && prev) {
+        const isHidden = form.style.display === 'none';
+        form.style.display = isHidden ? 'block' : 'none';
+        prev.style.display = isHidden ? 'none' : 'block';
+      }
+    });
+
+    qs('#btn-cancel-profile-addr')?.addEventListener('click', () => {
+      const form = qs('#form-profile-addr');
+      const prev = qs('#profile-addr-preview');
+      if (form) form.style.display = 'none';
+      if (prev) prev.style.display = 'block';
+    });
+
+    qs('#form-profile-addr')?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const name = qs('#profile-name')?.value?.trim() || '';
+      const phone = qs('#profile-phone')?.value?.trim() || '';
+      const address = qs('#profile-address')?.value?.trim() || '';
+      const postal = qs('#profile-postal')?.value?.trim() || '';
+
+      if (!name || !phone || !address || !postal) {
+        showToast('กรุณากรอกข้อมูลที่อยู่ให้ครบถ้วน');
+        return;
+      }
+
+      showToast('⏳ กำลังบันทึกที่อยู่...');
+      try {
+        localStorage.setItem('furlestial_customer_info', JSON.stringify({ name, phone, address, postal }));
+      } catch {}
+
+      if (currentAuthUser && supabase) {
+        try {
+          await supabase.from('profiles').upsert({
+            id: currentAuthUser.id,
+            full_name: name,
+            phone: phone,
+            shipping_address: address,
+            postal_code: postal,
+            updated_at: new Date().toISOString()
+          });
+        } catch (err) {
+          console.warn('[Profile Save Error]', err);
+        }
+      }
+
+      // Update UI
+      renderProfileAddressDisplay(name, phone, address, postal);
+      if (qs('#form-profile-addr')) qs('#form-profile-addr').style.display = 'none';
+      if (qs('#profile-addr-preview')) qs('#profile-addr-preview').style.display = 'block';
+
+      // Auto fill checkout inputs
+      if (qs('#chk-name')) qs('#chk-name').value = name;
+      if (qs('#chk-phone')) qs('#chk-phone').value = phone;
+      if (qs('#chk-address')) qs('#chk-address').value = address;
+      if (qs('#chk-postal')) qs('#chk-postal').value = postal;
+
+      showToast('✅ บันทึกที่อยู่จัดส่งสำเร็จแล้วนะแง้ว!');
+    });
+
     // Guest Lookup (Track by Phone or Order ID)
     qs('#btn-do-lookup')?.addEventListener('click', () => doGuestLookup());
     qs('#lookup-query')?.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') doGuestLookup();
     });
+
+    // Profile Avatar Upload System
+    initAvatarUploadSystem();
 
     // Check initial session
     if (supabase) {
@@ -1318,6 +1504,244 @@
         updateCustomerAuthUI();
       });
     }
+  }
+
+  function setAvatarDisplay(url) {
+    const imgEl = qs('#profile-avatar-img');
+    const fallbackEl = qs('#profile-avatar-fallback');
+    const headerIcon = qs('#header-auth-icon');
+    if (url) {
+      if (imgEl) {
+        imgEl.src = url;
+        imgEl.style.display = 'block';
+      }
+      if (fallbackEl) fallbackEl.style.display = 'none';
+      if (headerIcon) {
+        headerIcon.innerHTML = `<img src="${url}" class="nav-avatar-mini" alt="" />`;
+      }
+    } else {
+      if (imgEl) imgEl.style.display = 'none';
+      if (fallbackEl) fallbackEl.style.display = 'block';
+      if (headerIcon) headerIcon.innerHTML = '👤';
+    }
+  }
+
+  async function loadUserProfileAvatar(userId) {
+    if (!userId) return;
+    // 1. Instant cache from localStorage
+    const cached = localStorage.getItem('furlestial_avatar_' + userId);
+    if (cached) {
+      setAvatarDisplay(cached);
+    } else {
+      setAvatarDisplay(null);
+    }
+
+    if (!supabase) return;
+    try {
+      const { data, error } = await supabase
+        .from('profiles')
+        .select('avatar_url')
+        .eq('id', userId)
+        .single();
+      if (!error && data && data.avatar_url) {
+        localStorage.setItem('furlestial_avatar_' + userId, data.avatar_url);
+        setAvatarDisplay(data.avatar_url);
+      }
+    } catch (e) {
+      console.warn('[Avatar load error]', e);
+    }
+  }
+
+  let avatarCropper = null;
+
+  function closeAvatarCropModal() {
+    const cropModal = qs('#avatar-crop-modal-backdrop');
+    if (cropModal) cropModal.classList.remove('open');
+    if (avatarCropper) {
+      avatarCropper.destroy();
+      avatarCropper = null;
+    }
+    const input = qs('#profile-avatar-input');
+    if (input) input.value = '';
+    const profileBd = qs('#profile-modal-backdrop');
+    if (!profileBd || !profileBd.classList.contains('open')) {
+      document.body.style.overflow = '';
+    }
+  }
+
+  function initAvatarUploadSystem() {
+    const wrapper = qs('#profile-avatar-wrapper');
+    const input = qs('#profile-avatar-input');
+    const cropModal = qs('#avatar-crop-modal-backdrop');
+    const cropImg = qs('#crop-image-target');
+    const closeBtn = qs('#crop-modal-close-btn');
+    const cancelBtn = qs('#btn-crop-cancel');
+    const confirmBtn = qs('#btn-crop-confirm');
+
+    const zoomInBtn = qs('#btn-crop-zoom-in');
+    const zoomOutBtn = qs('#btn-crop-zoom-out');
+    const rotateLeftBtn = qs('#btn-crop-rotate-left');
+    const rotateRightBtn = qs('#btn-crop-rotate-right');
+    const resetBtn = qs('#btn-crop-reset');
+
+    if (!wrapper || !input) return;
+
+    wrapper.addEventListener('click', () => {
+      if (!currentAuthUser) {
+        showToast('กรุณาเข้าสู่ระบบก่อนเปลี่ยนรูปโปรไฟล์');
+        return;
+      }
+      input.click();
+    });
+
+    input.addEventListener('change', (e) => {
+      const file = e.target.files?.[0];
+      if (!file || !currentAuthUser) return;
+
+      if (!file.type.startsWith('image/')) {
+        showToast('❌ กรุณาเลือกไฟล์รูปภาพเท่านั้น');
+        input.value = '';
+        return;
+      }
+
+      if (file.size > 10 * 1024 * 1024) {
+        showToast('❌ ขนาดไฟล์ใหญ่เกิน 10MB');
+        input.value = '';
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = (evt) => {
+        const imageSrc = evt.target.result;
+        if (!cropImg || !cropModal) return;
+
+        if (avatarCropper) {
+          avatarCropper.destroy();
+          avatarCropper = null;
+        }
+
+        cropImg.src = imageSrc;
+        cropModal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+
+        setTimeout(() => {
+          if (typeof Cropper === 'undefined') {
+            showToast('❌ ไม่สามารถโหลดเครื่องมือตัดรูปได้');
+            closeAvatarCropModal();
+            return;
+          }
+
+          avatarCropper = new Cropper(cropImg, {
+            aspectRatio: 1,
+            viewMode: 1,
+            dragMode: 'move',
+            autoCropArea: 0.9,
+            restore: false,
+            guides: false,
+            center: true,
+            highlight: false,
+            cropBoxMovable: false,
+            cropBoxResizable: false,
+            toggleDragModeOnDblclick: false,
+            preview: '#crop-preview-container'
+          });
+        }, 150);
+      };
+      reader.readAsDataURL(file);
+    });
+
+    // Control buttons
+    zoomInBtn?.addEventListener('click', () => avatarCropper?.zoom(0.1));
+    zoomOutBtn?.addEventListener('click', () => avatarCropper?.zoom(-0.1));
+    rotateLeftBtn?.addEventListener('click', () => avatarCropper?.rotate(-90));
+    rotateRightBtn?.addEventListener('click', () => avatarCropper?.rotate(90));
+    resetBtn?.addEventListener('click', () => avatarCropper?.reset());
+
+    // Close handlers
+    closeBtn?.addEventListener('click', closeAvatarCropModal);
+    cancelBtn?.addEventListener('click', closeAvatarCropModal);
+    cropModal?.addEventListener('click', (e) => {
+      if (e.target === cropModal) closeAvatarCropModal();
+    });
+
+    // Confirm & Save
+    confirmBtn?.addEventListener('click', async () => {
+      if (!avatarCropper || !currentAuthUser) return;
+
+      confirmBtn.disabled = true;
+      confirmBtn.innerHTML = '<span>⏳ กำลังบันทึก...</span>';
+
+      try {
+        const canvas = avatarCropper.getCroppedCanvas({
+          width: 400,
+          height: 400,
+          imageSmoothingEnabled: true,
+          imageSmoothingQuality: 'high'
+        });
+
+        if (!canvas) {
+          throw new Error('Canvas export failed');
+        }
+
+        const croppedBlob = await new Promise((resolve) => {
+          canvas.toBlob((blob) => resolve(blob), 'image/jpeg', 0.88);
+        });
+
+        if (!croppedBlob) {
+          throw new Error('Blob creation failed');
+        }
+
+        const previewUrl = URL.createObjectURL(croppedBlob);
+        setAvatarDisplay(previewUrl);
+
+        showToast('☁️ กำลังบันทึกรูปโปรไฟล์...');
+
+        let finalUrl = '';
+        if (supabase) {
+          const fileName = `${currentAuthUser.id}_avatar_${Date.now()}.jpg`;
+          const { error: uploadErr } = await supabase.storage
+            .from('avatars')
+            .upload(fileName, croppedBlob, {
+              contentType: 'image/jpeg',
+              upsert: true
+            });
+
+          if (!uploadErr) {
+            const { data: urlData } = supabase.storage.from('avatars').getPublicUrl(fileName);
+            finalUrl = urlData?.publicUrl || `${SUPABASE_URL}/storage/v1/object/public/avatars/${fileName}`;
+          } else {
+            console.warn('[Storage bucket error, fallback to dataURL]', uploadErr);
+            finalUrl = await blobToBase64(croppedBlob);
+          }
+
+          // Save to profiles table
+          await supabase
+            .from('profiles')
+            .upsert({ id: currentAuthUser.id, avatar_url: finalUrl, updated_at: new Date().toISOString() });
+        } else {
+          finalUrl = await blobToBase64(croppedBlob);
+        }
+
+        localStorage.setItem('furlestial_avatar_' + currentAuthUser.id, finalUrl);
+        setAvatarDisplay(finalUrl);
+        showToast('✅ บันทึกรูปโปรไฟล์เรียบร้อยแล้วนะแง้ว! 🐾');
+        closeAvatarCropModal();
+      } catch (err) {
+        console.error('[Avatar upload error]', err);
+        showToast('❌ ไม่สามารถบันทึกรูปโปรไฟล์ได้');
+      } finally {
+        confirmBtn.disabled = false;
+        confirmBtn.innerHTML = '<span>💾 บันทึกรูปโปรไฟล์</span>';
+      }
+    });
+  }
+
+  function blobToBase64(blob) {
+    return new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.onloadend = () => resolve(reader.result);
+      reader.readAsDataURL(blob);
+    });
   }
 
   function updateCustomerAuthUI() {
@@ -1339,20 +1763,100 @@
         profileView.style.display = 'block';
         qs('#user-display-name').textContent = name;
         qs('#user-display-email').textContent = currentAuthUser.email;
+        loadUserProfileAvatar(currentAuthUser.id);
         loadUserOrders(currentAuthUser.id);
+        loadUserProfileAddress(currentAuthUser.id);
       }
     } else {
       if (authTxt) authTxt.textContent = 'เข้าสู่ระบบ';
+      setAvatarDisplay(null);
       if (tabsRow) tabsRow.style.display = 'flex';
       if (profileView) profileView.style.display = 'none';
       if (loginContent) loginContent.style.display = 'block';
     }
   }
 
+  async function loadUserProfileAddress(userId) {
+    let saved = null;
+    try {
+      saved = JSON.parse(localStorage.getItem('furlestial_customer_info') || 'null');
+    } catch {}
+
+    if (supabase && userId) {
+      try {
+        const { data: profile } = await supabase
+          .from('profiles')
+          .select('*')
+          .eq('id', userId)
+          .single();
+        if (profile) {
+          saved = {
+            name: profile.full_name || saved?.name || currentAuthUser?.user_metadata?.full_name || '',
+            phone: profile.phone || saved?.phone || currentAuthUser?.user_metadata?.phone || '',
+            address: profile.shipping_address || saved?.address || '',
+            postal: profile.postal_code || saved?.postal || ''
+          };
+          localStorage.setItem('furlestial_customer_info', JSON.stringify(saved));
+        }
+      } catch {}
+    }
+
+    const name = saved?.name || currentAuthUser?.user_metadata?.full_name || '';
+    const phone = saved?.phone || currentAuthUser?.user_metadata?.phone || '';
+    const address = saved?.address || '';
+    const postal = saved?.postal || '';
+
+    renderProfileAddressDisplay(name, phone, address, postal);
+
+    if (qs('#profile-name')) qs('#profile-name').value = name;
+    if (qs('#profile-phone')) qs('#profile-phone').value = phone;
+    if (qs('#profile-address')) qs('#profile-address').value = address;
+    if (qs('#profile-postal')) qs('#profile-postal').value = postal;
+  }
+
+  function renderProfileAddressDisplay(name, phone, address, postal) {
+    const previewEl = qs('#profile-addr-preview');
+    if (!previewEl) return;
+    if (name || phone || address) {
+      previewEl.innerHTML = `
+        <div class="profile-addr-lead-row">
+          <div class="profile-addr-name">
+            <span class="addr-name-text">${escapeHtml(name || 'คุณลูกค้า')}</span>
+            <span class="profile-addr-tag">ผู้รับพัสดุ</span>
+          </div>
+          ${phone ? `
+            <a href="tel:${escapeHtml(phone)}" class="profile-phone-pill" title="โทรติดต่อ">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <span>${escapeHtml(phone)}</span>
+            </a>
+          ` : ''}
+        </div>
+        <div class="profile-addr-box">
+          <div class="profile-addr-icon">📍</div>
+          <div class="profile-addr-detail">
+            <div class="profile-addr-street">${escapeHtml(address || 'ยังไม่ได้ระบุที่อยู่')}</div>
+            ${postal ? `<div class="profile-addr-postal-pill">รหัสไปรษณีย์: <strong>${escapeHtml(postal)}</strong></div>` : ''}
+          </div>
+        </div>
+      `;
+    } else {
+      previewEl.innerHTML = `
+        <div class="profile-addr-empty">
+          <div class="empty-icon-wrap">🏠</div>
+          <div class="empty-text-wrap">
+            <div class="empty-title">ยังไม่มีข้อมูลที่อยู่จัดส่งเริ่มต้น</div>
+            <div class="empty-sub">กดปุ่ม "แก้ไขที่อยู่" เพื่อบันทึกที่อยู่จัดส่งล่วงหน้า จะได้ไม่ต้องกรอกใหม่ทุกครั้งนะแง้ว</div>
+          </div>
+        </div>
+      `;
+    }
+  }
+
   async function loadUserOrders(userId) {
     const listEl = qs('#user-orders-list');
+    const countBadge = qs('#profile-orders-count-badge');
     if (!listEl || !supabase) return;
-    listEl.innerHTML = '<div style="color:#aaa; font-size:0.84rem;">⏳ กำลังโหลดประวัติคำสั่งซื้อ...</div>';
+    listEl.innerHTML = '<div class="profile-orders-status-msg">⏳ กำลังโหลดประวัติคำสั่งซื้อ...</div>';
 
     const { data: orders, error } = await supabase
       .from('orders')
@@ -1361,9 +1865,19 @@
       .order('created_at', { ascending: false });
 
     if (error || !orders || orders.length === 0) {
-      listEl.innerHTML = '<div style="color:#888; font-size:0.84rem; padding:8px 0;">ยังไม่มีประวัติคำสั่งซื้อ</div>';
+      if (countBadge) countBadge.textContent = '0 รายการ';
+      listEl.innerHTML = `
+        <div class="profile-orders-empty-state">
+          <div class="orders-empty-glow-box">
+            <span class="empty-box-icon">📦</span>
+          </div>
+          <div class="orders-empty-title">ยังไม่มีประวัติคำสั่งซื้อ</div>
+          <p class="orders-empty-desc">เมื่อคุณสั่งซื้อสินค้าพรีออเดอร์ ข้อมูลสถานะและเลขแทร็กกิ้งพัสดุจะอัปเดตที่นี่อัตโนมัตินะแง้ว</p>
+        </div>
+      `;
       return;
     }
+    if (countBadge) countBadge.textContent = `${orders.length} รายการ`;
     renderOrdersCards(orders, listEl);
   }
 
@@ -1373,7 +1887,7 @@
     if (!resultEl) return;
     if (!q) { showToast('กรุณากรอกเบอร์โทรหรือรหัสคำสั่งซื้อ'); return; }
 
-    resultEl.innerHTML = '<div style="color:#aaa; font-size:0.84rem;">⏳ กำลังค้นหาข้อมูลคำสั่งซื้อ...</div>';
+    resultEl.innerHTML = '<div class="profile-orders-status-msg">⏳ กำลังค้นหาข้อมูลคำสั่งซื้อ...</div>';
 
     let foundOrders = [];
     if (supabase) {
@@ -1400,7 +1914,7 @@
     }
 
     if (foundOrders.length === 0) {
-      resultEl.innerHTML = '<div style="color:#f87171; font-size:0.84rem; padding:8px 0;">❌ ไม่พบคำสั่งซื้อที่ตรงกับข้อมูลที่ค้นหา</div>';
+      resultEl.innerHTML = '<div class="profile-orders-status-msg text-error">❌ ไม่พบคำสั่งซื้อที่ตรงกับข้อมูลที่ค้นหา</div>';
       return;
     }
 
@@ -1409,29 +1923,29 @@
 
   function renderOrdersCards(orders, container) {
     const statusMap = {
-      pending_review: { label: '🟡 รอตรวจสอบยอดเงิน', color: '#fde68a' },
-      verifying: { label: '🟡 รอตรวจสอบยอดเงิน', color: '#fde68a' },
-      ordered_from_china: { label: '🔵 สั่งพรีออเดอร์แล้ว', color: '#60a5fa' },
-      preorder_placed: { label: '🔵 สั่งพรีออเดอร์แล้ว', color: '#60a5fa' },
-      arrived_thailand: { label: '🟣 สินค้าถึงไทยแล้ว', color: '#c084fc' },
-      arrived_th: { label: '🟣 สินค้าถึงไทยแล้ว', color: '#c084fc' },
-      shipped: { label: '🟢 จัดส่งแล้ว', color: '#34d399' },
-      cancelled: { label: '🔴 ยกเลิก', color: '#f87171' }
+      pending_review: { label: '🟡 รอตรวจสอบยอดเงิน', color: '#f59e0b' },
+      verifying: { label: '🟡 รอตรวจสอบยอดเงิน', color: '#f59e0b' },
+      ordered_from_china: { label: '🔵 สั่งพรีออเดอร์แล้ว', color: '#3b82f6' },
+      preorder_placed: { label: '🔵 สั่งพรีออเดอร์แล้ว', color: '#3b82f6' },
+      arrived_thailand: { label: '🟣 สินค้าถึงไทยแล้ว', color: '#8b5cf6' },
+      arrived_th: { label: '🟣 สินค้าถึงไทยแล้ว', color: '#8b5cf6' },
+      shipped: { label: '🟢 จัดส่งแล้ว', color: '#10b981' },
+      cancelled: { label: '🔴 ยกเลิก', color: '#ef4444' }
     };
 
     container.innerHTML = orders.map(ord => {
-      const st = statusMap[ord.order_status || ord.status] || { label: 'กำลังดำเนินการ', color: '#aaa' };
+      const st = statusMap[ord.order_status || ord.status] || { label: 'กำลังดำเนินการ', color: '#64748b' };
       const dateText = ord.created_at ? new Date(ord.created_at).toLocaleDateString('th-TH') : '';
       const items = ord.order_items || ord.items || [];
       return `
-        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:12px; margin-bottom:10px;">
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-            <strong style="color:var(--accent-gold); font-size:0.92rem;">${esc(ord.id)}</strong>
-            <span style="font-size:0.75rem; color:${st.color}; font-weight:700; background:rgba(0,0,0,0.3); padding:2px 8px; border-radius:10px;">${st.label}</span>
+        <div class="user-order-card">
+          <div class="order-card-header">
+            <strong class="order-card-id">${esc(ord.id)}</strong>
+            <span class="order-status-pill" style="color:${st.color}; border-color:${st.color};">${st.label}</span>
           </div>
-          <div style="font-size:0.78rem; color:#888; margin-bottom:6px;">วันที่สั่ง: ${dateText} • ยอดชำระ: <strong style="color:#34d399;">฿${Number(ord.total_amount || ord.totalAmount || 0).toLocaleString('th-TH')}</strong></div>
-          ${ord.tracking_number ? `<div style="background:rgba(52,211,153,0.12); border:1px solid rgba(52,211,153,0.3); border-radius:8px; padding:6px 10px; font-size:0.8rem; color:#34d399; margin:6px 0;">🚚 <strong>เลขพัสดุ (${esc(ord.shipping_carrier || 'Flash')}):</strong> <span style="font-family:monospace; font-weight:800;">${esc(ord.tracking_number)}</span></div>` : ''}
-          <div style="font-size:0.76rem; color:#bbb;">
+          <div class="order-card-meta">วันที่สั่ง: ${dateText} • ยอดชำระ: <strong class="order-card-amount">฿${Number(ord.total_amount || ord.totalAmount || 0).toLocaleString('th-TH')}</strong></div>
+          ${ord.tracking_number ? `<div class="order-card-tracking">🚚 <strong>เลขพัสดุ (${esc(ord.shipping_carrier || 'Flash')}):</strong> <span class="order-tracking-num">${esc(ord.tracking_number)}</span></div>` : ''}
+          <div class="order-card-items">
             ${items.map(it => `• ${esc(it.product_name || it.name)} ${it.variant_name || it.variant ? `(${esc(it.variant_name || it.variant)})` : ''} × ${it.quantity || 1}`).join('<br/>')}
           </div>
         </div>
@@ -1442,9 +1956,8 @@
   function openAuthModal(initialTab = 'login') {
     const bd = qs('#auth-modal-backdrop');
     if (!bd) return;
-    if (initialTab === 'profile' && currentAuthUser) {
-      updateCustomerAuthUI();
-    } else {
+    updateCustomerAuthUI();
+    if (!currentAuthUser || initialTab !== 'profile') {
       const tabBtn = qs(`.auth-tab-btn[data-tab="${initialTab}"]`);
       if (tabBtn) tabBtn.click();
     }

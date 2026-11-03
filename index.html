@@ -19,7 +19,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <!-- Apple & Luxury Modern Typography: Plus Jakarta Sans + IBM Plex Sans Thai -->
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=5.0" />
+  <link rel="stylesheet" href="style.css?v=6.7" />
+  <!-- Cropper.js for Interactive Profile Picture Cropping -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cropperjs@1.6.2/dist/cropper.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/cropperjs@1.6.2/dist/cropper.min.js"></script>
   <!-- Supabase Client for Self-Service Checkout & Customer Login -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
@@ -63,9 +66,12 @@
         </button>
 
         <!-- Customer Login / Account Button -->
-        <button id="header-auth-btn" class="nav-btn-glass" title="เข้าสู่ระบบ / เช็กประวัติคำสั่งซื้อ">
-          <span class="icon">👤</span>
+        <button id="header-auth-btn" class="nav-btn-glass" title="เข้าสู่ระบบ / จัดการบัญชีสมาชิก">
+          <span class="icon" id="header-auth-icon">👤</span>
           <span class="txt" id="header-auth-txt">เข้าสู่ระบบ</span>
+          <svg class="nav-chevron-down" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
         </button>
 
         <!-- Cart Button with Live Counter -->
@@ -447,7 +453,12 @@
 
         <!-- Section 1: Customer Shipping Form -->
         <div id="checkout-shipping-section">
-          <h4 class="checkout-section-title">📍 ข้อมูลผู้รับพัสดุ (ส่งฟรีถึงหน้าบ้าน)</h4>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+            <h4 class="checkout-section-title" style="margin:0;">📍 ข้อมูลผู้รับพัสดุ (ส่งฟรีถึงหน้าบ้าน)</h4>
+            <span id="chk-saved-indicator" style="display:none; font-size:0.75rem; color:#34d399; background:rgba(52,211,153,0.12); border:1px solid rgba(52,211,153,0.3); padding:2px 8px; border-radius:12px;">
+              ✨ ดึงที่อยู่ที่บันทึกไว้แล้ว
+            </span>
+          </div>
           <div class="chk-form-grid">
             <div class="chk-form-group">
               <label>ชื่อ-นามสกุล ผู้รับ <span class="req">*</span></label>
@@ -473,13 +484,24 @@
             </div>
           </div>
 
+          <!-- Save Address Option -->
+          <div style="margin-top:12px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px;">
+            <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:0.84rem; color:var(--text-1);">
+              <input type="checkbox" id="chk-save-address" checked style="accent-color:#10b981; width:16px; height:16px;" />
+              <span style="font-weight:600;">💾 บันทึกที่อยู่นี้ไว้ ไม่ต้องพิมพ์ใหม่ครั้งต่อไป</span>
+            </label>
+            <button type="button" id="btn-clear-saved-addr" class="btn-xs-glass" style="display:none; font-size:0.72rem; color:#f87171;" title="ล้างที่อยู่ที่เคยจำไว้">
+              ล้างที่อยู่ที่จำไว้
+            </button>
+          </div>
+
           <!-- Items summary in checkout -->
           <div class="chk-order-items-preview" style="margin-top:16px;">
-            <div style="font-size:0.85rem; color:#aaa; margin-bottom:6px;">รายการสินค้าที่สั่งซื้อ:</div>
+            <div class="chk-section-subtitle">รายการสินค้าที่สั่งซื้อ:</div>
             <div id="chk-items-summary-list"></div>
             <div class="chk-summary-total-bar">
-              <span>ยอดรวมทั้งหมด:</span>
-              <strong id="chk-subtotal-thb" style="color:#fde68a; font-size:1.15rem;">฿0</strong>
+              <span class="chk-total-lbl">ยอดรวมทั้งหมด:</span>
+              <strong id="chk-subtotal-thb" class="chk-total-price">฿0</strong>
             </div>
           </div>
 
@@ -626,7 +648,7 @@
     <div class="sheet-container auth-sheet-container" role="dialog" aria-modal="true">
       <div class="sheet-header">
         <div class="sheet-title" id="auth-modal-title">
-          <span>🐾</span> <span>ระบบสมาชิก & ติดตามออเดอร์</span>
+          <span>🐾</span> <span class="modal-main-title">ระบบสมาชิก & ติดตามออเดอร์</span>
         </div>
         <button id="auth-close-btn" class="sheet-close-btn" title="ปิด">✕</button>
       </div>
@@ -653,6 +675,12 @@
             <button type="submit" class="btn-sheet-primary" style="margin-top:16px; width:100%; background:linear-gradient(135deg, #f59e0b, #ec4899);">
               เข้าสู่ระบบ
             </button>
+            <div class="auth-switch-note">
+              ยังไม่มีบัญชีใช่ไหม? <a href="#" id="link-goto-signup" class="auth-link-gold">กดสมัครสมาชิกที่นี่ (5 วินาที)</a>
+            </div>
+            <div class="auth-switch-note auth-lookup-link-row">
+              💡 หรือ <a href="#" id="link-goto-lookup" class="auth-link-blue">เช็กสถานะพัสดุด้วยเบอร์โทร (ไม่ต้องล็อกอิน)</a>
+            </div>
           </form>
         </div>
 
@@ -678,12 +706,15 @@
             <button type="submit" class="btn-sheet-primary" style="margin-top:16px; width:100%; background:linear-gradient(135deg, #10b981, #059669);">
               สร้างบัญชีสมาชิก
             </button>
+            <div class="auth-switch-note">
+              มีบัญชีอยู่แล้ว? <a href="#" id="link-goto-login" class="auth-link-gold">เข้าสู่ระบบที่นี่</a>
+            </div>
           </form>
         </div>
 
         <!-- Tab 3: Guest Lookup (Track by Phone / Order ID) -->
         <div class="auth-tab-content" id="tab-lookup-content" style="display:none;">
-          <p style="font-size:0.84rem; color:#aaa; margin-top:0;">กรอกเบอร์โทรศัพท์ที่ใช้สั่งซื้อ หรือรหัสคำสั่งซื้อ เพื่อดูสถานะพัสดุได้ทันทีโดยไม่ต้องจำรหัสผ่าน</p>
+          <p class="auth-tab-desc">กรอกเบอร์โทรศัพท์ที่ใช้สั่งซื้อ หรือรหัสคำสั่งซื้อ เพื่อดูสถานะพัสดุได้ทันทีโดยไม่ต้องจำรหัสผ่าน</p>
           <div class="chk-form-group">
             <label>เบอร์โทรศัพท์ หรือ รหัสออเดอร์ (#FUR-...)</label>
             <div style="display:flex; gap:8px;">
@@ -698,18 +729,167 @@
 
         <!-- Logged In Customer Profile View -->
         <div id="auth-logged-in-view" style="display:none;">
-          <div class="user-profile-badge">
-            <div class="profile-avatar">🐾</div>
-            <div>
-              <div style="color:#fff; font-weight:700;" id="user-display-name">คุณลูกค้า</div>
-              <div style="color:#aaa; font-size:0.8rem;" id="user-display-email">email@domain.com</div>
+          <!-- Card 1: User Profile Header Card -->
+          <div class="user-profile-card">
+            <div class="profile-avatar-wrapper" id="profile-avatar-wrapper" title="คลิกเพื่อตัด/เปลี่ยนรูปโปรไฟล์">
+              <div class="profile-avatar" id="profile-avatar-display">
+                <span id="profile-avatar-fallback">🐾</span>
+                <img id="profile-avatar-img" src="" alt="Avatar" style="display:none;" />
+              </div>
+              <div class="profile-avatar-badge-edit" title="ตัด/เปลี่ยนรูปโปรไฟล์">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                  <circle cx="12" cy="13" r="4"></circle>
+                </svg>
+              </div>
+              <input type="file" id="profile-avatar-input" accept="image/jpeg,image/png,image/webp,image/gif" style="display:none;" />
             </div>
-            <button type="button" id="btn-customer-logout" class="btn-xs-glass" style="margin-left:auto; color:#f87171;">
-              ออกจากระบบ
+            <div class="profile-info-col">
+              <div class="profile-user-name" id="user-display-name">คุณลูกค้า</div>
+              <div class="profile-user-email">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span id="user-display-email">email@domain.com</span>
+              </div>
+            </div>
+            <button type="button" id="btn-customer-logout" class="btn-customer-logout" title="ออกจากระบบ">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                <polyline points="16 17 21 12 16 7"></polyline>
+                <line x1="21" y1="12" x2="9" y2="12"></line>
+              </svg>
+              <span>ออกจากระบบ</span>
             </button>
           </div>
-          <h4 style="color:#fde68a; font-size:0.95rem; margin:16px 0 8px 0;">📦 คำสั่งซื้อของคุณ:</h4>
-          <div id="user-orders-list" class="user-orders-list"></div>
+
+          <!-- Card 2: Saved Shipping Address -->
+          <div class="user-profile-section-card">
+            <div class="profile-card-header">
+              <div class="profile-card-lead">
+                <span class="profile-header-icon">🏠</span>
+                <span class="profile-section-title">ที่อยู่จัดส่งพัสดุเริ่มต้น</span>
+              </div>
+              <button type="button" id="btn-edit-profile-addr" class="profile-action-btn">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M12 20h9"></path>
+                  <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                </svg>
+                <span>แก้ไขที่อยู่</span>
+              </button>
+            </div>
+            <div id="profile-addr-preview" class="profile-addr-preview">
+              <div id="profile-saved-name-phone" class="profile-saved-name-phone">ยังไม่มีข้อมูลที่อยู่จัดส่ง</div>
+              <div id="profile-saved-full-addr" class="profile-saved-full-addr">กดปุ่มแก้ไขที่อยู่เพื่อบันทึกที่อยู่เริ่มต้นสำหรับการสั่งซื้อครั้งต่อไป</div>
+            </div>
+
+            <!-- Edit Address Form (Collapsible) -->
+            <form id="form-profile-addr" style="display:none; margin-top:12px;" class="auth-form">
+              <div class="chk-form-grid">
+                <div class="chk-form-group">
+                  <label>ชื่อ-นามสกุล ผู้รับ</label>
+                  <input type="text" id="profile-name" class="chk-input" required />
+                </div>
+                <div class="chk-form-group">
+                  <label>เบอร์โทรศัพท์</label>
+                  <input type="tel" id="profile-phone" class="chk-input" required />
+                </div>
+              </div>
+              <div class="chk-form-group" style="margin-top:8px;">
+                <label>ที่อยู่จัดส่งโดยละเอียด</label>
+                <textarea id="profile-address" rows="2" class="chk-input" required></textarea>
+              </div>
+              <div class="chk-form-group" style="margin-top:8px;">
+                <label>รหัสไปรษณีย์</label>
+                <input type="text" id="profile-postal" class="chk-input" style="max-width:140px;" required />
+              </div>
+              <div style="display:flex; gap:8px; margin-top:12px; justify-content:flex-end;">
+                <button type="button" id="btn-cancel-profile-addr" class="btn-sheet-secondary" style="padding:6px 14px; font-size:0.8rem;">ยกเลิก</button>
+                <button type="submit" class="btn-sheet-primary" style="padding:6px 18px; font-size:0.8rem; background:linear-gradient(135deg, #10b981, #059669); width:auto;">💾 บันทึกที่อยู่</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Card 3: Orders List -->
+          <div class="user-profile-section-card">
+            <div class="profile-card-header">
+              <div class="profile-card-lead">
+                <span class="profile-header-icon">📦</span>
+                <span class="profile-section-title">คำสั่งซื้อและสถานะพัสดุ</span>
+              </div>
+              <span class="profile-card-badge" id="profile-orders-count-badge">0 รายการ</span>
+            </div>
+            <div id="user-orders-list" class="user-orders-list">
+              <div class="profile-orders-empty-state">
+                <div class="orders-empty-glow-box">
+                  <span class="empty-box-icon">📦</span>
+                </div>
+                <div class="orders-empty-title">ยังไม่มีประวัติคำสั่งซื้อ</div>
+                <p class="orders-empty-desc">เมื่อคุณสั่งซื้อสินค้าพรีออเดอร์ ข้อมูลสถานะและเลขแทร็กกิ้งพัสดุจะอัปเดตที่นี่อัตโนมัตินะแง้ว</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✂️ AVATAR CROP MODAL -->
+  <div id="avatar-crop-modal-backdrop" class="sheet-backdrop" style="z-index:10001;">
+    <div class="sheet-container crop-sheet-container" role="dialog" aria-modal="true" style="max-width:440px;">
+      <div class="sheet-header">
+        <div class="sheet-title">
+          <span>✂️</span> <span>ครอบตัดรูปโปรไฟล์</span>
+        </div>
+        <button id="crop-modal-close-btn" class="sheet-close-btn" title="ปิด">✕</button>
+      </div>
+
+      <div class="crop-modal-body" style="padding:16px 20px;">
+        <div class="crop-hint-text">
+          💡 ลากเพื่อเลื่อนตำแหน่งภาพ หรือใช้ปุ่มด้านล่างเพื่อซูมและหมุน
+        </div>
+
+        <!-- Cropper Viewport Container -->
+        <div class="crop-stage-wrapper">
+          <img id="crop-image-target" src="" alt="Crop Target" style="max-width:100%; display:block;" />
+        </div>
+
+        <!-- Toolbar Controls (Zoom In, Zoom Out, Rotate Left, Rotate Right, Reset) -->
+        <div class="crop-controls-row">
+          <button type="button" id="btn-crop-zoom-in" class="crop-tool-btn" title="ซูมเข้า">
+            <span>🔎</span> ซูมเข้า
+          </button>
+          <button type="button" id="btn-crop-zoom-out" class="crop-tool-btn" title="ซูมออก">
+            <span>🔍</span> ซูมออก
+          </button>
+          <button type="button" id="btn-crop-rotate-left" class="crop-tool-btn" title="หมุนซ้าย 90°">
+            <span>↺</span> หมุนซ้าย
+          </button>
+          <button type="button" id="btn-crop-rotate-right" class="crop-tool-btn" title="หมุนขวา 90°">
+            <span>↻</span> หมุนขวา
+          </button>
+          <button type="button" id="btn-crop-reset" class="crop-tool-btn" title="รีเซ็ตตำแหน่ง">
+            <span>🔄</span> รีเซ็ต
+          </button>
+        </div>
+
+        <!-- Preview Circle & Notice -->
+        <div class="crop-preview-row">
+          <div class="crop-circle-preview-label">ตัวอย่างรูปโปรไฟล์:</div>
+          <div class="crop-circle-preview-box">
+            <div class="crop-preview-circle" id="crop-preview-container"></div>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="crop-actions-row">
+          <button type="button" id="btn-crop-cancel" class="btn-sheet-secondary">
+            ยกเลิก
+          </button>
+          <button type="button" id="btn-crop-confirm" class="btn-sheet-primary" style="background:linear-gradient(135deg, #10b981, #059669); width:auto; padding:8px 20px;">
+            <span>💾 บันทึกรูปโปรไฟล์</span>
+          </button>
         </div>
       </div>
     </div>
@@ -725,6 +905,6 @@
   <!-- iOS Dynamic Toast -->
   <div id="toast" class="ios-toast"></div>
 
-  <script src="catalog.js?v=5.0"></script>
+  <script src="catalog.js?v=6.7"></script>
 </body>
 </html>
